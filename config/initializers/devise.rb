@@ -230,19 +230,19 @@ Devise.setup do |config|
   # config.omniauth :github, 'APP_ID', 'APP_SECRET', :scope => 'user,public_repo'
   require 'omniauth-linkedin'
   
-  config.omniauth :linkedin, env['LINKEDIN_APP_ID'], env['LINKEDIN_APP_SECRET']
+  config.omniauth :linkedin, ENV['LINKEDIN_APP_ID'], ENV['LINKEDIN_APP_SECRET']
   
   require 'omniauth-twitter'
   
-  config.omniauth :twitter, env['TWITTER_APP_ID'], env['TWITTER_APP_SECRET']
+  config.omniauth :twitter, ENV['TWITTER_APP_ID'], ENV['TWITTER_APP_SECRET']
   
   require 'omniauth-github'
   
-  config.omniauth :github, env['GITHUB_APP_ID'], env['GITHUB_APP_SECRET']
+  config.omniauth :github, ENV['GITHUB_APP_ID'], ENV['GITHUB_APP_SECRET']
   
   require 'omniauth-google-oauth2'
   
-  config.omniauth :google_oauth2, env['GOOGLE_APP_ID'], env['GOOGLE_APP_SECRET']
+  config.omniauth :google_oauth2, ENV['GOOGLE_APP_ID'], ENV['GOOGLE_APP_SECRET']
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or
   # change the failure app, you can configure them inside the config.warden block.
