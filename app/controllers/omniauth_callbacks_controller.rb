@@ -1,0 +1,58 @@
+class OmniauthCallbacksController < Devise::OmniauthCallbacksController   
+  def linkedin
+    authenticate
+  end
+  
+  def twitter
+    authenticate
+  end
+  
+  def github
+    authenticate
+  end
+  
+  def facebook
+    authenticate
+  end
+  
+  def google_oauth2
+    authenticate
+  end
+  
+  private
+  
+  def authenticate
+    auth = request.env['omniauth.auth']
+    
+    @user = get_existant_user auth, current_user
+    #Sign in if already exist
+    unless @user.nil?
+      flash[:notice] = I18n.t 'devise.omniauth_callbacks.success', kind: auth.provider
+      return sign_in_and_redirect @user, event: :authentication
+    end
+    new_user_params = format_to_user_params auth
+    redirect_to new_user_registration_url
+  end
+  
+  def get_existant_user auth, signed_in_resource = nil
+    @users = User.all
+    
+    @user = @users.where(:provider => auth.provider, :uid => auth.uid).first
+    if @user.nil?
+      unless auth.info.email.nil?
+        @user = @users.where(:email => auth.info.email).first
+      end
+    end
+  end
+  
+  def format_to_user_params auth
+    new_user_params = { 
+                        :provider => auth.provider,
+                        :uid => auth.uid,
+                        :name => auth.info.name,
+                        :image => auth.info.image
+                      }
+    new_user_params[:email] = auth.info.email unless auth.info.email.nil?
+    return new_user_params
+  end
+end

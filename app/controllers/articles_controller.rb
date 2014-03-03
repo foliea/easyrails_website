@@ -1,6 +1,5 @@
 class ArticlesController < ApplicationController
-  before_filter :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
-  before_action :check_admin, only: [:new, :create, :edit, :update, :destroy]
+  before_action :check_permission, only: [:new, :create, :edit, :update, :destroy]
   before_action :set_article, only: [:show, :edit, :update, :destroy]
 
   # GET /articles
@@ -72,11 +71,5 @@ class ArticlesController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def article_params
       params.require(:article).permit(:title, :body)
-    end
-    
-    def check_admin
-      unless current_user.try(:admin?)
-        return redirect_to root_url, alert: 'You need to sign in as administrator first.'
-      end
     end
 end

@@ -29,6 +29,15 @@ gem 'jbuilder', '~> 1.2'
 
 gem 'devise'
 
+gem 'omniauth'
+gem 'omniauth-linkedin' 
+gem 'omniauth-twitter' 
+gem 'omniauth-github'
+gem 'omniauth-facebook'
+gem 'omniauth-google-oauth2'
+
+gem 'pry-rails', group: :development
+
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false
