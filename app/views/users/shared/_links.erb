@@ -21,32 +21,3 @@
 <%- if devise_mapping.lockable? && resource_class.unlock_strategy_enabled?(:email) && controller_name != 'unlocks' %>
   <%= link_to "Didn't receive unlock instructions?", new_unlock_path(resource_name) %><br />
 <% end -%>
-
-<%- if devise_mapping.omniauthable? %>
-  <%- resource_class.omniauth_providers.each do |provider| %>
-    <% 
-      title = provider.to_s.titleize
-      
-      case provider.to_s.titleize
-      when 'Linkedin'
-        class_name = 'fa fa-linkedin-square'
-        btn_class = 'btn btn-primary'
-      when 'Twitter'
-        class_name = 'fa fa-twitter-square'
-        btn_class = 'btn btn-info'
-      when 'Github'
-        class_name = 'fa fa-github'
-        btn_class = 'btn btn-default inverse'
-      when 'Google Oauth2'
-        class_name = 'fa fa-google-plus-square'
-        btn_class = 'btn btn-danger'
-        title = 'Google'
-      end 
-    %>
-    <div class='top-buffer'>
-      <%= button_to(omniauth_authorize_path(resource_name, provider), :class => btn_class) do %>
-        <i class='<%= class_name %>'></i> <%= title %>
-      <% end -%>
-    </div>
-  <% end -%>
-<% end -%>

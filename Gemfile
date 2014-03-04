@@ -22,6 +22,7 @@ gem 'coffee-rails', '~> 4.0.0'
 gem 'jquery-rails'
 
 gem 'bootstrap-sass'
+gem "font-awesome-rails"
 
 group :development do
   gem 'rails_layout'

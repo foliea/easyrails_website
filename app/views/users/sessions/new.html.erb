@@ -9,22 +9,30 @@
         <div class="panel-body">
           <%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
     				<div class="form-group">
-    					 <%= f.label :email %><%= f.email_field :email, :autofocus => true, class: 'form-control' %>
+    					 <%= f.label :email %>
+    					 <%= f.email_field :email, 
+    					                   :placeholder => 'user@example.com',
+    					                   :autofocus => true,
+    					                   class: 'form-control' %>
     				</div>
     				<div class="form-group">
-    					 <%= f.label :password %><%= f.password_field :password, class: 'form-control' %>
+    					 <%= f.label :password %>
+    					 <%= f.password_field :password, 
+                                    :placeholder => '********',
+                                     class: 'form-control' %>
     				</div>
     				<% if devise_mapping.rememberable? -%>
     				  <div class="checkbox">
-              <%= f.check_box :remember_me %> <%= f.label :remember_me %>
+                <%= f.check_box :remember_me %> <%= f.label :remember_me %>
               </div>
             <% end -%>
             
-            <%= button_tag(type: 'submit', class: "btn btn-default") do %>
-              <span class="glyphicon glyphicon-log-in"></span> Sign in
+            <%= button_tag(type: 'submit', class: "btn btn-success") do %>
+              <%= fa_icon 'sign-in', text: 'Sign in'%>
             <% end %>
     			<% end %>
       			<%= render "users/shared/links" %>
+      			<%= render "users/shared/links_connect_with" %>
         </div>
 		  </div>
 	  </div>

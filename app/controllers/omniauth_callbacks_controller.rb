@@ -24,6 +24,7 @@ class OmniauthCallbacksController < Devise::OmniauthCallbacksController
     unless auth.nil?
       @user = get_existant_user auth
       #Sign in if already exist
+      binding.pry
       unless @user.nil?
         flash[:notice] = I18n.t 'devise.omniauth_callbacks.success', kind: auth.provider
         return sign_in_and_redirect @user, event: :authentication

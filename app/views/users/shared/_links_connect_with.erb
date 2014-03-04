@@ -1,0 +1,31 @@
+<div class='top-buffer'>
+  <span>Connect with : </span>
+</div>
+<%- if devise_mapping.omniauthable? %>
+  <%- resource_class.omniauth_providers.each do |provider| %>
+    <% 
+      title = provider.to_s.titleize
+      
+      case provider.to_s.titleize
+      when 'Linkedin'
+        icon = 'linkedin-square'
+        btn_class = 'btn btn-primary'
+      when 'Twitter'
+        icon = 'twitter-square'
+        btn_class = 'btn btn-info'
+      when 'Github'
+        icon = 'github'
+        btn_class = 'btn btn-default inverse'
+      when 'Google Oauth2'
+        icon = 'google-plus-square'
+        btn_class = 'btn btn-danger'
+        title = 'Google'
+      end 
+    %>
+    <div class='top-buffer'>
+      <%= button_to(omniauth_authorize_path(resource_name, provider), :class => btn_class) do %>
+        <%= fa_icon icon, text: title %>
+      <% end %>
+    </div>
+  <% end -%>
+<% end -%>
