@@ -1,22 +1,33 @@
-<h2>Sign uperi</h2>
+<h2>Sign up</h2>
 
 <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
 
-  <div><%= f.label :email %><br />
-  <%= f.email_field :email, :autofocus => true %></div>
-
   <div><%= f.label :name %><br />
-  <%= f.text_field :name, :autofocus => true %></div>
+  <%= f.text_field :name, 
+                   :value => (session['new_user_params'][:name] unless session['new_user_params'].nil?),
+                   :autofocus => true %>
+  </div>
+  
+  <div><%= f.label :email %><br />
+  <%= f.email_field :email,
+                    :value => (session['new_user_params'][:email] unless session['new_user_params'].nil?) %>
+                      
+  </div>
+
   
   <div><%= f.label :password %><br />
-  <%= f.password_field :password %></div>
+  <%= f.password_field :password, :autofocus => !(session['new_user_params'].nil?) %></div>
 
   <div><%= f.label :password_confirmation %><br />
   <%= f.password_field :password_confirmation %></div>
 
-  <%= f.hidden_field :provider %>
-  <%= f.hidden_field :uid %>
+  <%= f.hidden_field :provider,
+                     :value => (session['new_user_params'][:provider] unless session['new_user_params'].nil?)
+  %>
+  <%= f.hidden_field :uid,
+                     :value => (session['new_user_params'][:uid] unless session['new_user_params'].nil?) 
+  %>
   <div><%= f.submit "Sign up" %></div>
 <% end %>
 

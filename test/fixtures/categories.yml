@@ -1,9 +1,11 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:
-  title: MyString
-  body: MyText
+  name: MyString
+  order: 1
+  published: false
 
 two:
-  title: MyString
-  body: MyText
+  name: MyString
+  order: 1
+  published: false

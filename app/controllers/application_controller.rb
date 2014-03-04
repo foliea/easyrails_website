@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
   
   protected 
   
-  def check_permission
+  def check_admin
     unless current_user.try(:admin?)
       redirect_to root_url, alert: 'You need to sign in as administrator first.'
     end

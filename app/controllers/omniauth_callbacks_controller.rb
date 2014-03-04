@@ -21,14 +21,15 @@ class OmniauthCallbacksController < Devise::OmniauthCallbacksController
   def authenticate
     auth = request.env['omniauth.auth']
     
-    binding.pry
-    @user = get_existant_user auth
-    #Sign in if already exist
-    unless @user.nil?
-      flash[:notice] = I18n.t 'devise.omniauth_callbacks.success', kind: auth.provider
-      return sign_in_and_redirect @user, event: :authentication
+    unless auth.nil?
+      @user = get_existant_user auth
+      #Sign in if already exist
+      unless @user.nil?
+        flash[:notice] = I18n.t 'devise.omniauth_callbacks.success', kind: auth.provider
+        return sign_in_and_redirect @user, event: :authentication
+      end
+      session['new_user_params'] = format_to_user_params auth
     end
-    new_user_params = format_to_user_params auth
     redirect_to new_user_registration_url
   end
   
