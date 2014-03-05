@@ -9,7 +9,7 @@
         <div class="panel-body">
           <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
             <%= devise_error_messages! %>
-            <div class="row clearfix top-buffer">
+            <div class="row clearfix">
               <div class="col-md-6">
                 <div class="form-group">
                   <%= f.label :name %>
@@ -37,9 +37,7 @@
                 </div>
                 <%= render "users/shared/links" %>
               </div>
-              <div class="col-md-6">
-              
-              </div>
+              <div class="col-md-6"></div>
             </div>
             <%= f.hidden_field :provider,
                                :value => (session['new_user_params'][:provider] unless session['new_user_params'].nil?)
@@ -47,18 +45,11 @@
             <%= f.hidden_field :uid,
                                :value => (session['new_user_params'][:uid] unless session['new_user_params'].nil?) 
             %>
-            
-            <div class="row clearfix top-buffer">
-              <div class="col-md-12">
-                <%= button_tag(type: 'submit', class: "btn btn-success") do %>
-                  <%= fa_icon 'check-square-o', text: 'Register'%>
-                <% end %>
-        <% end %>
-                <%= render "users/shared/links_connect_with" %>
-              </div>
-            </div>
-          
-          
+            <%= button_tag(type: 'submit', class: "btn btn-success top-buffer") do %>
+              <%= fa_icon 'check-square-o', text: 'Register'%>
+            <% end %>
+          <% end %>
+          <%= render "users/shared/links_connect_with" %>
         </div>
       </div>
     </div>

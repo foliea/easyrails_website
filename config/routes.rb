@@ -1,17 +1,12 @@
 FolieMyblog::Application.routes.draw do
 
-  namespace :admin do
-    resources :categories
-  end
+  ActiveAdmin.routes(self)
 
   get "home/index"
   root "home#index"
   
   devise_for :users, :controllers => { :omniauth_callbacks => "omniauth_callbacks" }
   
-  namespace :admin do
-    resources :articles
-  end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
