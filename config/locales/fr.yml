@@ -19,12 +19,12 @@
 # To learn more, please read the Rails Internationalization guide
 # available at http://guides.rubyonrails.org/i18n.html.
 
-en:
+fr:
   header:
     menu:
-      admin: "Admin"
-      profile: "Profile"
-      logout: "Logout"
-      register: "Register"
-      login: "Login"
+      admin: "Administration"
+      profile: "Profil"
+      logout: "Déconnexion"
+      register: "Inscription"
+      login: "Connexion"
   
