@@ -16,7 +16,7 @@ class ApplicationController < ActionController::Base
   def authenticate_admin!
     authenticate_user!
     unless current_user.admin?
-      flash[:alert] = "Unauthorized Access!"
+      flash[:alert] = I18n.t 'account.unauthorized'
       redirect_to root_path
     end
   end
@@ -31,9 +31,4 @@ class ApplicationController < ActionController::Base
     end
   end
   
-  #def check_admin
-  #  unless current_user.try(:admin?)
-  #    redirect_to root_url, alert: 'You need to sign in as administrator first.'
-  #  end
-  #end
 end

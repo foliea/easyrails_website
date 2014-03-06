@@ -4,7 +4,7 @@
     <div class="col-md-6">
       <div class="panel panel-default">
         <div class="panel-heading">
-            <h3 class="panel-title">Register an account</h3>
+            <h3 class="panel-title"><%= t('account.register.title') %></h3>
         </div>
         <div class="panel-body">
           <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
@@ -12,26 +12,26 @@
             <div class="row clearfix">
               <div class="col-md-6">
                 <div class="form-group">
-                  <%= f.label :name %>
+                  <%= f.label :name, t('account.field.name') %>
                   <%= f.text_field :name, 
                                    :value => (session['new_user_params'][:name] unless session['new_user_params'].nil?),
                                    :autofocus => true,
                                    class: 'form-control' %>
                 </div>
                 <div class="form-group">
-                  <%= f.label :email %>
+                  <%= f.label :email, t('account.field.email') %>
                   <%= f.email_field :email,
                                     :value => (session['new_user_params'][:email] unless session['new_user_params'].nil?),
                                     class: 'form-control' %>
                 </div>
                 <div class="form-group">
-                  <%= f.label :password %>
+                  <%= f.label :password, t('account.field.password') %>
                   <%= f.password_field :password,
                                        :autofocus => !(session['new_user_params'].nil?),
                                        class: 'form-control' %>
                 </div>
                 <div class="form-group">
-                  <%= f.label :password_confirmation %>
+                  <%= f.label :password_confirmation, t('account.field.password_confirmation') %>
                   <%= f.password_field :password_confirmation,
                                        class: 'form-control' %>
                 </div>
@@ -46,7 +46,7 @@
                                :value => (session['new_user_params'][:uid] unless session['new_user_params'].nil?) 
             %>
             <%= button_tag(type: 'submit', class: "btn btn-success top-buffer") do %>
-              <%= fa_icon 'check-square-o', text: 'Register'%>
+              <%= fa_icon 'check-square-o', text: t('account.register.button') %>
             <% end %>
           <% end %>
           <%= render "users/shared/links_connect_with" %>

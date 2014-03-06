@@ -4,18 +4,18 @@
     <div class="col-md-8">
       <div class="panel panel-default">
         <div class="panel-heading">
-            <h3 class="panel-title">Edit your account</h3>
+            <h3 class="panel-title"><%= t('account.edit.title') %></h3>
         </div>
         <div class="panel-body">
           <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put }) do |f| %>
             <%= devise_error_messages! %>
             <div class="form-group">
-              <%= f.label :name %>
+              <%= f.label :name, t('account.field.name') %>
               <%= f.text_field :name, :autofocus => true, class: 'form-control' %>
             </div>
             
             <div class="form-group">
-              <%= f.label :email %>
+              <%= f.label :email, t('account.field.email') %>
               <%= f.email_field :email, class: 'form-control' %>
             </div>
             
@@ -24,23 +24,23 @@
             <% end %>
             
             <div class="form-group">
-              <%= f.label :password %> <i>(leave blank if you don't want to change it)</i>
+              <%= f.label :password, t('account.field.new_password') %> <i><%= t('account.edit.tooltip_password') %></i>
               <%= f.password_field :password, :autocomplete => "off", class: 'form-control' %>
             </div>
             <div class="form-group">
-              <%= f.label :password_confirmation %>
+              <%= f.label :password_confirmation, t('account.field.new_password_confirmation') %>
               <%= f.password_field :password_confirmation, class: 'form-control' %>
             </div>
             <div class="form-group">
-              <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i>
+              <%= f.label :current_password, t('account.field.current_password') %> <i><%= t('account.edit.tooltip_current_password') %></i>
               <%= f.password_field :current_password, class: 'form-control' %>
             </div>
             <%= button_tag(type: 'submit', class: "btn btn-success") do %>
-              <%= fa_icon 'check-square-o', text: 'Update'%>
+              <%= fa_icon 'check-square-o', text: t('account.edit.button') %>
             <% end %>
           <% end %>
           <div class='top-buffer'>
-            <%= link_to "Back", :back %>
+            <%= link_to t('general.back'), :back %>
           </div>
         </div>
       </div>
@@ -52,12 +52,12 @@
     <div class="col-md-8">
       <div class="panel panel-default">
         <div class="panel-heading">
-            <h3 class="panel-title">Cancel my account</h3>
+            <h3 class="panel-title"><%= t('account.cancel.title') %></h3>
         </div>
         <div class="panel-body">
-          <p>Do you want to cancel your account ?</p>
-          <%= button_to(registration_path(resource_name), :data => { :confirm => "Are you sure?" }, :method => :delete, class: "btn btn-danger") do %>
-              <%= fa_icon 'warning', text: 'Cancel'%>
+          <p><%= t('account.cancel.question') %></p>
+          <%= button_to(registration_path(resource_name), :data => { :confirm => t('general.confirm') }, :method => :delete, class: "btn btn-danger") do %>
+              <%= fa_icon 'warning', text: t('account.cancel.button') %>
           <% end %>
         </div>
     </div>

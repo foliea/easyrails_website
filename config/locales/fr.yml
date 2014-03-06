@@ -27,4 +27,49 @@ fr:
       logout: "Déconnexion"
       register: "Inscription"
       login: "Connexion"
+  general:
+    back: "Retour"
+    confirm: "Êtes-vous sûr ?"
+  account:
+    connect_with: "Se connecter avec :"
+    unauthorized: "Accès interdit"
+    field:
+      name: "Prénom, Nom"
+      email: "Courriel"
+      password: "Mot de passe"
+      password_confirmation: "Mot de passe (Confirmation)"
+      new_password: "Nouveau Mot de passe"
+      new_password_confirmation: "Nouveau Mot de passe (Confirmation)"
+      current_password: "Mot de passe actuel"
+    sign_in:
+      title:  "Connexion"
+      remember_me: "Se souvenir de moi"
+      button: "Se connecter"
+    register:
+      title: "Inscription"
+      button: "S'inscrire"
+    edit:
+      title: "Modifier votre profil"
+      button: "Sauvegarder"
+      tooltip_password: "(Laisser blanc pour ne pas le changer)"
+      tooltip_current_password: "(Taper votre mot de passe pour confirmer les changements)"
+    cancel:
+      title: "Me désinscrire"
+      button: "Se désinscrire"
+      question: "Cliquer ici pour vous désinscrire"
+    recover:
+      title: "Mot de passe oublié ?"
+      button: "Envoyer un nouveau"
+    change_password:
+      title: "Changez votre mot de passe"
+      button: "Changer"
+    confirm:
+      title: "Réenvoyer un courriel de confirmation"
+      button: "Réenvoyer"
+    links:
+      sign_in: "Connexion"
+      register: "Inscription"
+      recover: "Mot de passe oublié ?"
+      confirm: "Confirmation non reçue ?"
+      lock: "Courriel de déblocage non reçu ?"
   

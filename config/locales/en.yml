@@ -27,4 +27,49 @@ en:
       logout: "Logout"
       register: "Register"
       login: "Login"
+  general:
+    back: "Back"
+    confirm: "Are you sure?"
+  account:
+    connect_with: "Connect with"
+    unauthorized: "Unauthorized Access!"
+    field:
+      name: "Name"
+      email: "Email"
+      password: "Password"
+      password_confirmation: "Password Confirmation"
+      new_password: "New Password"
+      new_password_confirmation: "Password Confirmation"
+      current_password: "Current Password"
+    sign_in:
+      title:  "Login to your account"
+      remember_me: "Remember me"
+      button: "Sign in"
+    register:
+      title: "Register an account"
+      button: "Register"
+    edit:
+      title: "Edit your account"
+      button: "Update"
+      tooltip_password: "(leave blank if you don't want to change it)"
+      tooltip_current_password: "(we need your current password to confirm your changes)"
+    cancel:
+      title: "Cancel my account"
+      button: "Cancel"
+      question: "Do you want to cancel your account ?"
+    recover:
+      title: "Forgot your password?"
+      button: "Send another"
+    change_password:
+      title: "Change your password"
+      button: "Change"
+    confirm:
+      title: "Resend confirmation instructions"
+      button: "Resend"
+    links:
+      sign_in: "Sign in"
+      register: "Register"
+      recover: "Forgot your password?"
+      confirm: "Didn't receive confirmation instructions?"
+      lock: "Didn't receive unlock instructions?"
   

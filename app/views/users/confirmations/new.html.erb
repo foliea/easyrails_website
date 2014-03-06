@@ -4,17 +4,17 @@
     <div class="col-md-4">
       <div class="panel panel-default">
         <div class="panel-heading">
-            <h3 class="panel-title">Resend confirmation instructions</h3>
+            <h3 class="panel-title"><%= t('account.confirm.title') %></h3>
         </div>
         <div class="panel-body">
           <%= form_for(resource, :as => resource_name, :url => confirmation_path(resource_name), :html => { :method => :post }) do |f| %>
             <%= devise_error_messages! %>
             <div class="form-group">
-              <%= f.label :email %>
+              <%= f.label :email, t('account.field.email') %>
               <%= f.email_field :email, :autofocus => true, class: 'form-control' %>
             </div>
             <%= button_tag(type: 'submit', class: "btn btn-primary") do %>
-              <%= fa_icon 'envelope-o', text: 'Resend' %>
+              <%= fa_icon 'envelope-o', text: t('account.confirm.button') %>
             <% end %>
           <% end %>
           <%= render "users/shared/links" %>
