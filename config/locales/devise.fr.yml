@@ -11,6 +11,9 @@ fr:
       not_locked: "n'était pas verrouillé(e)"
  
   devise:
+    omniauth_callbacks:
+      failure: "Identification impossible via %{kind} à cause de \"%{reason}\"."
+      success: "Identification avec votre compte %{kind} reussie."
     failure:
       unauthenticated: "Vous devez vous connecter ou vous inscrire pour continuer."
       unconfirmed: "Vous devez confirmer votre compte pour continuer."
