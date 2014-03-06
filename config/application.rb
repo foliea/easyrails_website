@@ -34,11 +34,14 @@ module FolieMyblog
       #
       # Set default title here
       config.site_title = 'Adrien Folie Tech Blog'
-      config.site_title_link = 'http://project-livec9baf8578360.rhcloud.com'
-      ActiveAdmin.setup do |cactive_admin|
-        cactive_admin.site_title = config.site_title
+      
+      ActiveAdmin.setup do |c|
+        c.site_title = config.site_title
+        c.site_title_link = 'http://project-livec9baf8578360.rhcloud.com/'
       end
       
+      #
+      ####################################################
     end
   end
 end
