@@ -20,6 +20,10 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
+  error:
+    language:
+      destroy: "You can't destroy a default language"
+      update: "An error has occured"
   header:
     menu:
       admin: "Admin"

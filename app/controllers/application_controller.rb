@@ -6,7 +6,9 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   
   def set_locale
+    I18n.default_locale = Language.where(default: true).first.code
     I18n.locale = params[:locale] || I18n.default_locale
+    I18n.reload!
   end
   
   def default_url_options(options={})
@@ -25,7 +27,7 @@ class ApplicationController < ActionController::Base
   
   def devise_parameter_sanitizer
     if resource_class == User
-      User::ParameterSanitizer.new(User, :user, params)
+      UserParameterSanitizer.new(User, :user, params)
     else
       super
     end
