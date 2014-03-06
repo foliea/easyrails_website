@@ -22,8 +22,23 @@ module FolieMyblog
     
     # Force locale on Heroku
     I18n.load_path += Dir[Rails.root.join('config', 'locales', '*.yml').to_s]
-    I18n.locale = :en
-    I18n.default_locale = :en
     I18n.reload!
+    
+    config.after_initialize do
+      # Set default_locale according to database
+      I18n.default_locale = Language.where(default: true).first.code
+      
+      # Set default language menu here
+      
+      # RENDRE PARAMETRABLES VIA DB
+      #
+      # Set default title here
+      config.site_title = 'Adrien Folie Tech Blog'
+      config.site_title_link = 'http://project-livec9baf8578360.rhcloud.com'
+      ActiveAdmin.setup do |cactive_admin|
+        cactive_admin.site_title = config.site_title
+      end
+      
+    end
   end
 end
