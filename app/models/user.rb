@@ -8,5 +8,5 @@ class User < ActiveRecord::Base
          :trackable,
          :validatable,
          :omniauthable
-  validate :email, :password, :presence => true
+  #validate :email, :password, :presence => true
 end

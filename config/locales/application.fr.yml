@@ -27,6 +27,7 @@ fr:
   header:
     menu:
       admin: "Administration"
+      account: "Mon compte"
       profile: "Profil"
       logout: "Déconnexion"
       register: "Inscription"

@@ -13,16 +13,10 @@
             <div class="row clearfix">
               <div class="col-md-6">
                 <div class="form-group">
-                  <%= f.label :name, t('account.field.name') %>
-                  <%= f.text_field :name, 
-                                   :value => (session['new_user_params'][:name] unless session['new_user_params'].nil?),
-                                   :autofocus => true,
-                                   class: 'form-control' %>
-                </div>
-                <div class="form-group">
                   <%= f.label :email, t('account.field.email') %>
                   <%= f.email_field :email,
                                     :value => (session['new_user_params'][:email] unless session['new_user_params'].nil?),
+                                    :autofocus => true,
                                     class: 'form-control' %>
                 </div>
                 <div class="form-group">

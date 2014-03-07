@@ -3,6 +3,8 @@ ActiveAdmin.setup do |config|
   config.before_filter do
     I18n.locale = 'en'
   end
+  
+  config.allow_comments = false
   # == Site Title
   #
   # Set the title that is displayed on the main layout
