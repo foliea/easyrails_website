@@ -26,22 +26,16 @@ module FolieMyblog
     
     config.after_initialize do
       # Set default_locale according to database
-      I18n.default_locale = Language.where(default: true).first.code
+      I18n.default_locale = Language.default.code
       
       # Set default language menu here
       
       # RENDRE PARAMETRABLES VIA DB
       #
       # Set default title here
-      config.site_title = 'Adrien Folie Tech Blog'
-      
-      ActiveAdmin.setup do |c|
-        c.site_title = config.site_title
-        c.site_title_link = 'http://project-livec9baf8578360.rhcloud.com/'
-      end
-      
-      #
-      ####################################################
+      AppConfig.configure(:model => Setting)
+      AppConfig.load if Setting.table_exists?
     end
+    
   end
 end

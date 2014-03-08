@@ -4,10 +4,10 @@ module ApplicationHelper
   end
   
   def application_title
-    title = 'Adrien Folie Tech Blog'
+    title = AppConfig['site_title']
   end
   
-  def languages
+  def languages_available
     @languages = Language.all
     return @languages
   end
