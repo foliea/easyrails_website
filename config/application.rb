@@ -28,13 +28,11 @@ module FolieMyblog
       # Set default_locale according to database
       I18n.default_locale = Language.default.code
       
-      # Set default language menu here
-      
-      # RENDRE PARAMETRABLES VIA DB
-      #
       # Set default title here
       AppConfig.configure(:model => Setting)
-      AppConfig.load if Setting.table_exists?
+      AppConfig.load
+      
+      Settings.reload!
     end
     
   end

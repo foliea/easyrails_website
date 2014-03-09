@@ -33,6 +33,8 @@ fr:
       register: "Inscription"
       login: "Connexion"
       language: "Langue"
+  footer:
+    copyright: "© %{owner}, tous droits réservés"
   general:
     back: "Retour"
     confirm: "Êtes-vous sûr ?"

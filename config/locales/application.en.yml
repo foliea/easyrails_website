@@ -32,6 +32,8 @@ en:
       register: "Register"
       login: "Login"
       language: "Language"
+  footer:
+    copyright: "© %{owner}, all rights reserved"
   general:
     back: "Back"
     confirm: "Are you sure?"

@@ -12,4 +12,5 @@
 # Default settings
 Setting.create(keyname: 'site_title', value: 'Adrien Folie Tech Blog', value_format: 'string')
 Setting.create(keyname: 'site_title_link', value: 'http://project-livec9baf8578360.rhcloud.com/', value_format: 'string')
+Setting.create(keyname: 'site_owner', value: 'Adrien Folie', value_format: 'string')
 ## ATTENTION : retirer before_create si ça ne marche pas

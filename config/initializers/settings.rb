@@ -1,0 +1,1 @@
+require "#{Rails.application.root}/lib/settings.rb"
