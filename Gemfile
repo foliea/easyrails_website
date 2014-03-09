@@ -37,7 +37,6 @@ gem 'jbuilder', '~> 1.2'
 gem 'devise'
 
 gem 'app-config'
-gem 'rails-admin-scaffold'
 gem 'activeadmin', github: 'gregbell/active_admin'
 gem 'rconfig'
 
