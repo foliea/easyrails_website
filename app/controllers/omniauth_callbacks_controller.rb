@@ -36,20 +36,20 @@ class OmniauthCallbacksController < Devise::OmniauthCallbacksController
   def get_existant_user auth
     @users = User.all
     
-    @user = @users.where(:provider => auth.provider, :uid => auth.uid).first
+    @user = @users.where(provider: auth.provider, uid: auth.uid).first
     if @user.nil?
       unless auth.info.email.nil?
-        @user = @users.where(:email => auth.info.email).first
+        @user = @users.where(email: auth.info.email).first
       end
     end
   end
   
   def format_to_user_params auth
     new_user_params = { 
-                        :provider =>  auth.provider,
-                        :uid =>       auth.uid,
-                        :name =>      auth.info.name,
-                        :image =>     auth.info.image
+                        provider:   auth.provider,
+                        uid:           auth.uid,
+                        name:       auth.info.name,
+                        image:      auth.info.image
                       }
     new_user_params[:email] = auth.info.email unless auth.info.email.nil?
     return new_user_params

@@ -8,21 +8,21 @@
             <h3 class="panel-title"><%= t('account.register.title') %></h3>
         </div>
         <div class="panel-body">
-          <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
+          <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
             <%= devise_error_messages! %>
             <div class="row clearfix">
               <div class="col-md-6">
                 <div class="form-group">
                   <%= f.label :email, t('account.field.email') %>
                   <%= f.email_field :email,
-                                    :value => (session['new_user_params'][:email] unless session['new_user_params'].nil?),
-                                    :autofocus => true,
+                                    value: (session['new_user_params'][:email] unless session['new_user_params'].nil?),
+                                    autofocus: true,
                                     class: 'form-control' %>
                 </div>
                 <div class="form-group">
                   <%= f.label :password, t('account.field.password') %>
                   <%= f.password_field :password,
-                                       :autofocus => !(session['new_user_params'].nil?),
+                                       autofocus: !(session['new_user_params'].nil?),
                                        class: 'form-control' %>
                 </div>
                 <div class="form-group">
@@ -35,10 +35,10 @@
               <div class="col-md-6"></div>
             </div>
             <%= f.hidden_field :provider,
-                               :value => (session['new_user_params'][:provider] unless session['new_user_params'].nil?)
+                               value: (session['new_user_params'][:provider] unless session['new_user_params'].nil?)
             %>
             <%= f.hidden_field :uid,
-                               :value => (session['new_user_params'][:uid] unless session['new_user_params'].nil?) 
+                               value: (session['new_user_params'][:uid] unless session['new_user_params'].nil?) 
             %>
             <%= button_tag(type: 'submit', class: "btn btn-success top-buffer") do %>
               <%= fa_icon 'check-square-o', text: t('account.register.button') %>
@@ -51,5 +51,3 @@
     <div class="col-md-3"></div>
   </div>
 </div>
-
-

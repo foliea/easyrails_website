@@ -2,8 +2,8 @@ class Language < ActiveRecord::Base
   before_destroy :destroy?
   before_save :change_default
   
-  validates :name, :code, :presence => true
-  validates :code, :uniqueness => true
+  validates :name, :code, presence: true
+  validates :code, uniqueness: true
   
   scope :default, -> { where(default: true).first }
   

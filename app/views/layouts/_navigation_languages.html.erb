@@ -2,7 +2,7 @@
 <a href="#" class="dropdown-toggle" data-toggle="dropdown"><%= t('header.menu.language') %> <b class="caret"></b></a>
 <ul class="dropdown-menu">
 <% languages_available.each do |l| %>
-  <li><%= link_to l.name, url_for( :locale => l.code ) %></li>
+  <li><%= link_to l.name, url_for( locale: l.code ) %></li>
 <% end %>
 </ul>
 </li>
