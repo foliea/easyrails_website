@@ -1,6 +1,6 @@
 class Language < ActiveRecord::Base
   before_destroy :destroy?
-  before_save :change_default
+  before_save :update_default
   
   validates :name, :code, presence: true
   validates :code, uniqueness: true
@@ -17,7 +17,7 @@ class Language < ActiveRecord::Base
     return !default
   end
   
-  def change_default
+  def update_default
     if default == true
       @languages = Language.where.not(id: id)
       

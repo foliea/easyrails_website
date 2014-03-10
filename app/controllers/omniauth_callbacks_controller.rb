@@ -47,7 +47,7 @@ class OmniauthCallbacksController < Devise::OmniauthCallbacksController
   def format_to_user_params auth
     new_user_params = { 
                         provider:   auth.provider,
-                        uid:           auth.uid,
+                        uid:        auth.uid,
                         name:       auth.info.name,
                         image:      auth.info.image
                       }
