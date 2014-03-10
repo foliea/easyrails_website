@@ -14,15 +14,10 @@ class User < ActiveRecord::Base
   validates :email, :password, presence: true
   
   def create_profile
-    @profile = Profile.new
-    if @profile.save
-      profile = @profile
-    else
-      return false
-    end
+    return true if profile.create
   end
   
   def destroy_profile
-    profile.destroy
+    return true if profile.destroy
   end
 end

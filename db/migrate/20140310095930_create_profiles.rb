@@ -1,5 +1,5 @@
 class CreateProfiles < ActiveRecord::Migration
-  def change
+  def up
     create_table :profiles do |t|
       t.string :name
       t.string :location
@@ -8,8 +8,12 @@ class CreateProfiles < ActiveRecord::Migration
       t.text :description
       t.string :image
       
-      t.belongs_to :customer
+      t.belongs_to :user
       t.timestamps
     end
+  end
+  
+  def down
+    drop_table :profiles  
   end
 end

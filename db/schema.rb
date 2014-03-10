@@ -31,7 +31,7 @@ ActiveRecord::Schema.define(version: 20140310095930) do
     t.string   "public_email"
     t.text     "description"
     t.string   "image"
-    t.integer  "customer_id"
+    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
