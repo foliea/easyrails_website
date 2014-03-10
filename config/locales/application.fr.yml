@@ -61,6 +61,7 @@ fr:
       button: "Sauvegarder"
       tooltip_password: "(Laisser blanc pour ne pas le changer)"
       tooltip_current_password: "(Taper votre mot de passe pour confirmer les changements)"
+      email_confirmation: "Attente de la confirmation par email :"
     cancel:
       title: "Me désinscrire"
       button: "Se désinscrire"

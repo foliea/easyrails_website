@@ -60,6 +60,7 @@ en:
       button: "Update"
       tooltip_password: "(leave blank if you don't want to change it)"
       tooltip_current_password: "(we need your current password to confirm your changes)"
+      email_confirmation: "Currently waiting confirmation for:"
     cancel:
       title: "Cancel my account"
       button: "Cancel"
