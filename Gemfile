@@ -24,9 +24,11 @@ gem 'jquery-rails'
 gem 'bootstrap-sass'
 gem "font-awesome-rails"
 
-group :development do
-  gem 'rails_layout'
-end
+gem 'rails_layout', group: :development
+gem 'better_errors', group: :development
+gem 'binding_of_caller', group: :development
+gem 'meta_request', group: :development
+gem 'pry-rails', group: :development
 
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
@@ -46,8 +48,6 @@ gem 'omniauth-twitter'
 gem 'omniauth-github'
 gem 'omniauth-facebook'
 gem 'omniauth-google-oauth2'
-
-gem 'pry-rails', group: :development
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
