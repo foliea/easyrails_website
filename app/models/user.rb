@@ -12,7 +12,7 @@ class User < ActiveRecord::Base
             :validatable,
             :omniauthable
   validates :email, :password, presence: true
-  
+
   def create_profile
     return true if profile.create
   end

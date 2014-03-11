@@ -15,14 +15,13 @@
                 <div class="form-group">
                   <%= f.label :email, t('account.field.email') %>
                   <%= f.email_field :email,
-                                    value: session['new_user_params'][:email].presence,
+                                    value: (session['new_user_params'][:email] if session['new_user_params']),
                                     autofocus: true,
                                     class: 'form-control' %>
                 </div>
                 <div class="form-group">
                   <%= f.label :password, t('account.field.password') %>
                   <%= f.password_field :password,
-                                       autofocus: true if session['new_user_params'][:email].present?,
                                        class: 'form-control' %>
                 </div>
                 <div class="form-group">
@@ -35,10 +34,10 @@
               <div class="col-md-6"></div>
             </div>
             <%= f.hidden_field :provider,
-                               value: session['new_user_params'][:provider].presence
+                               value: (session['new_user_params'][:provider] if session['new_user_params'])
             %>
             <%= f.hidden_field :uid,
-                               value: session['new_user_params'][:uid].presence
+                               value: (session['new_user_params'][:uid] if session['new_user_params'])
             %>
             <%= button_tag(type: 'submit', class: 'btn btn-success top-buffer') do %>
               <%= fa_icon 'check-square-o', text: t('account.register.button') %>
