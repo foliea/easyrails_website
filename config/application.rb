@@ -26,13 +26,13 @@ module FolieMyblog
     
     config.after_initialize do
       # Set default_locale according to database
-      I18n.default_locale = Language.default.code
+      I18n.default_locale = Language.defaults.first.code.presence || :en
       
       # Set default title here
       AppConfig.configure(:model => Setting)
       AppConfig.load
       
-      Settings.reload!
+      Settings.reload
     end
     
   end

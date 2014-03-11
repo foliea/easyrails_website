@@ -23,7 +23,7 @@
       end 
     %>
     <div class='top-buffer'>
-      <%= button_to(omniauth_authorize_path(resource_name, provider), :class => btn_class) do %>
+      <%= button_to(omniauth_authorize_path(resource_name, provider), class: btn_class) do %>
         <%= fa_icon icon, text: title %>
       <% end %>
     </div>

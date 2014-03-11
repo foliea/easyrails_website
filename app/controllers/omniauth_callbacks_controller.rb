@@ -21,10 +21,10 @@ class OmniauthCallbacksController < Devise::OmniauthCallbacksController
   def authenticate
     auth = request.env['omniauth.auth']
     
-    unless auth.nil?
+    if auth.present?
       @user = get_existant_user auth
       #Sign in if already exist
-      unless @user.nil?
+      if @user.present?
         flash[:notice] = I18n.t 'devise.omniauth_callbacks.success', kind: auth.provider
         return sign_in_and_redirect @user, event: :authentication
       end
@@ -38,7 +38,7 @@ class OmniauthCallbacksController < Devise::OmniauthCallbacksController
     
     @user = @users.where(provider: auth.provider, uid: auth.uid).first
     if @user.nil?
-      unless auth.info.email.nil?
+      if auth.info.email.present?
         @user = @users.where(email: auth.info.email).first
       end
     end
@@ -46,12 +46,11 @@ class OmniauthCallbacksController < Devise::OmniauthCallbacksController
   
   def format_to_user_params auth
     new_user_params = { 
-                        provider:   auth.provider,
-                        uid:        auth.uid,
-                        name:       auth.info.name,
-                        image:      auth.info.image
+                        provider:   auth.provider.presence,
+                        uid:        auth.uid.presence,
+                        name:       auth.info.name.presence,
+                        image:      auth.info.image.presence,
+                        email:      auth.info.email.presence
                       }
-    new_user_params[:email] = auth.info.email unless auth.info.email.nil?
-    return new_user_params
   end
 end

@@ -1,34 +1,24 @@
 class Language < ActiveRecord::Base
   before_destroy :destroy?
-  before_save :update_default
+  before_save :update_defaults, if: :default
   
   validates :name, :code, presence: true
   validates :code, uniqueness: true
   
-  scope :default, -> { where(default: true).first }
-  
+  scope :defaults, -> { where(default: true) }
+
   private
   
   def destroy?
     # Only if Language is not configured as default
     if default == true
-      errors[:default] = I18n.t 'error.language.update'
+      errors.add :default, (I18n.t 'error.language.update')
     end
     return !default
   end
   
-  def update_default
-    if default == true
-      @languages = Language.where.not(id: id)
-      
-      @languages.each do |language|
-        language.default = false
-        unless language.save
-          errors[:default] = I18n.t 'error.language.update'
-          return false
-        end
-      end
-      I18n.default_locale = code
-    end
+  def update_defaults
+    Language.update_all(default: false)
+    I18n.default_locale = code
   end
 end

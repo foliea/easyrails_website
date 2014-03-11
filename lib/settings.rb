@@ -1,5 +1,5 @@
 class Settings
-  def self.reload!
+  def self.reload
     AppConfig.reload
     ActiveAdmin.setup do |c|
       c.site_title = AppConfig['site_title']

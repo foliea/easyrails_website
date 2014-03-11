@@ -16,7 +16,6 @@ module ApplicationHelper
   end
 
   def languages_available
-    @languages = Language.all
-    return @languages
+    return Language.all
   end
 end
