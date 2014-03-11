@@ -34,12 +34,10 @@ class OmniauthCallbacksController < Devise::OmniauthCallbacksController
   end
   
   def get_existant_user auth
-    @users = User.all
-    
-    @user = @users.where(provider: auth.provider, uid: auth.uid).first
+    @user = User.where(provider: auth.provider, uid: auth.uid).first
     if @user.nil?
       if auth.info.email.present?
-        @user = @users.where(email: auth.info.email).first
+        @user = User.where(email: auth.info.email).first
       end
     end
   end
