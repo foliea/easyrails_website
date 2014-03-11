@@ -12,7 +12,7 @@ class Language < ActiveRecord::Base
   
   def destroy?
     # Only if Language is not configured as default
-    if default == true
+    if default
       errors.add :default, (I18n.t 'error.language.update')
     end
     return !default
