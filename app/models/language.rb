@@ -1,6 +1,7 @@
 class Language < ActiveRecord::Base
   before_destroy :destroy?
   before_save :update_defaults, if: :default
+  after_save :change_default_locale, if: :default
   
   validates :name, :code, presence: true
   validates :code, uniqueness: true
@@ -19,6 +20,9 @@ class Language < ActiveRecord::Base
   
   def update_defaults
     Language.update_all(default: false)
+  end
+  
+  def change_default_locale
     I18n.default_locale = code
   end
 end
