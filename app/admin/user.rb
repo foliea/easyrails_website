@@ -22,7 +22,7 @@ ActiveAdmin.register User do
 
   edit = Proc.new {
     @user            = User.find_or_create_by_id(params[:id])
-    @user.admin  = params[:user][:admin]
+    @user.admin      = params[:user][:admin]
     if @user.save
       redirect_to action: :show, id: @user.id
     else

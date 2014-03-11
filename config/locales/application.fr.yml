@@ -21,9 +21,8 @@
 
 fr:
   error:
-    language:
-      destroy: "Vous ne pouvez pas supprimmer le langage par défaut"
-      update: "Une erreur s'est produite"
+    destroy: "Vous ne pouvez pas supprimmer le %{class_name} par défaut"
+    update: "Une erreur s'est produite"
   header:
     menu:
       admin: "Administration"
