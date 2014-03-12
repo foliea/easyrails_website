@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
   has_one :profile
-  before_create :create_profile
+  after_create :create_profile
   before_destroy :destroy_profile
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
@@ -14,9 +14,9 @@ class User < ActiveRecord::Base
   validates :email, :password, presence: true
 
   def create_profile
-    profile.create
+    Profile.create(user_id: id)
   end
-  
+
   def destroy_profile
     profile.destroy
   end

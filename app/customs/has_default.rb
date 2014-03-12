@@ -5,13 +5,13 @@ class HasDefault
       before_save     :set_defaults_to_false,       if:     :default
       after_create    :set_default_if_none_exists,  unless: :default
       after_update    :fallback_default,            unless: :default
-      
+
       #scope :defaults, -> { where(default: true) }
 
       extend  ClassMethods
       include InstanceMethods
     end
-    
+
     module ClassMethods
       def get_default
         return where(default: true).first
@@ -19,30 +19,30 @@ class HasDefault
     end
 
     module InstanceMethods
-    
+
       private
-      
+
       def destroy?
         if default
           errors.add :default, (I18n.t 'error.destroy', class_name: self.class.name)
         end
         return !default
       end
-      
+
       def fallback_default
         set_default if default_was == true
         return true
       end
-      
+
       def set_default_if_none_exists
-        set_default if self.class.default.nil?
+        set_default if self.class.get_default.nil?
         return true
       end
-      
+
       def set_default
         self.update_column(:default, true)
       end
-      
+
       def set_defaults_to_false
         self.class.update_all(default: false) if (default_was == false || new_record?)
         return true
