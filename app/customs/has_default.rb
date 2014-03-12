@@ -13,7 +13,7 @@ class HasDefault
     end
     
     module ClassMethods
-      def default
+      def get_default
         return where(default: true).first
       end
     end

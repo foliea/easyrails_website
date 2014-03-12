@@ -26,7 +26,7 @@ module FolieMyblog
     
     config.after_initialize do
       # Set default_locale according to database
-      @default_language = Language.default
+      @default_language = Language.get_default
       
       I18n.default_locale = (@default_language.code if @default_language) || :en
       
