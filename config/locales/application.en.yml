@@ -40,8 +40,13 @@ en:
     edit:
       title: "Edit your profile"
       button: "Update"
+      success: "Profile was successfully updated."
     field:
       name: "Name"
+      location: "Location"
+      birthday: "Birthday"
+      public_email: "Public Email"
+      description: "Description"
   account:
     connect_with: "Connect with"
     unauthorized: "Unauthorized Access!"

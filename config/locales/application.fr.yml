@@ -40,9 +40,14 @@ fr:
   profile:
     edit:
       title: "Modifier mon profil"
-      button: Sauvegarder"
+      button: "Sauvegarder"
+      success: "Profil modifié avec succès."
     field:
       name: "Prénom, Nom"
+      location: "Lieu"
+      birthday: "Date de naissance"
+      public_email: "Email public"
+      description: "Description"
   account:
     connect_with: "Se connecter avec :"
     unauthorized: "Accès interdit"

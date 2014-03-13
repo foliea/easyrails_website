@@ -13,6 +13,22 @@
               <%= f.label :name, t('profile.field.name') %>
               <%= f.text_field :name, autofocus: true, class: 'form-control' %>
             </div>
+            <div class="form-group">
+              <%= f.label :location, t('profile.field.location') %>
+              <%= f.text_field :location, class: 'form-control' %>
+            </div>
+            <div class="form-group">
+              <%= f.label :birthday, t('profile.field.birthday') %>
+              <%= f.date_field :birthday, class: 'form-control' %>
+            </div>
+            <div class="form-group">
+              <%= f.label :public_email, t('profile.field.public_email') %>
+              <%= f.email_field :public_email, class: 'form-control' %>
+            </div>
+            <div class="form-group">
+              <%= f.label :description, t('profile.field.description') %>
+              <%= f.text_area :description, class: 'form-control' %>
+            </div>
             <%= button_tag(type: 'submit', class: 'btn btn-success') do %>
               <%= fa_icon 'check-square-o', text: t('profile.edit.button') %>
             <% end %>

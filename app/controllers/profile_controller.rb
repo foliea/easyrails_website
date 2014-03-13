@@ -1,5 +1,5 @@
 class ProfileController < ApplicationController
-  before_action :find_profile
+  before_action :set_profile
   before_action :own_profile?, only: [:edit, :update]
 
   def show
@@ -10,22 +10,25 @@ class ProfileController < ApplicationController
   end
 
   def update
-    binding.pry
-    if @profile.update_attributes params[:profile]
-      redirect_to show_profile_path, id: profile.id
+    if @profile.update_attributes profile_params
+      redirect_to @profile, notice: I18n.t('profile.edit.success')
     else
-      render :action => :edit
+      render action: :edit
     end
   end
 
   private
 
-  def find_profile
+  def set_profile
     @profile = Profile.find params[:id]
   end
 
   def own_profile?
     owned = @profile == current_user.profile
     unauthorized if !owned
+  end
+
+  def profile_params
+    params.require(:profile).permit(:name, :location, :birthday, :public_email, :description, :image)
   end
 end
