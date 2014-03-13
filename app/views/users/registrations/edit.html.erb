@@ -14,13 +14,13 @@
               <%= f.label :email, t('account.field.email') %>
               <%= f.email_field :email, autofocus: true, class: 'form-control' %>
             </div>
-            
+
             <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
               <div class="top-buffer bottom-buffer">
                 <%= t('account.edit.email_confirmation') %> <%= resource.unconfirmed_email %>
               </div>
             <% end %>
-            
+
             <div class="form-group">
               <%= f.label :password, t('account.field.new_password') %> <i><%= t('account.edit.tooltip_password') %></i>
               <%= f.password_field :password, autocomplete: "off", class: 'form-control' %>

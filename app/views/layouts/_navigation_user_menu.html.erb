@@ -6,10 +6,11 @@
         <li><%= link_to t('header.menu.admin'), admin_dashboard_path %></li>
       <% end %>
       <li><%= link_to t('header.menu.account'), edit_user_registration_path %></li>
+      <li><%= link_to t('header.menu.profile'), edit_profile_path(current_user.profile) %></li>
       <li><%= link_to t('header.menu.logout'), destroy_user_session_path, method: :delete  %></li>
     </ul>
   </li>
-  
+
 <% else %>
   <li><%= link_to t('header.menu.register'), new_user_registration_path %></li>
   <li><%= link_to t('header.menu.login'), new_user_session_path  %></li>

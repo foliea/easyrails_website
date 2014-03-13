@@ -37,11 +37,16 @@ fr:
   general:
     back: "Retour"
     confirm: "Êtes-vous sûr ?"
+  profile:
+    edit:
+      title: "Modifier mon profil"
+      button: Sauvegarder"
+    field:
+      name: "Prénom, Nom"
   account:
     connect_with: "Se connecter avec :"
     unauthorized: "Accès interdit"
     field:
-      name: "Prénom, Nom"
       email: "Courriel"
       password: "Mot de passe"
       password_confirmation: "Mot de passe (Confirmation)"
@@ -56,7 +61,7 @@ fr:
       title: "Inscription"
       button: "S'inscrire"
     edit:
-      title: "Modifier votre profil"
+      title: "Modifier votre compte"
       button: "Sauvegarder"
       tooltip_password: "(Laisser blanc pour ne pas le changer)"
       tooltip_current_password: "(Taper votre mot de passe pour confirmer les changements)"
@@ -80,4 +85,3 @@ fr:
       recover: "Mot de passe oublié ?"
       confirm: "Confirmation non reçue ?"
       lock: "Courriel de déblocage non reçu ?"
-  

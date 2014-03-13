@@ -1,0 +1,28 @@
+<%= title t('profile.edit.title') %>
+<div class="container" role="main">
+  <div class="row clearfix top-buffer">
+    <div class="col-md-2"></div>
+    <div class="col-md-8">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title"><%= t('profile.edit.title') %></h3>
+        </div>
+        <div class="panel-body">
+          <%= form_for(@profile, url: profile_path(@profile), html: { method: :put }) do |f| %>
+            <div class="form-group">
+              <%= f.label :name, t('profile.field.name') %>
+              <%= f.text_field :name, autofocus: true, class: 'form-control' %>
+            </div>
+            <%= button_tag(type: 'submit', class: 'btn btn-success') do %>
+              <%= fa_icon 'check-square-o', text: t('profile.edit.button') %>
+            <% end %>
+          <% end %>
+          <div class='top-buffer'>
+            <%= link_to t('general.back'), :back %>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-2"></div>
+  </div>
+</div>

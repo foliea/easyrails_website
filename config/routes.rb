@@ -4,9 +4,13 @@ FolieMyblog::Application.routes.draw do
 
   get "home/index"
   root "home#index"
-  
-  devise_for :users, :controllers => { :omniauth_callbacks => "omniauth_callbacks" }
-  
+
+  #get "profile/edit"
+  #get "profile/update"
+  resources :profile, except: [:index, :new, :create]
+
+  devise_for :users, controllers: { :omniauth_callbacks => "omniauth_callbacks" }
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -47,7 +51,7 @@ FolieMyblog::Application.routes.draw do
   #       get 'recent', on: :collection
   #     end
   #   end
-  
+
   # Example resource route with concerns:
   #   concern :toggleable do
   #     post 'toggle'

@@ -36,11 +36,16 @@ en:
   general:
     back: "Back"
     confirm: "Are you sure?"
+  profile:
+    edit:
+      title: "Edit your profile"
+      button: "Update"
+    field:
+      name: "Name"
   account:
     connect_with: "Connect with"
     unauthorized: "Unauthorized Access!"
     field:
-      name: "Name"
       email: "Email"
       password: "Password"
       password_confirmation: "Password Confirmation"
@@ -79,4 +84,3 @@ en:
       recover: "Forgot your password?"
       confirm: "Didn't receive confirmation instructions?"
       lock: "Didn't receive unlock instructions?"
-  
