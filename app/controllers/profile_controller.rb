@@ -3,7 +3,6 @@ class ProfileController < ApplicationController
   before_action :own_profile?, only: [:edit, :update]
 
   def show
-    binding.pry
   end
 
   def edit
