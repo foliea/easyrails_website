@@ -12,7 +12,7 @@ class ProfileController < ApplicationController
     if @profile.update_attributes profile_params
       redirect_to @profile, notice: I18n.t('profile.edit.success')
     else
-      render action: :edit
+      render :edit
     end
   end
 

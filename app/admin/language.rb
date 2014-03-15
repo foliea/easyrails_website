@@ -8,7 +8,6 @@ ActiveAdmin.register Language do
       f.input :code
       f.input :default if f.object.default.blank?
     end
-    binding.pry
     f.actions
   end
 end
