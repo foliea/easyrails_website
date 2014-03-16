@@ -1,6 +1,7 @@
 class ProfileController < ApplicationController
-  before_action :set_profile
-  before_action :own_profile?, only: [:edit, :update]
+  before_action :get_profile
+  before_action :authenticate_user!, only: [:edit, :update]
+  before_action :check_ownership, only: [:edit, :update]
 
   def show
   end
@@ -18,13 +19,14 @@ class ProfileController < ApplicationController
 
   private
 
-  def set_profile
+  def get_profile
     @profile = Profile.find params[:id]
   end
 
-  def own_profile?
-    owned = @profile == current_user.profile
-    unauthorized if !owned
+  def check_ownership
+    if @profile != current_user.profile
+      redirect_to @profile, alert: I18n.t('account.unauthorized')
+    end
   end
 
   def profile_params

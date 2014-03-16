@@ -22,8 +22,4 @@ module ApplicationHelper
   def site_description
     return AppConfig['site_description']
   end
-
-  def languages_available
-    return Language.all
-  end
 end

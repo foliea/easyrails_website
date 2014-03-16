@@ -2,11 +2,8 @@ FolieMyblog::Application.routes.draw do
 
   ActiveAdmin.routes(self)
 
-  get "home/index"
   root "home#index"
 
-  #get "profile/edit"
-  #get "profile/update"
   resources :profile, except: [:index, :new, :create]
 
   devise_for :users, controllers: { :omniauth_callbacks => "omniauth_callbacks" }
