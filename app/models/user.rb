@@ -1,7 +1,6 @@
 class User < ActiveRecord::Base
-  has_one :profile
+  has_one :profile, dependent: :destroy
   after_create :create_profile
-  before_destroy :destroy_profile
   
   devise :database_authenticatable,
             :registerable,
@@ -13,10 +12,6 @@ class User < ActiveRecord::Base
   validates :email, :password, presence: true
 
   def create_profile
-    Profile.create(user_id: id)
-  end
-
-  def destroy_profile
-    profile.destroy if profile.present?
+    self.create_profile
   end
 end
