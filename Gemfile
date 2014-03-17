@@ -24,11 +24,16 @@ gem 'jquery-rails'
 gem 'bootstrap-sass'
 gem "font-awesome-rails"
 
-gem 'rails_layout', group: :development
-gem 'better_errors', group: :development
-gem 'binding_of_caller', group: :development
-gem 'meta_request', group: :development
-gem 'pry-rails', group: :development
+group :development do 
+  gem 'rails_layout'
+  gem 'better_errors'
+  gem 'binding_of_caller'
+  gem 'meta_request'
+  gem 'pry-rails'
+end
+
+gem 'paperclip'
+gem 'aws-sdk'
 
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
