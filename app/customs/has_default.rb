@@ -14,7 +14,7 @@ class HasDefault
 
     module ClassMethods
       def get_default
-        return where(default: true).first
+        where(default: true).first
       end
     end
 
@@ -26,17 +26,17 @@ class HasDefault
         if default
           errors.add :default, (I18n.t 'error.destroy', class_name: self.class.name)
         end
-        return !default
+        !default
       end
 
       def fallback_default
         set_default if default_was == true
-        return true
+        true
       end
 
       def set_default_if_none_exists
         set_default if self.class.get_default.nil?
-        return true
+        true
       end
 
       def set_default
@@ -45,7 +45,7 @@ class HasDefault
 
       def set_defaults_to_false
         self.class.update_all(default: false) if (default_was == false || new_record?)
-        return true
+        true
       end
     end
   end
