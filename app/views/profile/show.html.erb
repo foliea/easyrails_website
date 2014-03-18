@@ -1,0 +1,21 @@
+<%= title t('profile.show.title') %>
+<div class="container" role="main">
+  <div class="row clearfix top-buffer">
+    <div class="col-md-2"></div>
+    <div class="col-md-8">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title"><%= t('profile.show.title') %></h3>
+        </div>
+        <div class="panel-body">
+
+          <%= image_tag @profile.avatar.url(:medium) %>
+          <div class='top-buffer'>
+            <%= link_to t('general.back'), :back %>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-2"></div>
+  </div>
+</div>

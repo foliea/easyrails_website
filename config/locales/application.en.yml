@@ -41,6 +41,8 @@ en:
       title: "Edit your profile"
       button: "Update"
       success: "Profile was successfully updated."
+    show:
+      title: "Profile"
     field:
       name: "Name"
       location: "Location"
