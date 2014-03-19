@@ -6,7 +6,6 @@ one:
   birthday: 2014-03-10 05:59:31
   public_email: MyString
   description: MyText
-  image: MyString
 
 two:
   name: MyString
@@ -14,4 +13,3 @@ two:
   birthday: 2014-03-10 05:59:31
   public_email: MyString
   description: MyText
-  image: MyString

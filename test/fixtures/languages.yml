@@ -1,11 +1,11 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
-one:
-  name: MyString
-  code: MyString
+fr:
+  name: Français
+  code: fr
   default: false
 
-two:
-  name: MyString
-  code: MyString
-  default: false
+en:
+  name: English
+  code: en
+  default: true
