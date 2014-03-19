@@ -1,15 +1,20 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
-one:
-  name: MyString
-  location: MyString
+adrien:
+  name: Adrien
+  location: Paris
   birthday: 2014-03-10 05:59:31
-  public_email: MyString
-  description: MyText
+  public_email: adrien@yopmail.com
+  description: blabla
+  user_id: 1
 
-two:
-  name: MyString
-  location: MyString
+lola:
+  name: Lola
+  location: Poissy
   birthday: 2014-03-10 05:59:31
-  public_email: MyString
-  description: MyText
+  public_email: lola@yopmail.com
+  description: blabla
+  user_id: 2
+
+mandatory_fields:
+  user_id: 3

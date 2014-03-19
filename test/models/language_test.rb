@@ -21,11 +21,10 @@ class LanguageTest < ActiveSupport::TestCase
     assert !l_en.valid?, 'Uniqueness of Code is not being validated'
   end
 
-  test "valid without default" do
-    l = languages(:fr)
-    l.default = nil
+  test "valid with only mandatory fields" do
+    l = languages(:mandatory_fields)
 
-    assert l.valid?, 'Language wasn\'t valid without default'
+    assert l.valid?, 'One field should not be validated'
   end
 
   test "valid with all attributes" do

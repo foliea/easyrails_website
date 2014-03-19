@@ -9,3 +9,7 @@ en:
   name: English
   code: en
   default: true
+
+mandatory_fields:
+  name: Spanish
+  code: es
