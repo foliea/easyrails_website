@@ -7,13 +7,11 @@ class ProfileTest < ActiveSupport::TestCase
 
   test "valid with only mandatory fields" do
     p = profiles(:mandatory_fields)
-
     assert p.valid?, 'One field should not be validated'
   end
 
   test "valid with all attributes" do
     p = profiles(:adrien)
-
     assert p.valid?, 'Profile wasn\'t valid'
   end
 end

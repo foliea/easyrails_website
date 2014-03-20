@@ -7,7 +7,6 @@ class LanguageTest < ActiveSupport::TestCase
 
   test "valid with only mandatory fields" do
     l = languages(:mandatory_fields)
-
     assert l.valid?, 'One field should not be validated'
   end
 
