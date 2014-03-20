@@ -7,10 +7,11 @@ development:
   adapter: postgresql
   encoding: unicode
   pool: 5
-  database: d5naa1kp5r28i0
-  username: oykqgovdolzghx
-  password: AKQoDYGeD1Bk9b4lTDmKPGAX2A
-  host: ec2-54-204-35-114.compute-1.amazonaws.com
+#  database: d5naa1kp5r28i0
+#  username: oykqgovdolzghx
+#  password: AKQoDYGeD1Bk9b4lTDmKPGAX2A
+#  host: ec2-54-204-35-114.compute-1.amazonaws.com
+  database: folieblog_dev
   port: 5432
 
 # Warning: The database defined as "test" will be erased and

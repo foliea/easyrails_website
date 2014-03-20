@@ -19,23 +19,24 @@ module FolieMyblog
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :de
-    
+
     # Force locale on Heroku
     I18n.load_path += Dir[Rails.root.join('config', 'locales', '*.yml').to_s]
     I18n.reload!
-    
+
     config.after_initialize do
       # Set default_locale according to database
-      @default_language = Language.get_default
-      
+      @default_language = Language.get_default if Language.table_exists?
+
       I18n.default_locale = (@default_language.code if @default_language) || :en
-      
+
       # Set default title here
       AppConfig.configure(:model => Setting)
-      AppConfig.load
-      
-      Settings.reload
+      if Setting.table_exists?
+        AppConfig.load
+        Settings.reload
+      end
     end
-    
+
   end
 end
