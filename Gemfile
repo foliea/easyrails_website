@@ -24,12 +24,16 @@ gem 'jquery-rails'
 gem 'bootstrap-sass'
 gem "font-awesome-rails"
 
-group :development do 
+group :development do
   gem 'rails_layout'
   gem 'better_errors'
   gem 'binding_of_caller'
   gem 'meta_request'
   gem 'pry-rails'
+end
+
+group :test do
+  gem 'shoulda'
 end
 
 gem 'paperclip'
