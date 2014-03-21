@@ -34,6 +34,7 @@ end
 
 group :test do
   gem 'shoulda'
+  gem 'capybara'
 end
 
 gem 'paperclip'
