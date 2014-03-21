@@ -20,10 +20,6 @@ class ActionDispatch::IntegrationTest
 
   def teardown
     Capybara.reset_sessions!
-    Capybara.user_default_driver
-  end
-
-  def sign_up_as email, password
-
+    Capybara.use_default_driver
   end
 end
