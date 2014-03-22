@@ -6,12 +6,13 @@ class LanguageTest < ActiveSupport::TestCase
   should validate_uniqueness_of(:code)
 
   test "valid with only mandatory fields" do
-    l = languages(:mandatory_fields)
+    l = FactoryGirl.build(:language_mandatory)
     assert l.valid?, 'One field should not be validated'
   end
 
   test "valid with all attributes" do
-    l = languages(:fr)
+    l = FactoryGirl.build(:language)
+    binding.pry
     assert l.valid?, 'Language wasn\'t valid'
   end
 end

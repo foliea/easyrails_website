@@ -29,12 +29,16 @@ group :development do
   gem 'better_errors'
   gem 'binding_of_caller'
   gem 'meta_request'
-  gem 'pry-rails'
 end
 
 group :test do
   gem 'shoulda'
   gem 'capybara'
+end
+
+group :development, :test do
+  gem 'pry-rails'
+  gem 'factory_girl_rails'
 end
 
 gem 'paperclip'
