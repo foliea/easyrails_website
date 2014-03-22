@@ -39,6 +39,8 @@ end
 group :development, :test do
   gem 'pry-rails'
   gem 'factory_girl_rails'
+  gem 'mocha'
+  gem 'rspec-rails'
 end
 
 gem 'paperclip'
