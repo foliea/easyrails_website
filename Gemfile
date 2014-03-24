@@ -32,6 +32,7 @@ end
 
 group :test do
   gem 'shoulda'
+  gem 'shoulda-matchers'
   gem 'capybara'
 end
 
