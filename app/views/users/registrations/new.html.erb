@@ -39,7 +39,7 @@
             <%= f.hidden_field :uid,
                                value: (session['new_user_params'][:uid] if session['new_user_params'])
             %>
-            <%= button_tag(type: 'submit', class: 'btn btn-success top-buffer') do %>
+            <%= button_tag(type: 'submit', class: 'btn btn-success top-buffer', id: 'register') do %>
               <%= fa_icon 'check-square-o', text: t('account.register.button') %>
             <% end %>
           <% end %>

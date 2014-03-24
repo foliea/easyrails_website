@@ -18,7 +18,6 @@ gem 'coffee-rails', '~> 4.0.0'
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
-# Use jquery as the JavaScript library
 gem 'jquery-rails'
 
 gem 'bootstrap-sass'
@@ -29,12 +28,19 @@ group :development do
   gem 'better_errors'
   gem 'binding_of_caller'
   gem 'meta_request'
-  gem 'pry-rails'
 end
 
 group :test do
   gem 'shoulda'
+  gem 'shoulda-matchers'
   gem 'capybara'
+end
+
+group :development, :test do
+  gem 'pry-rails'
+  gem 'factory_girl_rails'
+  gem 'mocha'
+  gem 'rspec-rails'
 end
 
 gem 'paperclip'
