@@ -1,21 +1,9 @@
 class OmniauthCallbacksController < Devise::OmniauthCallbacksController
-  before_action :authenticate
-
-  def linkedin
+ # before_action :authenticate
+  [:linkedin, :twitter, :github, :facebook, :google_oauth2].each do |method_name|
+    define_method method_name { authenticate }
   end
-
-  def twitter
-  end
-
-  def github
-  end
-
-  def facebook
-  end
-
-  def google_oauth2
-  end
-
+  
   private
 
   def authenticate
