@@ -11,7 +11,7 @@ class OmniauthCallbacksController < Devise::OmniauthCallbacksController
 
     if auth.present?
       user_params = format_to_user_params auth
-      @user = User.get_existant_user user_params
+      @user = get_existant_user user_params
       #Sign in if already exist
       if @user
         flash[:notice] = I18n.t 'devise.omniauth_callbacks.success', kind: auth.provider
