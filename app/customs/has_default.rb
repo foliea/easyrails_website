@@ -40,7 +40,7 @@ class HasDefault
       end
 
       def set_default
-        self.update_column(:default, true)
+        self.update_columns(default: true)
       end
 
       def set_defaults_to_false

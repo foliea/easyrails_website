@@ -9,4 +9,4 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-FolieMyblog::Application.config.secret_key_base = '7007ac8255684da6c3d0a105f6706a65da2966f36f89077e76426913fa6c0d5aa2ca46a0776c4df2c060cafb194571a1fa0e71ddeb9392560e85b26f5a865f25'
+FolieMyblog::Application.config.secret_key_base = ENV['SECRET_KEY_BASE']

@@ -24,10 +24,10 @@ class OmniauthCallbacksController < Devise::OmniauthCallbacksController
   end
 
   def get_existant_user user_params
-    user = User.where(provider: user_params[:provider], uid: user_params[:uid]).first
+    user = User.find_by(provider: user_params[:provider], uid: user_params[:uid])
     if user.nil?
       if user_params.present?
-        user = User.where(email: user_params[:email]).first
+        user = User.find_by(email: user_params[:email])
       end
     end
   end

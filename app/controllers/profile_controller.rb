@@ -11,7 +11,7 @@ class ProfileController < ApplicationController
   end
 
   def update
-    if @profile.update_attributes profile_params
+    if @profile.update profile_params
       session.delete 'new_user_params'
       redirect_to @profile, notice: I18n.t('profile.edit.success')
     else
