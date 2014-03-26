@@ -22,6 +22,13 @@ class OmniauthCallbacksController < Devise::OmniauthCallbacksController
     redirect_to new_user_registration_url
   end
   
+  def get_existant_user user_params
+    user = User.get_by_provider(user_params[:provider].presence, user_params[:uid].presence)
+    if user.nil?
+      user = User.get_by_email(user_params[:email].presence)
+    end  
+  end
+  
   def format_to_user_params auth
     new_user_params = {
                         provider:   auth.provider.presence,
