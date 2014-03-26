@@ -4,6 +4,8 @@ class Setting < ActiveRecord::Base
   validates :keyname, :value, presence: true
   validates :keyname, uniqueness: true
   
+  protected
+  
   def reload
     Settings.reload
   end

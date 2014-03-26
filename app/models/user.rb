@@ -11,6 +11,8 @@ class User < ActiveRecord::Base
             :omniauthable
   validates :email, :password, presence: true
 
+  protected
+
   def set_profile
     self.create_profile
   end

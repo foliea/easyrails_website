@@ -6,7 +6,7 @@ class Language < ActiveRecord::Base
 
   has_default
 
-  private
+  protected
 
   def set_default_locale
     I18n.default_locale = code
