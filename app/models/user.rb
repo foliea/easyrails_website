@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
   has_one :profile, dependent: :destroy
-  before_create :add_profile
+  before_create :set_profile
 
   devise :database_authenticatable,
             :registerable,
@@ -11,7 +11,7 @@ class User < ActiveRecord::Base
             :omniauthable
   validates :email, :password, presence: true
 
-  def add_profile
+  def set_profile
     self.create_profile
   end
 end
