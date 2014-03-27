@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+ruby '1.9.3'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.0'
 
@@ -42,6 +44,8 @@ group :development, :test do
   gem 'mocha'
   gem 'rspec-rails'
 end
+
+gem 'puma'
 
 gem 'paperclip'
 gem 'aws-sdk'
