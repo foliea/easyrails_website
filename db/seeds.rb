@@ -4,11 +4,21 @@ User.create(email: 'admin@example.com', password: 'password', admin: true)
 # Default language
 Language.create(name: 'English', code: 'en', default: true)
 
-# Default settings
-Setting.create(keyname: 'site_title', value: 'Adrien Folie Tech Blog', value_format: 'string')
-Setting.create(keyname: 'site_title_link', value: 'http://project-livec9baf8578360.rhcloud.com/', value_format: 'string')
-Setting.create(keyname: 'site_owner', value: 'Adrien Folie', value_format: 'string')
-Setting.create(keyname: 'site_description', value: 'This is easy rails website', value_format: 'string')
+settings = [
+  # Default settings
+  { keyname: 'site_title',        value: 'EasyRails Website',          value_format: 'string' },
+  { keyname: 'site_title_link',   value: '127.0.0.1:3000',             value_format: 'string' },
+  { keyname: 'site_owner',        value: 'EasyRails',                  value_format: 'string' },
+  { keyname: 'site_description',  value: 'This is easy rails website', value_format: 'string' },
 
-# Amazon Web Services
-Setting.create(keyname: 's3_host_name', value: 's3-eu-west-1.amazonaws.com', value_format: 'string')
+  # Amazon Web Services
+  { keyname: 's3_host_name',      value: 's3-eu-west-1.amazonaws.com', value_format: 'string' }
+]
+
+settings.each do |attributes|
+  Setting.find_or_initialize_by(keyname: attributes[:keyname]).tap do |s|
+    s.value = attributes[:value]
+    s.value_format = attributes[:value_format]
+    s.save!
+  end
+end

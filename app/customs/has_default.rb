@@ -2,11 +2,13 @@ class HasDefault
   module Models
     def has_default
       before_destroy  :destroyable?
-      before_save     :set_defaults_to_false,       if:     :default
-      after_create    :set_default_if_none_exists,  unless: :default
-      after_update    :fallback_default,            unless: :default
 
-      #scope :defaults, -> { where(default: true) }
+      # If model is selected as default
+      before_save     :set_defaults_to_false, if: Proc.new { |m|  m.default && (m.default_was != true || m.new_record?) }
+      # If no other default exist
+      after_create    :set_as_default,        if: Proc.new { |m| !m.default && m.class.get_default.nil? }
+      # If fallback is required
+      after_update    :set_as_default,        if: Proc.new { |m| !m.default && m.default_was == true }
 
       extend  ClassMethods
       include InstanceMethods
@@ -29,24 +31,14 @@ class HasDefault
         !default
       end
 
-      def fallback_default
-        set_default if default_was == true
-        true
-      end
-
-      def set_default_if_none_exists
-        set_default if self.class.get_default.nil?
-        true
-      end
-
-      def set_default
+      def set_as_default
         self.update_columns(default: true)
       end
 
       def set_defaults_to_false
-        self.class.update_all(default: false) if (default_was == false || new_record?)
-        true
+        self.class.update_all(default: false)
       end
+
     end
   end
   ActiveRecord::Base.extend Models
