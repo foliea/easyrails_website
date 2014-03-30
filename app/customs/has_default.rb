@@ -1,7 +1,7 @@
 class HasDefault
   module Models
     def has_default
-      before_destroy  :destroy?
+      before_destroy  :destroyable?
       before_save     :set_defaults_to_false,       if:     :default
       after_create    :set_default_if_none_exists,  unless: :default
       after_update    :fallback_default,            unless: :default
@@ -22,7 +22,7 @@ class HasDefault
 
       private
 
-      def destroy?
+      def destroyable?
         if default
           errors.add :default, (I18n.t 'error.destroy', class_name: self.class.name)
         end

@@ -2,7 +2,6 @@ class ProfileController < ApplicationController
   before_action :get_profile
   before_action :authenticate_user!, only: [:edit, :update]
   before_action :check_ownership, only: [:edit, :update]
-  before_action :set_avatar, only: :update
 
   def show
   end
@@ -11,6 +10,7 @@ class ProfileController < ApplicationController
   end
 
   def update
+    @profile.picture_from_url ||= get_avatar_from_session
     if @profile.update profile_params
       session.delete 'new_user_params'
       redirect_to @profile, notice: I18n.t('profile.edit.success')
@@ -25,12 +25,8 @@ class ProfileController < ApplicationController
     @profile = Profile.find params[:id]
   end
 
-  def set_avatar
-    avatar_url = session['new_user_params'][:image] if session['new_user_params']
-    if avatar_url.present?
-      @profile.picture_from_url avatar_url
-    end
-    true
+  def get_avatar_from_session
+    (session['new_user_params'][:image] if session['new_user_params']) || nil
   end
 
   def check_ownership
