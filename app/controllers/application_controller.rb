@@ -3,15 +3,15 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
 
-  before_action :set_user_params
+  #before_action :set_user_params
   before_action :set_locale
   before_action :get_languages
 
   protected
 
-  def set_user_params
-    session['new_user_params'] = session['new_user_params'] ||= {}
-  end
+  #def set_user_params
+  #  session['new_user_params'] = session['new_user_params'] ||= {}
+  #end
 
   def set_locale
     # update sessions if passed
