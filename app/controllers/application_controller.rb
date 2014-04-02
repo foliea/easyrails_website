@@ -5,8 +5,8 @@ class ApplicationController < ActionController::Base
 
   #before_action :set_user_params
   before_action :set_locale
-  before_action :get_languages
-
+  before_action :set_languages_available
+  
   protected
 
   #def set_user_params
@@ -20,8 +20,8 @@ class ApplicationController < ActionController::Base
     I18n.locale = session[:locale] || I18n.default_locale
   end
 
-  def get_languages
-    @languages = Language.all
+  def set_languages_available
+    @languages_available = Language.all
   end
 
   def authenticate_admin!

@@ -1,5 +1,1 @@
-<div class="container">
-  <div class="row">
-    <p><%= t('footer.copyright', date: Date.today.year, owner: site_owner) %></p>
-  </div>
-</div>
+<p><%= t('footer.copyright', owner: setting('site_owner'), date: setting('site_date_start_end')) %></p>

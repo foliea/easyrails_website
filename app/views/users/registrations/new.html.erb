@@ -1,52 +1,45 @@
 <%= title t('account.register.title') %>
-<div class="container" role="main">
-  <div class="row clearfix top-buffer">
-    <div class="col-md-3"></div>
-    <div class="col-md-6">
-      <div class="panel panel-default">
-        <div class="panel-heading">
-            <h3 class="panel-title"><%= t('account.register.title') %></h3>
-        </div>
-        <div class="panel-body">
-          <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-            <%= devise_error_messages! %>
-            <div class="row clearfix">
-              <div class="col-md-6">
-                <div class="form-group">
-                  <%= f.label :email, t('account.field.email') %>
-                  <%= f.email_field :email,
-                                    value: (session['new_user_params'][:email] if session['new_user_params']),
-                                    autofocus: true,
-                                    class: 'form-control' %>
-                </div>
-                <div class="form-group">
-                  <%= f.label :password, t('account.field.password') %>
-                  <%= f.password_field :password,
-                                       class: 'form-control' %>
-                </div>
-                <div class="form-group">
-                  <%= f.label :password_confirmation, t('account.field.password_confirmation') %>
-                  <%= f.password_field :password_confirmation,
-                                       class: 'form-control' %>
-                </div>
-                <%= render 'users/shared/links' %>
-              </div>
-              <div class="col-md-6"></div>
-            </div>
-            <%= f.hidden_field :provider,
-                               value: (session['new_user_params'][:provider] if session['new_user_params'])
-            %>
-            <%= f.hidden_field :uid,
-                               value: (session['new_user_params'][:uid] if session['new_user_params'])
-            %>
-            <%= button_tag(type: 'submit', class: 'btn btn-success top-buffer', id: 'register') do %>
-              <%= fa_icon 'check-square-o', text: t('account.register.button') %>
-            <% end %>
+<div class="row clearfix top-buffer">
+  <div class="col-md-3"></div>
+  <div class="col-md-6">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+          <h3 class="panel-title"><%= t('account.register.title') %></h3>
+      </div>
+      <div class="panel-body">
+        <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+          <%= devise_error_messages! %>
+          <div class="form-group">
+            <%= f.label :email, t('account.field.email') %>
+            <%= f.email_field :email,
+                              value: (session['new_user_params'][:email] if session['new_user_params']),
+                              autofocus: true,
+                              class: 'form-control' %>
+          </div>
+          <div class="form-group">
+            <%= f.label :password, t('account.field.password') %>
+            <%= f.password_field :password,
+                                 class: 'form-control' %>
+          </div>
+          <div class="form-group">
+            <%= f.label :password_confirmation, t('account.field.password_confirmation') %>
+            <%= f.password_field :password_confirmation,
+                                 class: 'form-control' %>
+          </div>
+          <%= render 'users/shared/links' %>
+          <%= f.hidden_field :provider,
+                             value: (session['new_user_params'][:provider] if session['new_user_params'])
+          %>
+          <%= f.hidden_field :uid,
+                             value: (session['new_user_params'][:uid] if session['new_user_params'])
+          %>
+          <%= button_tag(type: 'submit', class: 'btn btn-success top-buffer', id: 'register') do %>
+            <%= fa_icon 'check-square-o', text: t('account.register.button') %>
           <% end %>
-          <%= render 'users/shared/links_connect_with' %>
-        </div>
+        <% end %>
+        <%= render 'users/shared/links_connect_with' %>
       </div>
     </div>
-    <div class="col-md-3"></div>
   </div>
+  <div class="col-md-3"></div>
 </div>

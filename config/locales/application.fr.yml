@@ -33,7 +33,7 @@ fr:
       login: "Connexion"
       language: "Langue"
   footer:
-    copyright: "© %{owner}, tous droits réservés"
+    copyright: "© %{owner} %{date}"
   general:
     back: "Retour"
     confirm: "Êtes-vous sûr ?"

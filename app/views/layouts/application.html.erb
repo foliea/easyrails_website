@@ -2,24 +2,29 @@
 <html>
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%= content_for?(:title) ? yield(:title) : site_title %></title>
-    <meta name="description" content="<%= content_for?(:description) ? yield(:description) : site_description %>">
+    <title><%= content_for?(:title) ? yield(:title) : setting('site_title') %></title>
+    <meta name="description" content="<%= content_for?(:description) ? yield(:description) : setting('site_description') %>">
     <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
     <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
     <%= csrf_meta_tags %>
   </head>
   <body>
     <header>
-      <%= render 'layouts/navigation', languages: @languages %>
+      <%= render 'layouts/navigation', languages_available: @languages_available %>
     </header>
     <main role="main">
       <div class="top-buffer">
-        <%= render 'layouts/messages' %>
-        <%= yield %>
+        <div class="container" role="main">
+          <%= render 'layouts/messages' %>
+          <%= yield %>
+          <hr>
+          <footer>
+            <%= render 'layouts/footer' %>
+          </footer>
+        </div>
       </div>
     </main>
-    <footer class="footer">
-      <%= render 'layouts/footer' %>
-    </footer>
+    
+    
   </body>
 </html>
