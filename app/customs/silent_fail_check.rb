@@ -1,4 +1,4 @@
-class SilentFailChecker
+class SilentFailCheck
   module Models
     CheckParameters = Struct.new(:sym, :args, :block)
 
