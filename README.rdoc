@@ -1,28 +1,6 @@
-== README
+# EasyRails Website
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+EasyRails Website is a tiny blog CMS. This project aims to provide an easy way for anyone 
+to promote themselves with a user friendly blog.
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+Warning : This project is still at an early development stage. Don't use it yet.
