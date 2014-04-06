@@ -6,9 +6,7 @@ class Setting < ActiveRecord::Base
   validates :keyname, :value, presence: true
   validates :keyname, uniqueness: true
 
-  silent_fail_check :validation, :keyname, :value do
-    puts 'test'
-  end
+  #silent_fail_check :validation, :keyname, :value
 
   protected
 
