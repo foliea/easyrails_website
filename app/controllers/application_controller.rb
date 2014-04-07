@@ -6,11 +6,11 @@ class ApplicationController < ActionController::Base
   #before_action :set_user_params
   before_action :set_locale
   before_action :set_languages_available
-  
+
   protected
 
   #def set_user_params
-  #  session['new_user_params'] = session['new_user_params'] ||= {}
+  #  session['new_user_params'] ||= {}
   #end
 
   def set_locale
@@ -21,7 +21,7 @@ class ApplicationController < ActionController::Base
   end
 
   def set_languages_available
-    @languages_available = Language.all
+    @languages_available ||= Language.all
   end
 
   def authenticate_admin!
