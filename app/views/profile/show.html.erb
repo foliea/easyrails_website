@@ -8,7 +8,7 @@
       </div>
       <div class="panel-body">
 
-        <%= image_tag @profile.avatar.url(:medium) %>
+        <%= image_tag @profile.avatar.url(:medium), class: 'thumbnail' %>
         <div class='top-buffer'>
           <%= link_to t('general.back'), :back %>
         </div>

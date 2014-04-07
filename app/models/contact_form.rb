@@ -1,6 +1,6 @@
 class ContactForm
   include WithoutDatabase
 
-  attr_accessor :name, :status
-  validates :name, presence: true
+  attr_accessor :email, :subject, :body
+  validates :email, presence: true
 end
