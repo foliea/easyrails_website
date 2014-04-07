@@ -10,7 +10,7 @@ class ProfileController < ApplicationController
   end
 
   def update
-    @profile.picture_from_url ||= get_avatar_from_session
+    @profile.picture_from_url(get_avatar_from_session) if get_avatar_from_session
     if @profile.update profile_params
       session.delete 'new_user_params'
       redirect_to @profile, notice: I18n.t('profile.edit.success')
