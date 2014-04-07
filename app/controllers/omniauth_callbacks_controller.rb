@@ -1,9 +1,8 @@
 class OmniauthCallbacksController < Devise::OmniauthCallbacksController
- # before_action :authenticate
   [:linkedin, :twitter, :github, :facebook, :google_oauth2].each do |method_name|
-    define_method method_name { authenticate }
+    define_method(method_name) { authenticate }
   end
-  
+
   private
 
   def authenticate
@@ -21,14 +20,14 @@ class OmniauthCallbacksController < Devise::OmniauthCallbacksController
     end
     redirect_to new_user_registration_url
   end
-  
+
   def get_existant_user user_params
     user = User.get_by_provider(user_params[:provider].presence, user_params[:uid].presence)
     if user.nil?
       user = User.get_by_email(user_params[:email].presence)
-    end  
+    end
   end
-  
+
   def format_to_user_params auth
     new_user_params = {
                         provider:   auth.provider.presence,
