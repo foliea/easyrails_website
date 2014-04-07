@@ -1,5 +1,3 @@
-require 'silent_fail_check'
-
 class Setting < ActiveRecord::Base
   after_save :reload
 
