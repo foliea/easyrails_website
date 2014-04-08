@@ -13,6 +13,11 @@ class ApplicationController < ActionController::Base
   #  session['new_user_params'] ||= {}
   #end
 
+  def set_default_locale
+    @default_language ||= Language.get_default
+    I18n.default_locale = @default_language.locale if (@default_language) || :en
+  end
+
   def set_locale
     # update sessions if passed
     session[:locale] = params[:locale] if params[:locale].present?
