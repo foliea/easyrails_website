@@ -43,9 +43,8 @@ group :development, :test do
   gem 'factory_girl_rails'
   gem 'mocha'
   gem 'rspec-rails'
+  gem 'puma'
 end
-
-gem 'puma'
 
 gem 'paperclip'
 gem 'aws-sdk'
