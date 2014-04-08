@@ -4,7 +4,7 @@ FolieMyblog::Application.routes.draw do
 
   root "home#index"
 
-  resources :profile, only: [:show, :edit, :update]
+  resources :profiles, only: [:show, :edit, :update]
 
   devise_for :users, controllers: { :omniauth_callbacks => "omniauth_callbacks" }
 
@@ -12,7 +12,7 @@ FolieMyblog::Application.routes.draw do
   #   l.ressources :products
   #   l.ressources :offers
   # end
-  
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
