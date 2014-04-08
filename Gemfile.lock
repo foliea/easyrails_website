@@ -198,8 +198,6 @@ GEM
       slop (~> 3.4)
     pry-rails (0.3.2)
       pry (>= 0.9.10)
-    puma (2.8.1)
-      rack (>= 1.1, < 2.0)
     rack (1.5.2)
     rack-contrib (1.1.0)
       rack (>= 0.9.1)
@@ -322,7 +320,6 @@ DEPENDENCIES
   paperclip
   pg
   pry-rails
-  puma
   rails (= 4.0.0)
   rails_12factor
   rails_layout

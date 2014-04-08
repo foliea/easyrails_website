@@ -2,7 +2,6 @@ source 'https://rubygems.org'
 
 ruby '1.9.3'
 
-# Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.0'
 
 # Use postgresql as the database for Active Record
@@ -24,27 +23,6 @@ gem 'jquery-rails'
 
 gem 'bootstrap-sass'
 gem "font-awesome-rails"
-
-group :development do
-  gem 'rails_layout'
-  gem 'better_errors'
-  gem 'binding_of_caller'
-  gem 'meta_request'
-end
-
-group :test do
-  gem 'shoulda'
-  gem 'shoulda-matchers'
-  gem 'capybara'
-end
-
-group :development, :test do
-  gem 'pry-rails'
-  gem 'factory_girl_rails'
-  gem 'mocha'
-  gem 'rspec-rails'
-  gem 'puma'
-end
 
 gem 'paperclip'
 gem 'aws-sdk'
@@ -73,18 +51,28 @@ group :doc do
   gem 'sdoc', require: false
 end
 
+gem 'thin'
+
+group :development do
+  gem 'rails_layout'
+  gem 'better_errors'
+  gem 'binding_of_caller'
+  gem 'meta_request'
+end
+
+group :test do
+  gem 'shoulda'
+  gem 'shoulda-matchers'
+  gem 'capybara'
+end
+
+group :development, :test do
+  gem 'pry-rails'
+  gem 'factory_girl_rails'
+  gem 'mocha'
+  gem 'rspec-rails'
+end
+
 group :production do
-  gem 'thin'
   gem 'rails_12factor'
 end
-# Use ActiveModel has_secure_password
-# gem 'bcrypt-ruby', '~> 3.0.0'
-
-# Use unicorn as the app server
-# gem 'unicorn'
-
-# Use Capistrano for deployment
-# gem 'capistrano', group: :development
-
-# Use debugger
-# gem 'debugger', group: [:development, :test]
