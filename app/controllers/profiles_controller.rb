@@ -1,4 +1,4 @@
-class ProfileController < ApplicationController
+class ProfilesController < ApplicationController
   before_action :get_profile
   before_action :authenticate_user!, only: [:edit, :update]
   before_action :check_ownership, only: [:edit, :update]
