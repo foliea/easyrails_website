@@ -5,7 +5,8 @@ FolieMyblog::Application.routes.draw do
   root "home#index"
 
   resources :profiles, only: [:show, :edit, :update]
-
+  resources :articles, only: [:index, :show]
+  
   devise_for :users, controllers: { :omniauth_callbacks => "omniauth_callbacks" }
 
   # with_options only: :index do |l|
