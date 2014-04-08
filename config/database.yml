@@ -25,8 +25,5 @@ production:
   adapter: postgresql
   encoding: unicode
   pool: 5
-  database: env['DB_NAME']
-  username: env['DB_USERNAME']
-  password: env['DB_PASSWORD']
-  host: env['DB_HOST']
+  database: folieblog_dev
   port: 5432
