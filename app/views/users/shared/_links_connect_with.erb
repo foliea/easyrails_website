@@ -3,9 +3,9 @@
 </div>
 <%- if devise_mapping.omniauthable? %>
   <%- resource_class.omniauth_providers.each do |provider| %>
-    <% 
+    <%
       title = provider.to_s.titleize
-      
+
       case provider.to_s.titleize
       when 'Linkedin'
         icon = 'linkedin-square'
@@ -20,12 +20,10 @@
         icon = 'google-plus-square'
         btn_class = 'btn btn-danger'
         title = 'Google'
-      end 
+      end
     %>
     <div class='top-buffer'>
-      <%= button_to(omniauth_authorize_path(resource_name, provider), class: btn_class) do %>
-        <%= fa_icon icon, text: title %>
-      <% end %>
+      <%= link_to fa_icon(icon, text: title), omniauth_authorize_path(resource_name, provider), class: btn_class %>
     </div>
   <% end -%>
 <% end -%>
