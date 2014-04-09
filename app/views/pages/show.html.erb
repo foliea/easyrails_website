@@ -4,7 +4,7 @@
   </div>
   <% if current_user && current_user.admin? %>
   <div class="top-buffer">
-    <p><%= link_to "Edit Page", "/editor" + request.path %></p>
+    <p><%= link_to t('page.edit'), "/editor/pages/#{@page.name}" %></p>
   </div>
   <% end %>
 </div>

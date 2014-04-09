@@ -3,11 +3,9 @@ class ProfilesController < ApplicationController
   before_action :authenticate_user!, only: [:edit, :update]
   before_action :check_ownership, only: [:edit, :update]
 
-  def show
-  end
+  def show ; end
 
-  def edit
-  end
+  def edit ; end
 
   def update
     @profile.picture_from_url(get_avatar_from_session) if get_avatar_from_session

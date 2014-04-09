@@ -37,6 +37,8 @@ fr:
   general:
     back: "Retour"
     confirm: "Êtes-vous sûr ?"
+  page:
+    edit: "Editer la page"
   profile:
     edit:
       title: "Modifier mon profil"

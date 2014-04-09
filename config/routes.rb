@@ -4,7 +4,7 @@ FolieMyblog::Application.routes.draw do
   Mercury::Engine.routes
   ActiveAdmin.routes(self)
 
-  root "home#index"
+  root 'pages#show', defaults: { id: 'home' }
 
   resources :profiles, only: [:show, :edit, :update]
   resources :articles, only: [:index, :show]
