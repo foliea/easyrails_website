@@ -24,7 +24,7 @@ gem 'jquery-rails'
 gem 'bootstrap-sass'
 gem "font-awesome-rails"
 
-gem 'paperclip'
+gem 'paperclip', github: 'thoughtbot/paperclip'
 gem 'aws-sdk'
 
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
@@ -52,6 +52,7 @@ group :doc do
 end
 
 gem 'thin'
+gem 'mercury-rails', github: 'jejacks0n/mercury'
 
 group :development do
   gem 'rails_layout'

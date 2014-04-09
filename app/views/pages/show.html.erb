@@ -1,0 +1,10 @@
+<div class="content">
+  <div id="page_content" data-mercury="full">
+    <%= raw @page.content %>
+  </div>
+  <% if current_user && current_user.admin? %>
+  <div class="top-buffer">
+    <p><%= link_to "Edit Page", "/editor" + request.path %></p>
+  </div>
+  <% end %>
+</div>
