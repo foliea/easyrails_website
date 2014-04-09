@@ -2,7 +2,7 @@
 User.create(email: 'admin@example.com', password: 'password', admin: true)
 
 # Default language
-Language.create(name: 'English', code: 'en', default: true)
+#Language.create(name: 'English', locale: 'en', default: true)
 
 settings = [
   # Default settings
@@ -22,3 +22,6 @@ settings.each do |attributes|
     s.save!
   end
 end
+
+Page.create(name: 'home', locale: 'en', content: '<h1>Home EN</h1>')
+Page.create(name: 'home', locale: 'fr', content: '<h1>Home FR</h1>')

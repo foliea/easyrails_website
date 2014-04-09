@@ -1,14 +1,17 @@
 FolieMyblog::Application.routes.draw do
 
+  mount Mercury::Engine => '/'
+  Mercury::Engine.routes
   ActiveAdmin.routes(self)
 
   root "home#index"
 
   resources :profiles, only: [:show, :edit, :update]
   resources :articles, only: [:index, :show]
-  
+
   devise_for :users, controllers: { :omniauth_callbacks => "omniauth_callbacks" }
 
+  resources :pages
   # with_options only: :index do |l|
   #   l.ressources :products
   #   l.ressources :offers
