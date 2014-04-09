@@ -36,6 +36,8 @@ en:
   general:
     back: "Back"
     confirm: "Are you sure?"
+  page:
+    edit: "Edit page"
   profile:
     edit:
       title: "Edit your profile"
