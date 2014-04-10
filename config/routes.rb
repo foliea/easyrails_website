@@ -6,14 +6,14 @@ EasyRailsWebsite::Application.routes.draw do
 
   ActiveAdmin.routes(self)
 
-  root 'pages#show', defaults: { id: 'home' }
+  root 'pages#show', defaults: { name: 'home' }
 
   resources :profiles, only: [:show, :edit, :update]
   resources :articles, only: [:index, :show]
 
   devise_for :users, controllers: { :omniauth_callbacks => "omniauth_callbacks" }
 
-  resources :pages
+  resources :pages, param: :name, only: [:show, :update]
 
   namespace :mercury do
     resources :images
