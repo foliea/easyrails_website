@@ -7,7 +7,7 @@
  *
  * You can include the Rails jQuery ujs script here to get some nicer behaviors in modals, panels and lightviews when
  * using :remote => true within the contents rendered in them.
- * require jquery_ujs
+ *= require jquery_ujs
  *
  * Add any requires for the support libraries that integrate nicely with Mercury Editor.
  * require mercury/support/history
@@ -24,9 +24,9 @@
  * require mercury/plugins/save_as_xml/plugin.js
  *
  * Require any files you want to use that either extend, or change the default Mercury behavior.
- * require mercury_overrides
+ *= require mercury_overrides
  */
- 
+
 window.Mercury = {
 
   // # Mercury Configuration
@@ -451,13 +451,3 @@ window.Mercury = {
   debug: false
 
 };
-
-$(window).bind('mercury:ready', function() {
-  var link = $('#mercury_iframe').contents().find('#edit_link');
-  Mercury.saveURL = link.data('save-url');
-  link.hide();
-});
-
-$(window).bind('mercury:saved', function() {
-  window.location = window.location.href.replace(/\/editor\//i, '/');
-});
