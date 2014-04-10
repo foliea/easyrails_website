@@ -3,6 +3,7 @@
  * found at https://github.com/jejacks0n/mercury
  *
  *= require jquery
+ *= require jquery-migrate-min
  * Minimum jQuery requirements are 1.7
  *= require_self
  *
