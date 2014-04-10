@@ -20,7 +20,6 @@ gem 'coffee-rails', '~> 4.0.0'
 # gem 'therubyracer', platforms: :ruby
 
 gem 'jquery-rails'
-gem 'jquery-migrate-rails'
 
 gem 'bootstrap-sass'
 gem "font-awesome-rails"

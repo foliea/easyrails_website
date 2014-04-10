@@ -7,7 +7,7 @@ Language.create(name: 'English', locale: 'en', default: true)
 settings = [
   # Default settings
   { keyname: 'site_title',            value: 'Adrien Folie',               value_format: 'string' },
-  { keyname: 'site_title_link',       value: 'www.foliea.io',              value_format: 'string' },
+  { keyname: 'site_title_link',       value: 'http://www.foliea.io',       value_format: 'string' },
   { keyname: 'site_owner',            value: 'Adrien Folie',               value_format: 'string' },
   { keyname: 'site_description',      value: 'Adrien Folie blog',          value_format: 'string' },
   { keyname: 'site_date_start_end',   value: '2014',                       value_format: 'string' },
