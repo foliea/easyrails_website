@@ -2,7 +2,7 @@
 User.create(email: 'admin@example.com', password: 'password', admin: true)
 
 # Default language
-#Language.create(name: 'English', locale: 'en', default: true)
+Language.create(name: 'English', locale: 'en', default: true)
 
 settings = [
   # Default settings

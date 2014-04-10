@@ -37,7 +37,7 @@ class ApplicationController < ActionController::Base
   end
 
   def unauthorized
-    flash[:alert] = I18n.t 'account.unauthorized'
+    flash[:alert] = I18n.t('account.unauthorized')
     redirect_to root_path
   end
 

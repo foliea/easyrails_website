@@ -1,6 +1,7 @@
 class Article < ActiveRecord::Base
+  include Commentable
+
   belongs_to :user
-  has_many :comments, as: :commentable
 
   validates :locale, presence: true
 end

@@ -1,5 +1,5 @@
-class HasDefault
-  module Models
+module SpecialModel
+  module HasDefault
     def has_default
       before_destroy  :destroyable?
 
@@ -41,5 +41,5 @@ class HasDefault
 
     end
   end
-  ActiveRecord::Base.extend Models
+  ActiveRecord::Base.extend HasDefault
 end
