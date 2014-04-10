@@ -21,11 +21,13 @@ gem 'coffee-rails', '~> 4.0.0'
 
 gem 'jquery-rails'
 
+# Front-end
 gem 'bootstrap-sass'
 gem "font-awesome-rails"
 
-gem 'paperclip', github: 'thoughtbot/paperclip'
+# Image Uploading
 gem 'aws-sdk'
+gem 'paperclip'
 
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
@@ -33,12 +35,16 @@ gem 'turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 1.2'
 
-gem 'devise'
-
-gem 'app-config'
+# Admin editing
 gem 'activeadmin', github: 'gregbell/active_admin'
-gem 'rconfig'
+gem 'mercury-rails', github: 'jejacks0n/mercury'
 
+# Settings
+gem 'rconfig'
+gem 'app-config'
+
+# Authentication
+gem 'devise'
 gem 'omniauth'
 gem 'omniauth-linkedin'
 gem 'omniauth-twitter'
@@ -46,13 +52,13 @@ gem 'omniauth-github'
 gem 'omniauth-facebook'
 gem 'omniauth-google-oauth2'
 
+# Server
+gem 'puma'
+
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false
 end
-
-gem 'thin'
-gem 'mercury-rails', github: 'jejacks0n/mercury'
 
 group :development do
   gem 'rails_layout'
