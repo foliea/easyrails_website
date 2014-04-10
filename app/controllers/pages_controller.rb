@@ -15,6 +15,6 @@ class PagesController < ApplicationController
   private
 
   def get_page
-    Page.get_page(name: params[:id], locale: I18n.locale)
+    Page.get_page(params[:name], I18n.locale)
   end
 end

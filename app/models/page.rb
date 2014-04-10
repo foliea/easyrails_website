@@ -4,7 +4,7 @@ class Page < ActiveRecord::Base
 
   scope :by_name, lambda { |n| where(name: n) }
 
-  def self.get_page args = {}
-    self.where(name: args[:name], locale: args[:locale]).first
+  def self.get_page name, locale
+    self.where(name: name, locale: locale).first
   end
 end

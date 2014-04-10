@@ -5,7 +5,7 @@
   </div>
   <% if current_user && current_user.admin? %>
   <div class="top-buffer">
-    <p><%= link_to t('page.edit.link'), @page_decorator.edit_link %></p>
+    <p><%= link_to t('page.edit.link'), @page_decorator.edit_link(page_path(@page_decorator)) %></p>
   </div>
   <% end %>
 </div>
