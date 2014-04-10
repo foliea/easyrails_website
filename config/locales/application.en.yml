@@ -20,8 +20,8 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 en:
   error:
-    destroy: "You can't destroy a default %{class_name}"
-    update: "An error has occured"
+    destroy: "You can't destroy a default %{class_name}."
+    update: "An error has occured."
   header:
     menu:
       admin: "Admin"
