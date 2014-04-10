@@ -9,7 +9,7 @@ class PagesController < ApplicationController
     @page = get_page
     @page.content = params[:content][:page_content][:value]
     @page.save!
-    render text: I18n.t('page.edit.saved')
+    render text: ''
   end
 
   private
