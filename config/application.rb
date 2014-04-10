@@ -5,7 +5,7 @@ require 'rails/all'
 # you've limited to :test, :development, or :production.
 Bundler.require(:default, Rails.env)
 
-module FolieMyblog
+module EasyRailsWebsite
   class Application < Rails::Application
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
@@ -27,7 +27,6 @@ module FolieMyblog
     I18n.reload!
 
     config.after_initialize do
-      # Set default title here
       AppConfig.configure(:model => Setting)
       if Setting.table_exists?
         AppConfig.load

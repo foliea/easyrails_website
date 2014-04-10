@@ -1,3 +1,3 @@
 # Be sure to restart your server when you modify this file.
 
-FolieMyblog::Application.config.session_store :cookie_store, key: '_folie_myblog_session'
+EasyRailsWebsite::Application.config.session_store :cookie_store, key: '_easyrails_website_session'
