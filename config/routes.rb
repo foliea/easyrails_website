@@ -1,7 +1,9 @@
 EasyRailsWebsite::Application.routes.draw do
 
   mount Mercury::Engine => '/'
+
   Mercury::Engine.routes
+
   ActiveAdmin.routes(self)
 
   root 'pages#show', defaults: { id: 'home' }
@@ -12,6 +14,11 @@ EasyRailsWebsite::Application.routes.draw do
   devise_for :users, controllers: { :omniauth_callbacks => "omniauth_callbacks" }
 
   resources :pages
+
+  namespace :mercury do
+    resources :images
+  end
+
   # with_options only: :index do |l|
   #   l.ressources :products
   #   l.ressources :offers
