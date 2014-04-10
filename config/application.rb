@@ -23,6 +23,7 @@ module EasyRailsWebsite
     config.autoload_paths += Dir[Rails.root.join('presenters', '*', '*.rb').to_s]
 
     # Force locale on Heroku
+    I18n.config.enforce_available_locales = true
     I18n.load_path += Dir[Rails.root.join('config', 'locales', '*.yml').to_s]
     I18n.reload!
 
