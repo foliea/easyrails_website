@@ -13,8 +13,6 @@ class Profile < ActiveRecord::Base
   validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\Z/
   validates_attachment_size :avatar, less_than: 2.megabytes
 
-  #protected
-
   def picture_from_url(url)
     self.avatar = URI.parse(url)
   end

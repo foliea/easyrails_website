@@ -1,16 +1,20 @@
 class PagesController < ApplicationController
   before_action :authenticate_admin!, only: :update
-  before_action :set_page
 
-  def show ; end
-
-  def update
-    @page.content = params[:content][:page_content][:value]
-    @page.save!
-    render text: ''
+  def show
+    @page_decorator = PageDecorator.new(get_page)
   end
 
-  def set_page
-    @page = Page.get_page(name: params[:id], locale: I18n.locale)
+  def update
+    @page = get_page
+    @page.content = params[:content][:page_content][:value]
+    @page.save!
+    render text: I18n.t('page.edit.saved')
+  end
+
+  private
+
+  def get_page
+    Page.get_page(name: params[:id], locale: I18n.locale)
   end
 end

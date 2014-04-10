@@ -37,7 +37,9 @@ en:
     back: "Back"
     confirm: "Are you sure?"
   page:
-    edit: "Edit page"
+    edit:
+      link: "Edit page"
+      saved: "Saved"
   profile:
     edit:
       title: "Edit your profile"

@@ -1,10 +1,11 @@
+<%= title @page_decorator.title if @page_decorator.title.present? %>
 <div class="content">
   <div id="page_content" data-mercury="full">
-    <%= raw @page.content %>
+    <%= raw @page_decorator.content %>
   </div>
   <% if current_user && current_user.admin? %>
   <div class="top-buffer">
-    <p><%= link_to t('page.edit'), "/editor/pages/#{@page.name}" %></p>
+    <p><%= link_to t('page.edit.link'), @page_decorator.edit_link %></p>
   </div>
   <% end %>
 </div>

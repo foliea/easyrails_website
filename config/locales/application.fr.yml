@@ -38,7 +38,9 @@ fr:
     back: "Retour"
     confirm: "Êtes-vous sûr ?"
   page:
-    edit: "Editer la page"
+    edit:
+      link: "Editer la page"
+      saved: "Sauvegardée"
   profile:
     edit:
       title: "Modifier mon profil"

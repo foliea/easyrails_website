@@ -1,1 +1,1 @@
-Dir[File.join(Rails.root, "app", "customs", "**", "*.rb")].each{ |path| require path }
+Dir[File.join(Rails.root, "app", "others", "*", "*.rb")].each { |path| require path }
