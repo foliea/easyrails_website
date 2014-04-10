@@ -2,6 +2,7 @@
  * Mercury Editor is a CoffeeScript and jQuery based WYSIWYG editor.  Documentation and other useful information can be
  * found at https://github.com/jejacks0n/mercury
  *
+ *= require jquery
  * Minimum jQuery requirements are 1.7
  *= require_self
  *
