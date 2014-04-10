@@ -1,4 +1,4 @@
-FolieMyblog::Application.routes.draw do
+EasyRailsWebsite::Application.routes.draw do
 
   mount Mercury::Engine => '/'
   Mercury::Engine.routes
