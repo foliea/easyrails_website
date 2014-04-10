@@ -3,4 +3,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-FolieMyblog::Application.load_tasks
+EasyRailsWebsite::Application.load_tasks

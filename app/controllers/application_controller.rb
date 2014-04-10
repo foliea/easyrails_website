@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
-  # Prevent CSRF attacks by raising an exception.
-  # For APIs, you may want to use :null_session instead.
+  include AdminAuthentication
+  
   protect_from_forgery with: :exception
 
   before_action :set_default_locale
@@ -8,10 +8,6 @@ class ApplicationController < ActionController::Base
   before_action :set_languages_available
 
   protected
-
-  #def set_user_params
-  #  session['new_user_params'] ||= {}
-  #end
 
   def set_default_locale
     @default_language ||= Language.get_default
@@ -27,18 +23,6 @@ class ApplicationController < ActionController::Base
 
   def set_languages_available
     @languages_available ||= Language.all
-  end
-
-  def authenticate_admin!
-    authenticate_user!
-    unless current_user.admin?
-      unauthorized
-    end
-  end
-
-  def unauthorized
-    flash[:alert] = I18n.t('account.unauthorized')
-    redirect_to root_path
   end
 
   def devise_parameter_sanitizer
