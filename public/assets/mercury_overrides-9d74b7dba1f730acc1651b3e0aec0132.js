@@ -1,0 +1,1 @@
+$(window).bind("mercury:ready",function(){var i=$("#mercury_iframe").contents().find("#edit_link");Mercury.saveURL=i.data("save-url"),i.hide()}),$(window).bind("mercury:saved",function(){window.location=window.location.href.replace(/\/editor\//i,"/")});
