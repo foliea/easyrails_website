@@ -6,7 +6,7 @@ ActiveAdmin.setup do |config|
 
   config.allow_comments = false
 
-  config.register_javascript 'pages_editor.js'
+  config.register_javascript 'pages_editor'
   # == Site Title
   #
   # Set the title that is displayed on the main layout
