@@ -38,6 +38,7 @@ gem 'jbuilder', '~> 1.2'
 # Admin editing
 gem 'activeadmin', github: 'gregbell/active_admin'
 gem 'mercury-rails', github: 'jejacks0n/mercury'
+gem 'ace-rails-ap'
 
 # Settings
 gem 'rconfig'

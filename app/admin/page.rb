@@ -14,8 +14,11 @@ ActiveAdmin.register Page do
       f.input :name
       f.input :locale
       f.input :title
-      f.input :content
+      f.input :content, as: :hidden
     end
     f.actions
+    # Faire un decorator
+    f.form_buffers.last << content_tag(:div, f.object.content, id: 'html-editor', style: 'height:400px;margin-top:20px;border:1px solid #DDD;border-radius:4px;')
+
   end
 end
