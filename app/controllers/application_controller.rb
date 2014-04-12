@@ -1,18 +1,12 @@
 class ApplicationController < ActionController::Base
   include AdminAuthentication
-  
+
   protect_from_forgery with: :exception
 
-  before_action :set_default_locale
   before_action :set_locale
   before_action :set_languages_available
 
   protected
-
-  def set_default_locale
-    @default_language ||= Language.get_default
-    I18n.default_locale = @default_language.locale if (@default_language) || :en
-  end
 
   def set_locale
     # update sessions if passed
@@ -32,5 +26,4 @@ class ApplicationController < ActionController::Base
       super
     end
   end
-
 end
