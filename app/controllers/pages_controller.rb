@@ -15,9 +15,6 @@ class PagesController < ApplicationController
   private
 
   def get_page
-    p ||= Page.get_page_with_locale(params[:name], I18n.locale)
-    p ||= Page.get_page_with_locale(params[:name], I18n.default_locale)
-    p ||= Page.get_page!(params[:name])
-    p
+    Page.get_page!(params[:name])
   end
 end
