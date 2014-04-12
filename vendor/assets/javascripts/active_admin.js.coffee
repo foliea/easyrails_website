@@ -3,4 +3,4 @@
 #= require ace/mode-html
 #= require active_admin/base
 #= require_self
-#= require pages_editor
+#= require active_admin_editor
