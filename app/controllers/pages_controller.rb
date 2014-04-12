@@ -15,6 +15,6 @@ class PagesController < ApplicationController
   private
 
   def get_page
-    Page.get_page!(params[:name])
+    Page.get_by_name!(params[:name])
   end
 end
