@@ -1,5 +1,5 @@
 # Default admin account
-User.create(email: 'admin@example.com', password: 'password', admin: true)
+#User.create(email: 'admin@example.com', password: 'password', admin: true)
 
 # Default language
 Language.create(name: 'English', locale: 'en', default: true)
@@ -14,7 +14,8 @@ settings = [
   { keyname: 'favicon_url',           value: 'https://s.gravatar.com/avatar/6b030f9d40af0aacef77ba4ba2076985?s=40',
                                       value_format: 'string' },
   # Amazon Web Services
-  { keyname: 's3_host_name',          value: 's3-eu-west-1.amazonaws.com', value_format: 'string' }
+  { keyname: 's3_host_name',          value: 's3-eu-west-1.amazonaws.com', value_format: 'string' },
+  { keyname: 'disqus_shortname',      value: 'foliea', value_format: 'string' }
 ]
 
 settings.each do |attributes|
@@ -26,4 +27,4 @@ settings.each do |attributes|
 end
 
 Page.create(name: 'home', locale: 'en', content: '<h1>Home EN</h1>')
-Page.create(name: 'home', locale: 'fr', content: '<h1>Home FR</h1>')
+#Page.create(name: 'home', locale: 'fr', content: '<h1>Home FR</h1>')

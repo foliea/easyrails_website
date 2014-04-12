@@ -10,5 +10,5 @@
   <% end %>
 </div>
 <% if @page_decorator.commentable? %>
-  <div id="disqus_thread"></div>
+  <%= render 'pages/disqus' %>
 <% end %>
