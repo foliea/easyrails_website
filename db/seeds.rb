@@ -15,7 +15,7 @@ settings = [
                                       value_format: 'string' },
   # Amazon Web Services
   { keyname: 's3_host_name',          value: 's3-eu-west-1.amazonaws.com', value_format: 'string' },
-  { keyname: 'disqus_shortname',      value: 'foliea', value_format: 'string' }
+  { keyname: 'disqus_shortname',      value: 'adrienfolie',                value_format: 'string' }
 ]
 
 settings.each do |attributes|
