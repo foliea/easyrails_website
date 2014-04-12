@@ -12,10 +12,6 @@ class Page < ActiveRecord::Base
     page ||= self.find_by!(name: name)
   end
 
-  def commentable?
-    commentable.present?
-  end
-
   protected
 
   def parameterize_name
