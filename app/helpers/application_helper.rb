@@ -6,8 +6,8 @@ module ApplicationHelper
   def description(description)
      content_for(:description, description)
   end
-  
-  def setting(key)
+
+  def settings(key)
     AppConfig[key]
   end
 end
