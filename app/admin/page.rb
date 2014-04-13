@@ -10,7 +10,7 @@ ActiveAdmin.register Page do
   end
 
   form do |f|
-    f.inputs "Page" do
+    f.inputs 'Page' do
       f.input :name
       f.input :locale
       f.input :commentable

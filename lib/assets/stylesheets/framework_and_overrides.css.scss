@@ -3,10 +3,6 @@ img {
   @extend .img-responsive;
   margin: 0 auto;
   }
-// override for the 'Home' navigation link
-.navbar-brand {
-  font-size: inherit;
-  }
 
 // THESE ARE EXAMPLES YOU CAN MODIFY
 // create your own classes
@@ -40,3 +36,16 @@ section {
   @extend .row;
   margin-top: 20px;
   }
+
+#error_explanation {
+  @extend .alert;
+  @extend .alert-danger;
+  width: inherit;
+}
+
+.field_with_errors {
+  @extend .has-error;
+  display: inherit;
+  padding: inherit;
+  background-color: inherit;
+}

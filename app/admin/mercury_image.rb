@@ -1,10 +1,11 @@
 ActiveAdmin.register Mercury::Image do
+  menu label: 'Images'
   actions :all, except: :edit
   permit_params :image, :image_file_name
 
   form do |f|
-    f.inputs "Page" do
-      f.input :image, :required => false, :as => :file
+    f.inputs 'Image' do
+      f.input :image, required: false, as: :file, label: 'Upload'
     end
     f.actions
   end

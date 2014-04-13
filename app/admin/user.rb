@@ -11,11 +11,11 @@ ActiveAdmin.register User do
   end
 
   form do |f|
-    f.inputs "User Details" do
+    f.inputs 'User Details' do
       f.input :email
       f.input :password
       f.input :password_confirmation
-      f.input :admin, label: "Administrator"
+      f.input :admin, label: 'Administrator'
     end
     f.actions
   end
@@ -26,6 +26,6 @@ ActiveAdmin.register User do
     @user.update_columns(admin: @user.admin) unless @user.save
     redirect_to action: :show, id: @user.id
   end
-  
+
   member_action :update, method: :put, &edit
 end
