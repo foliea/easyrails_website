@@ -19,7 +19,7 @@ class OmniauthProviderDecorator
     @@decorations[@provider][:icon]
   end
 
-  def klass
+  def classes
     "btn btn-#{@@decorations[@provider][:klass]}"
   end
 
