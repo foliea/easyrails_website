@@ -1,10 +1,10 @@
 class OmniauthProviderDecorator
   @@decorations =
   {
-    linkedin:      { icon: 'linkedin-square',    klass: 'primary' },
-    twitter:       { icon: 'twitter-square',     klass: 'info'    },
-    github:        { icon: 'github',             klass: 'default' },
-    google_oauth2: { icon: 'google-plus-square', klass: 'danger'  }
+    linkedin:      { icon: 'linkedin-square',    class: 'primary' },
+    twitter:       { icon: 'twitter-square',     class: 'info'    },
+    github:        { icon: 'github',             class: 'default' },
+    google_oauth2: { icon: 'google-plus-square', class: 'danger'  }
   }
 
   def initialize(provider)
@@ -20,7 +20,7 @@ class OmniauthProviderDecorator
   end
 
   def classes
-    "btn btn-#{@@decorations[@provider][:klass]}"
+    "btn btn-#{@@decorations[@provider][:class]}"
   end
 
   def to_sym
