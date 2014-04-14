@@ -2,14 +2,18 @@
   <span><%= t('account.connect_with') %></span>
 </div>
 <% if devise_mapping.omniauthable? %>
-  <% resource_class.omniauth_providers.each do |provider| %>
-    <% @omniauth_provider_decorator = OmniauthProviderDecorator.new(provider)%>
-    <div class='top-buffer'>
-      <%=
-        link_to fa_icon(@omniauth_provider_decorator.icon, text: @omniauth_provider_decorator.title),
-                user_omniauth_authorize_path(@omniauth_provider_decorator.to_sym),
-                class: @omniauth_provider_decorator.klass
-      %>
-    </div>
+  <%
+    omniauth_providers_decorated = resource_class.omniauth_providers.map do |provider|
+      OmniauthProviderDecorator.new(provider)
+    end
+    omniauth_providers_decorated.each do |provider|
+  %>
+  <div class='top-buffer'>
+    <%=
+      link_to fa_icon(provider.icon, text: provider.title),
+              user_omniauth_authorize_path(provider.to_sym),
+              class: provider.classes
+    %>
+  </div>
   <% end %>
 <% end %>
