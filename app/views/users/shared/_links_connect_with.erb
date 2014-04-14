@@ -11,7 +11,7 @@
   <div class='top-buffer'>
     <%=
       link_to fa_icon(provider.icon, text: provider.title),
-              user_omniauth_authorize_path(provider.to_sym),
+              omniauth_authorize_path(resource_name, provider.to_sym),
               class: provider.classes
     %>
   </div>
