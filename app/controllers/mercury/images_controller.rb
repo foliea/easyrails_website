@@ -6,7 +6,8 @@ class Mercury::ImagesController < MercuryController
   respond_to :json
 
   def create
-    @image = Mercury::Image.new(image_params)
+    binding.pry
+    @image = Image.new(image_params)
     @image.save
     respond_with @image
   end
@@ -20,7 +21,7 @@ class Mercury::ImagesController < MercuryController
   private
 
   def get_image
-    Mercury::Image.find(params[:id])
+    Image.find(params[:id])
   end
 
   def image_params
