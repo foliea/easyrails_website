@@ -2,7 +2,7 @@ class PagesController < ApplicationController
   before_action :authenticate_admin!, only: :update
 
   def show
-    @page_decorator = PageDecorator.new(get_page, view_context),
+    @page_decorator = PageDecorator.new(get_page, view_context)
   end
 
   def update
