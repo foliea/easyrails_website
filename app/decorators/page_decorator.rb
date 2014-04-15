@@ -1,16 +1,16 @@
-class PageDecorator < SimpleDelegator
-  def edit_link page_path
-    "/editor#{page_path}"
+class PageDecorator < BaseDecorator
+  def edit_link
+    "/editor#{h.page_path(self)}"
   end
   
   def to_param
     "#{name.parameterize}"
   end
   
-  def data page_url
+  def data
     {
       disqus_shortname: AppConfig['disqus_shortname'],
-      disqus_url: page_url,
+      disqus_url: h.page_url(self),
       disqus_identifier: self.to_param
     }
   end
