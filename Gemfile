@@ -22,7 +22,7 @@ gem 'coffee-rails', '~> 4.0.0'
 gem 'jquery-rails'
 
 # Front-end
-gem 'bootstrap-sass'
+gem 'bootstrap-sass', '~> 4.0.0'
 gem "font-awesome-rails"
 
 # Image Uploading
