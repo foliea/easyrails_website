@@ -116,9 +116,6 @@ GEM
       railties (>= 3.2, < 5.0)
     formtastic (2.3.0.rc2)
       actionpack (>= 3.0)
-    gon (5.0.4)
-      actionpack (>= 2.3.0)
-      json
     has_scope (0.6.0.rc)
       actionpack (>= 3.2, < 5)
       activesupport (>= 3.2, < 5)
@@ -316,7 +313,6 @@ DEPENDENCIES
   devise
   factory_girl_rails
   font-awesome-rails
-  gon
   jbuilder (~> 1.2)
   jquery-rails
   mercury-rails!
