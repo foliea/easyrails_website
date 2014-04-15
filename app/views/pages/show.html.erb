@@ -10,5 +10,6 @@
   <% end %>
 </div>
 <% if @page_decorator.commentable? %>
-  <%= render 'pages/disqus' %>
+  <%= content_tag :div, id: 'disqus_thread', data: @page_decorator.data(page_url(@page_decorator)) %>
+  <%= javascript_include_tag 'page_disqus' %>
 <% end %>
