@@ -3,7 +3,8 @@
 
     var disqus_shortname = '<%= settings('disqus_shortname') %>';
     var disqus_url = '<%= page_url(@page_decorator) %>';
-
+    var disqus_identifier = '<%= @page_decorator.name %>';
+    
     var loadDisqus = function() {
       var dsq = document.createElement('script');
           dsq.type = 'text/javascript';
