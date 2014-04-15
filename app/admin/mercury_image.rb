@@ -3,6 +3,8 @@ ActiveAdmin.register Mercury::Image do
   actions :all, except: :edit
   permit_params :image, :image_file_name
 
+  # Move to mercury/images
+  
   form do |f|
     f.inputs 'Image' do
       f.input :image, required: false, as: :file, label: 'Upload'

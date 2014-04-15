@@ -10,4 +10,10 @@ module ApplicationHelper
   def settings(key)
     AppConfig[key]
   end
+  
+  def decorate decorator, instance, &block
+    capture do
+      block.call decorator.new(instance, self)
+    end
+  end
 end
