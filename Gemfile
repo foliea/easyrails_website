@@ -53,6 +53,9 @@ gem 'omniauth-github'
 gem 'omniauth-facebook'
 gem 'omniauth-google-oauth2'
 
+# Logging
+gem 'newrelic_rpm'
+
 # Server
 gem 'puma'
 
