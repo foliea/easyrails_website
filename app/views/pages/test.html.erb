@@ -5,11 +5,11 @@ decorate(PageDecorator, @page) do |page_decorated|
     content_tag(:div, page_decorated.content, id: page_decorated.div_id, data: page_decorated.mercury_data)
   
     if current_user && current_user.admin?
-      link_to(t('page.edit.link'), page_decorated.edit_link, class: 'top-buffer')
+      + link_to(t('page.edit.link'), page_decorated.edit_link, class: 'top-buffer')
     end
   
     if page_decorated.commentable?
-      content_tag(:div, nil, id: page_decorated.disqus_id, data: page_decorated.disqus_data)
+      + content_tag(:div, nil, id: page_decorated.disqus_id, data: page_decorated.disqus_data)
     end
     )
 end
