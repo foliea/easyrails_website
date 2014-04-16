@@ -11,6 +11,14 @@ class PageDecorator < BaseDecorator
     h.raw super
   end
 
+  def div_id
+    'page_content'
+  end
+
+  def disqus_id
+    'disqus_thread'
+  end
+
   def mercury_data
     { mercury: 'full' }
   end
