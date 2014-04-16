@@ -1,14 +1,15 @@
 <%= title @page_decorator.title if @page_decorator.title.present? %>
+<%=
+decorate(PageDecorator, @page) do |page_decorator|
+  content = content_tag(:div, page_decorator.content, data: page_decorator.mercury_data)
 
-<div class="content">
-  <%= content_tag(:div, @page_decorator.content, data: @page_decorator.mercury_data) %>
+  if current_user && current_user.admin?
+    content << link_to(t('page.edit.link'), page_decorator.edit_link, class: 'top-buffer')
+  end
 
-  <% if current_user && current_user.admin? %>
-    <p><%= link_to t('page.edit.link'), @page_decorator.edit_link, class: 'top-buffer' %></p>
-  <% end %>
-
-</div>
-
-<% if @page_decorator.commentable? %>
-  <%= content_tag(:div, nil, id: 'disqus_thread', data: @page_decorator.disqus_data) %>
-<% end %>
+  if page_decorator.commentable?
+    content << content_tag(:div, nil, id: 'disqus_thread', data: @page_decorator.disqus_data)
+  end
+  content
+end
+%>

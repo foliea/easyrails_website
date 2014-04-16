@@ -3,6 +3,7 @@ class PagesController < ApplicationController
 
   def show
     @page_decorator = PageDecorator.new(get_page, view_context)
+    @page = get_page
   end
 
   def update
