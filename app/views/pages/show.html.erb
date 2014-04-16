@@ -1,4 +1,4 @@
-<%= title @page_decorator.title if @page_decorator.title.present? %>
+<%= title @page.title if @page.title.present? %>
 <%=
 decorate(PageDecorator, @page) do |page_decorator|
   content = content_tag(:div, page_decorator.content, data: page_decorator.mercury_data)
