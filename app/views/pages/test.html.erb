@@ -9,7 +9,7 @@ decorate(PageDecorator, @page) do |page_decorator|
     end
   
     if page_decorator.commentable?
-      content_tag(:div, nil, id: 'disqus_thread', data: @page_decorator.disqus_data)
+      content_tag(:div, nil, id: 'disqus_thread', data: page_decorator.disqus_data)
     end
     content
     )
