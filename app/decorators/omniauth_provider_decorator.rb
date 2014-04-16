@@ -7,8 +7,9 @@ class OmniauthProviderDecorator
     google_oauth2: { icon: 'google-plus-square', class: 'danger'  }
   }
 
-  def initialize(provider)
+  def initialize(provider, view_context)
     @provider = provider
+    @view_context = view_context
   end
 
   def title
@@ -21,6 +22,10 @@ class OmniauthProviderDecorator
 
   def classes
     "btn btn-#{@@decorations[@provider][:class]}"
+  end
+
+  def h
+    @view_context
   end
 
   def to_sym
