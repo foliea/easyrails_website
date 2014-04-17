@@ -17,7 +17,7 @@ class PageDecorator < BaseDecorator
 
   def disqus_data
     {
-      disqus_shortname: AppConfig['disqus_shortname'],
+      disqus_shortname: h.setting('disqus_shortname'),
       disqus_url: h.page_url(self),
       disqus_identifier: self.to_param
     }
