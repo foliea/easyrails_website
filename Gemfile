@@ -53,7 +53,7 @@ gem 'omniauth-github'
 gem 'omniauth-facebook'
 gem 'omniauth-google-oauth2'
 
-# Logging
+# Monitoring
 gem 'newrelic_rpm'
 
 # Server
