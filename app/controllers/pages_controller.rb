@@ -1,14 +1,11 @@
 class PagesController < ApplicationController
   before_action :authenticate_admin!, only: :update
-
-  def show
-    #@page_decorator = PageDecorator.new(get_page, view_context)
-    @page = get_page
-  end
+  before_action :get_page
+  
+  def show ; end
 
   def update
-    @page = get_page
-    @page.content = params[:page_content][:value]
+    @page.content = params[:content][:page_content][:value]
     @page.save!
     render json: {}
   end
@@ -16,6 +13,6 @@ class PagesController < ApplicationController
   private
 
   def get_page
-    Page.get_by_name!(params[:name])
+    @page = Page.get_by_name!(params[:name])
   end
 end
