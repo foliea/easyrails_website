@@ -1,14 +1,14 @@
 <%= title @page.title if @page.title.present? %>
 <%=
 decorate(PageDecorator, @page) do |page_decorated|
-    c = content_tag(:div, page_decorated.content, id: 'page_content', data: page_decorated.mercury_data)
+    c = content_tag(:div, page_decorated.content, id: :page_content, data: page_decorated.mercury_data)
 
     if current_user && current_user.admin?
-      c << link_to(t('page.edit.link'), page_decorated.edit_link, id: 'edit_link', class: 'top-buffer')
+      c << link_to(t('page.edit.link'), page_decorated.edit_link, id: :edit_link, class: 'top-buffer')
     end
 
     if page_decorated.commentable?
-      c << content_tag(:div, nil, id: 'disqus_thread', data: page_decorated.disqus_data)
+      c << content_tag(:div, nil, id: :disqus_thread, data: page_decorated.disqus_data)
     end
     c
 end
