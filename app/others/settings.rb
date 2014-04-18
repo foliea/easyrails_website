@@ -1,7 +1,7 @@
 module Settings
   extend self
   
-  def reload
+  def load
     AppConfig.reload
     ActiveAdmin.setup do |c|
       c.site_title = proc { AppConfig['site_title'] }
