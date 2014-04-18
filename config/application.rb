@@ -16,8 +16,9 @@ module EasyRailsWebsite
     I18n.reload!
 
     config.after_initialize do
-      AppConfig.configure(:model => Setting)
+     
       if Setting.table_exists?
+        AppConfig.configure(:model => Setting)
         AppConfig.load
         Settings.reload
       end
