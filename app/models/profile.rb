@@ -5,9 +5,7 @@ class Profile < ActiveRecord::Base
                       uniqueness: true
 
   # This method associates the attribute ":avatar" with a file attachment
-  has_attached_file :avatar, styles: {
-    medium: '300x300>'
-  }
+  has_attached_file :avatar, styles: { medium: '300x300>' }
 
   # Validate the attached image is image/jpg, image/png, etc
   validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\Z/
@@ -15,5 +13,6 @@ class Profile < ActiveRecord::Base
 
   def picture_from_url(url)
     self.avatar = URI.parse(url)
+    @avatar_remote_url = url_value
   end
 end
