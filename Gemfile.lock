@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/gregbell/active_admin.git
-  revision: ac15e74415b70dc29f8ce4ee50300d0e4f8ef9e8
+  revision: 5b7fa25b1e0dcdea1a9494976129f8fc9374c6f2
   specs:
     activeadmin (1.0.0.pre)
       arbre (~> 1.0)
@@ -128,7 +128,7 @@ GEM
     jquery-rails (3.1.0)
       railties (>= 3.0, < 5.0)
       thor (>= 0.14, < 2.0)
-    jquery-ui-rails (4.2.0)
+    jquery-ui-rails (4.2.1)
       railties (>= 3.2.16)
     json (1.8.1)
     jwt (0.1.11)
@@ -139,7 +139,7 @@ GEM
     mail (2.5.4)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
-    meta_request (0.2.9)
+    meta_request (0.3.0)
       callsite
       rack-contrib
       railties
@@ -229,7 +229,7 @@ GEM
       activesupport (= 4.0.4)
       rake (>= 0.8.7)
       thor (>= 0.18.1, < 2.0)
-    rake (10.2.2)
+    rake (10.3.0)
     ransack (1.2.2)
       actionpack (>= 3.0)
       activerecord (>= 3.0)
