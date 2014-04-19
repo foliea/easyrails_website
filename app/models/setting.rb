@@ -1,5 +1,5 @@
 class Setting < ActiveRecord::Base
-  #after_save :reload
+  after_save :reload
 
   validates :keyname, :value, presence: true
   validates :keyname, uniqueness: true
@@ -7,6 +7,6 @@ class Setting < ActiveRecord::Base
   protected
 
   def reload
-    Settings.reload
+    AppConfig.reload
   end
 end
