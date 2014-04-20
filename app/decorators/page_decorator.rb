@@ -1,6 +1,6 @@
 class PageDecorator < BaseDecorator
   def edit_link
-    "/editor#{h.page_path(self)}"
+    h.mercury_edit_path(h.page_path(self))
   end
 
   def to_param
