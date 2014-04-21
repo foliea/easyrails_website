@@ -1,6 +1,6 @@
 ActiveAdmin.register Language do
 
-  permit_params :name, :code, :default
+  permit_params :name, :locale, :default
 
   form do |f|
     f.inputs 'Language' do
