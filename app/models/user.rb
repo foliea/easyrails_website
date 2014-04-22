@@ -1,6 +1,5 @@
 class User < ActiveRecord::Base
   has_one :profile, dependent: :destroy
-  has_many :comments
   before_create :set_profile
 
   devise :database_authenticatable,
