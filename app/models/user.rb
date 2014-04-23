@@ -13,13 +13,13 @@ class User < ActiveRecord::Base
 
   def self.get_by_provider provider, uid
     if provider.present? && uid.present?
-      user = self.where(provider: provider, uid: uid).first
+      user = find_by(provider: provider, uid: uid)
     end
   end
 
   def self.get_by_email email
     if email.present?
-      user = self.where(email: email).first
+      user = find_by(email: email)
     end
   end
 
