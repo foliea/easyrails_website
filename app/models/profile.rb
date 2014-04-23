@@ -1,7 +1,7 @@
 class Profile < ActiveRecord::Base
   belongs_to  :user
 
-  validates :user_id, presence: true,
+  validates :user, presence: true,
                       uniqueness: true
 
   # This method associates the attribute ":avatar" with a file attachment
