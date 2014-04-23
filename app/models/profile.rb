@@ -2,7 +2,7 @@ class Profile < ActiveRecord::Base
   belongs_to  :user
 
   validates :user, presence: true,
-                      uniqueness: true
+                   uniqueness: true
 
   # This method associates the attribute ":avatar" with a file attachment
   has_attached_file :avatar, styles: { medium: '300x300>' }
