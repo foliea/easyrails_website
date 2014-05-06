@@ -15,17 +15,17 @@ Devise.setup do |config|
   require 'omniauth-github'
   require 'omniauth-google-oauth2'
   
-  config.omniauth :linkedin, ENV['LINKEDIN_APP_ID'], ENV['LINKEDIN_APP_SECRET']
-  config.omniauth :twitter, ENV['TWITTER_APP_ID'], ENV['TWITTER_APP_SECRET']
-  config.omniauth :github, ENV['GITHUB_APP_ID'], ENV['GITHUB_APP_SECRET']
-  config.omniauth :google_oauth2, ENV['GOOGLE_APP_ID'], ENV['GOOGLE_APP_SECRET']
+  config.omniauth :linkedin,      ENV['LINKEDIN_APP_ID'], ENV['LINKEDIN_APP_SECRET']
+  config.omniauth :twitter,       ENV['TWITTER_APP_ID'],  ENV['TWITTER_APP_SECRET']
+  config.omniauth :github,        ENV['GITHUB_APP_ID'],   ENV['GITHUB_APP_SECRET']
+  config.omniauth :google_oauth2, ENV['GOOGLE_APP_ID'],   ENV['GOOGLE_APP_SECRET']
   
    # config.after_initialize do
   # ==> Mailer Configuration
   # Configure the e-mail address which will be shown in Devise::Mailer,
   # note that it will be overwritten if you use your own mailer class
   # with default "from" parameter.
-  config.mailer_sender = 'please-change-me-at-config-initializers-devise@example.com'
+  config.mailer_sender = Proc.new { AppConfig[:email_mailer] }
   
   # Configure the class responsible to send e-mails.
   # config.mailer = 'Devise::Mailer'
