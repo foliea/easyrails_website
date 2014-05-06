@@ -11,6 +11,7 @@ settings = [
   { keyname: 'site_owner',            value: 'Adrien Folie',               value_format: 'string' },
   { keyname: 'site_description',      value: 'Adrien Folie blog',          value_format: 'string' },
   { keyname: 'site_date_start_end',   value: '2014',                       value_format: 'string' },
+  { keyname: 'mailer_sender',         value: 'adrien@foliea.io',           value_format: 'string' },
   { keyname: 'favicon_url',           value: 'https://s.gravatar.com/avatar/6b030f9d40af0aacef77ba4ba2076985?s=40',
                                       value_format: 'string' },
   # Amazon Web Services

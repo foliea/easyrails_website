@@ -11,7 +11,7 @@
           <%= devise_error_messages! %>
           <div class="form-group">
             <%= f.label :email, t('account.field.email') %>
-            <%= f.email_field :email, :autofocus: true, class: 'form-control' %>
+            <%= f.email_field :email, autofocus: true, class: 'form-control' %>
           </div>
           <%= button_tag(type: 'submit', class: "btn btn-primary") do %>
             <%= fa_icon 'envelope-o', text: t('account.recover.button') %>
@@ -20,8 +20,6 @@
         <%= render "users/shared/links" %>
       </div>
     </div>
+  </div>
   <div class="col-md-4"></div>
 </div>
-
-
-

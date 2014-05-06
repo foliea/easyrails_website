@@ -20,9 +20,9 @@ module EasyRailsWebsite
         AppConfig.configure(:model => Setting)
         AppConfig.load
       end
-      
+
       if Language.table_exists?
-        I18n.default_locale = Language.get_default.locale
+        I18n.default_locale    = Language.get_default.locale
         I18n.available_locales = Language.available_locales
       end
     end
