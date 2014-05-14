@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::Base
-  include AdminAuthentication
+  include Authentication
 
   protect_from_forgery with: :exception
 

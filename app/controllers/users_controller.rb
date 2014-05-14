@@ -21,10 +21,4 @@ class UsersController < ApplicationController
     @user = User.find params[:id]
   end
 
-   def check_ownership!
-    if @user != current_user
-      redirect_to root_url, alert: I18n.t('account.unauthorized')
-    end
-  end
-
 end

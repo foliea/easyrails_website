@@ -1,4 +1,4 @@
-module AdminAuthentication
+module Authentication
 
   protected
 
@@ -6,6 +6,12 @@ module AdminAuthentication
     authenticate_user!
     unless current_user.admin?
       unauthorized
+    end
+  end
+
+  def check_ownership!
+    if @user != current_user
+      unauthorized   
     end
   end
 
