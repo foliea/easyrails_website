@@ -16,4 +16,11 @@ module ApplicationHelper
       block.call decorator.new(instance, self)
     end
   end
+  
+  def include_javascripts
+    case controller.controller_name 
+    when 'pages'
+      javascript_include_tag 'pages'
+    end
+  end
 end
