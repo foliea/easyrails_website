@@ -1,5 +1,5 @@
 class ProfilesController < ApplicationController
-  before_action :get_profile
+  before_action :set_profile
   before_action :authenticate_user!, only: [:edit, :update]
   before_action :check_ownership, only: [:edit, :update]
 
@@ -19,7 +19,7 @@ class ProfilesController < ApplicationController
 
   private
 
-  def get_profile
+  def set_profile
     @profile = Profile.find params[:id]
   end
 

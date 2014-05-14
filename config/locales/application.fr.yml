@@ -90,6 +90,11 @@ fr:
     confirm:
       title: "Réenvoyer un courriel de confirmation"
       button: "Réenvoyer"
+    email:
+      title: "Confirmation de l'adresse email"
+      notice: "Veuillez confirmer votre adresse email."
+      success: "Votre adresse email a été sauvegardée avec succès."
+      button: "Confirmer"
     links:
       sign_in: "Connexion"
       register: "Inscription"

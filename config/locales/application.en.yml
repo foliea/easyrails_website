@@ -89,6 +89,11 @@ en:
     confirm:
       title: "Resend confirmation instructions"
       button: "Resend"
+    email:
+      title: "Email confirmation"
+      notice: "Please confirm your email address."
+      success: "Your email address was successfully updated."
+      button: "Confirm"
     links:
       sign_in: "Sign in"
       register: "Register"

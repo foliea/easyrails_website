@@ -1,6 +1,6 @@
 class PagesController < ApplicationController
   before_action :authenticate_admin!, only: :update
-  before_action :get_page
+  before_action :set_page
   
   def show ; end
 
@@ -12,7 +12,7 @@ class PagesController < ApplicationController
 
   private
 
-  def get_page
+  def set_page
     @page = Page.get_by_name!(params[:name])
   end
 end

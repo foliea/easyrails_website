@@ -1,4 +1,6 @@
 class User < ActiveRecord::Base
+  TEMP_EMAIL = 'temp@temp.io'
+
   has_one :profile, dependent: :destroy
   before_create :set_profile
 
@@ -11,21 +13,24 @@ class User < ActiveRecord::Base
             :omniauthable
   validates :email, :password, presence: true
 
-  def self.get_by_provider provider, uid
-    if provider.present? && uid.present?
-      user = find_by(provider: provider, uid: uid)
+  def self.get_from_oauth provider, uid, email
+    user = find_by(provider: provider, uid: uid)
+    if user.nil? && email.present?
+     user = find_by(email: email)
     end
-  end
-
-  def self.get_by_email email
-    if email.present?
-      user = find_by(email: email)
+    if user.nil?
+      user = self.create(provider: provider,
+                         uid:      uid,
+                         email:    TEMP_EMAIL,
+                         password: Devise.friendly_token[0,20],
+                        )
     end
   end
 
   protected
 
   def set_profile
+    binding.pry
     self.create_profile
   end
 

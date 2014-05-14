@@ -1,0 +1,31 @@
+<%= title t('account.email.title') %>
+<div class="row top-buffer clearfix">
+  <div class="col-md-3"></div>
+  <div class="col-md-6">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title"><%= t('account.email.title') %></h3>
+      </div>
+      <div class="panel-body">
+        <%= form_for(@user, as: 'user', url: add_user_email_path(@user), html: { role: 'form'}) do |f| %>
+         <% if @show_errors && @user.errors.any? %>
+          <div id="error_explanation">
+            <% @user.errors.full_messages.each do |msg| %>
+            <%= msg %><br>
+            <% end %>
+          </div>
+          <% end %>
+          <div class="form-group">
+            <%= f.label :email %>
+            <%= f.text_field :email, autofocus: true, value: '', class: 'form-control input-lg'  %>
+            <p class="help-block"><%= t('account.email.notice') %></p>
+          </div>
+          <div class="actions">
+            <%= f.submit t('account.email.button'), class: 'btn btn-primary' %>
+          </div>
+        <% end %>
+        </div>
+      </div>
+    </div>
+  <div class="col-md-3"></div>
+</div>
