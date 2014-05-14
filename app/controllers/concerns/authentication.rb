@@ -1,5 +1,11 @@
 module Authentication
 
+  def self.included base
+    base.class_eval do
+      before_action :ensure_valid_email
+    end
+  end
+
   protected
 
   def authenticate_admin!
@@ -19,4 +25,22 @@ module Authentication
     flash[:alert] = I18n.t('account.unauthorized')
     redirect_to root_path
   end
+
+  def ensure_valid_email
+    binding.pry
+    return if action_name == 'add_email'
+
+    if current_user && current_user.email == User::TEMP_EMAIL
+      redirect_to add_user_email_path(current_user)
+    end
+  end 
+
+  def devise_parameter_sanitizer
+    if resource_class == User
+      UserParameterSanitizer.new(User, :user, params)
+    else
+      super
+    end
+  end
+
 end
