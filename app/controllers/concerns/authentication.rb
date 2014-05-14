@@ -11,23 +11,22 @@ module Authentication
   def authenticate_admin!
     authenticate_user!
     unless current_user.admin?
-      unauthorized
+      unauthorized!
     end
   end
 
   def check_ownership!
     if @user != current_user
-      unauthorized   
+      unauthorized!  
     end
   end
 
-  def unauthorized
+  def unauthorized!
     flash[:alert] = I18n.t('account.unauthorized')
     redirect_to root_path
   end
 
   def ensure_valid_email
-    binding.pry
     return if action_name == 'add_email'
 
     if current_user && current_user.email == User::TEMP_EMAIL

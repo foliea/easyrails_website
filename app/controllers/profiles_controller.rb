@@ -29,7 +29,7 @@ class ProfilesController < ApplicationController
 
   def check_ownership
     if @profile != current_user.profile
-      redirect_to @profile, alert: I18n.t('account.unauthorized')
+      unauthorized!
     end
   end
 
