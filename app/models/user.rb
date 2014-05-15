@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
-  TEMP_EMAIL = 'temp@temp.io'
+  TEMP_EMAIL       = '@temp.com'
+  TEMP_EMAIL_REGEX = /.+#{TEMP_EMAIL}$/
 
   has_one :profile, dependent: :destroy
   before_create :set_profile
@@ -21,7 +22,7 @@ class User < ActiveRecord::Base
     if user.nil?
       user = self.create(provider: provider,
                          uid:      uid,
-                         email:    TEMP_EMAIL,
+                         email:    "#{uid}_#{provider}#{TEMP_EMAIL}",
                          password: Devise.friendly_token[0,20],
                         )
     end
@@ -30,7 +31,6 @@ class User < ActiveRecord::Base
   protected
 
   def set_profile
-    binding.pry
     self.create_profile
   end
 

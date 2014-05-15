@@ -29,7 +29,7 @@ module Authentication
   def ensure_valid_email
     return if action_name == 'add_email'
 
-    if current_user && current_user.email == User::TEMP_EMAIL
+    if current_user && User::TEMP_EMAIL_REGEX.match(current_user.email)
       redirect_to add_user_email_path(current_user)
     end
   end 
