@@ -20,7 +20,7 @@ ActiveAdmin.register User do
   end
 
   edit = Proc.new do
-    @user = User.find_or_create_by_id(params[:id])
+    @user = User.find_or_create_by(id: params[:id])
     @user.admin = params[:user][:admin]
     @user.update_columns(admin: @user.admin) unless @user.save
     redirect_to action: :show, id: @user.id
