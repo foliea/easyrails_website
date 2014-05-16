@@ -2,8 +2,8 @@ class User < ActiveRecord::Base
   TEMP_EMAIL       = '@temp.com'
   TEMP_EMAIL_REGEX = /.+#{TEMP_EMAIL}$/
 
-  has_one :profile#, dependent: :destroy
-  #before_create :set_profile
+  has_one :profile, dependent: :destroy
+  before_create :set_profile
 
   devise :database_authenticatable,
             :registerable,
@@ -30,7 +30,7 @@ class User < ActiveRecord::Base
   protected
 
   def set_profile
-   self.create_profile
+   self.profile = Profile.create
   end
 
 end
