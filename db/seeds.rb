@@ -1,5 +1,5 @@
 # Default admin account
-#User.create(email: 'admin@example.com', password: 'password', admin: true)
+User.create(email: 'admin@example.com', password: 'password', admin: true)
 
 # Default language
 Language.create(name: 'English', locale: 'en', default: true)
