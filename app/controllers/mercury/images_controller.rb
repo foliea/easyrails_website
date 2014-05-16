@@ -1,5 +1,5 @@
 class Mercury::ImagesController < MercuryController
-  include AdminAuthentication
+  include Authentication
 
   before_action :authenticate_admin!
 
