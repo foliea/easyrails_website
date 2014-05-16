@@ -30,7 +30,7 @@ class User < ActiveRecord::Base
   protected
 
   def set_profile
-    self.create_profile
+ #   self.create_profile
   end
 
 end
