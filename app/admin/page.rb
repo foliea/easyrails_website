@@ -6,7 +6,7 @@ ActiveAdmin.register Page do
     column :locale
     column :created_at
     column :updated_at
-    default_actions
+    actions
   end
 
   form do |f|

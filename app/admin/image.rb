@@ -8,7 +8,7 @@ ActiveAdmin.register Image do
     column :image_file_size
     column :created_at
     column :updated_at
-    default_actions
+    actions 
   end
 
   show do |s|

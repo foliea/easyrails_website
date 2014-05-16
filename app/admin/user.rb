@@ -8,7 +8,7 @@ ActiveAdmin.register User do
     column :admin
     column :created_at
     column :updated_at
-    default_actions
+    actions
   end
 
   form do |f|
