@@ -7,7 +7,6 @@ class UsersController < ApplicationController
     if params[:user]
       current_user.email = params[:user][:email].presence
 
-      binding.pry
       if current_user.valid? || current_user.errors[:email].blank?
         current_user.update_columns(email: params[:user][:email])
         return redirect_to root_url, notice: I18n.t('account.email.success')
