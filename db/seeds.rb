@@ -31,4 +31,3 @@ end
 Page.create(name: 'home', locale: 'en', content: '<h1>Home EN</h1>')
 #Page.create(name: 'home', locale: 'fr', content: '<h1>Home FR</h1>')
 
-Setting.find_by(keyname: 'site_title_link').destroy!
