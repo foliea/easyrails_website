@@ -94,6 +94,7 @@ fr:
       title: "Confirmation de l'adresse email"
       notice: "Veuillez confirmer votre adresse email."
       success: "Votre adresse email a été sauvegardée avec succès."
+      error: "Email invalide."
       button: "Confirmer"
     links:
       sign_in: "Connexion"

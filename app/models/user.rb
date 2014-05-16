@@ -19,13 +19,12 @@ class User < ActiveRecord::Base
     if user.nil? && email.present?
      user = find_by(email: email)
     end
-    if user.nil?
-      user = self.create(provider: provider,
-                         uid:      uid,
-                         email:    "#{uid}_#{provider}#{TEMP_EMAIL}",
-                         password: Devise.friendly_token[0,20],
-                        )
-    end
+    return user if user.present?
+    user = self.create(provider: provider,
+                       uid:      uid,
+                       email:    "#{uid}_#{provider}#{TEMP_EMAIL}",
+                       password: Devise.friendly_token[0,20],
+                      )
   end
 
   protected

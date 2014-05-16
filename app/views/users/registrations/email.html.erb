@@ -8,11 +8,9 @@
       </div>
       <div class="panel-body">
         <%= form_for(@user, as: 'user', url: add_user_email_path(@user), html: { role: 'form'}) do |f| %>
-         <% if @show_errors && @user.errors.any? %>
+         <% if @show_error %>
           <div id="error_explanation">
-            <% @user.errors.full_messages.each do |msg| %>
-            <%= msg %><br>
-            <% end %>
+            <%= t('account.email.error') %>
           </div>
           <% end %>
           <div class="form-group">

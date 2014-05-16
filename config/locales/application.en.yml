@@ -93,6 +93,7 @@ en:
       title: "Email confirmation"
       notice: "Please confirm your email address."
       success: "Your email address was successfully updated."
+      error: "Email invalid."
       button: "Confirm"
     links:
       sign_in: "Sign in"
