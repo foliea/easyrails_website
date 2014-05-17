@@ -14,16 +14,14 @@
       <%= render 'layouts/navigation', languages_available: @languages_available %>
     </header>
     <main role="main">
-      <div class="top-buffer">
-        <div class="container" role="main">
-          <%= render 'layouts/messages' %>
-          <%= yield %>
-          <hr>
-          <footer>
-            <%= render 'layouts/footer' %>
-          </footer>
-        </div>
-      </div>
+      <section class="container">
+        <%= render 'layouts/messages' %>
+        <%= yield %>
+        <hr>
+        <footer>
+          <%= render 'layouts/footer' %>
+        </footer>
+      </section>
     </main>
   </body>
 </html>
