@@ -15,4 +15,5 @@ class Profile < ActiveRecord::Base
     self.avatar = URI.parse(url)
     @avatar_remote_url = url_value
   end
+
 end
