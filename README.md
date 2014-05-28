@@ -6,3 +6,4 @@ to promote themselves with a user friendly customizable website.
 ## Warning
 
 This project is still at an early development stage. Don't use it yet.
+It's also my first project with rails, don't blame me.
