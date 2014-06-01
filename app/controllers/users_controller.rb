@@ -14,7 +14,6 @@ class UsersController < ApplicationController
        @show_error = true 
       end
     end
-    render 'users/registrations/email'
   end
 
   private

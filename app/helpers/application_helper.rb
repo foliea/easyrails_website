@@ -17,10 +17,10 @@ module ApplicationHelper
     end
   end
   
-  def include_javascripts
+  def include_specifics_javascripts
     case controller.controller_name 
     when 'pages'
-      javascript_include_tag 'pages'
+      javascript_include_tag 'page'
     end
   end
 end

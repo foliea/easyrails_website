@@ -6,7 +6,6 @@ class Mercury::ImagesController < MercuryController
   respond_to :json
 
   def create
-    binding.pry
     @image = Image.new(image_params)
     @image.save
     respond_with @image
