@@ -17,7 +17,7 @@ module EasyRailsWebsite
 
     config.after_initialize do
       if Setting.table_exists?
-        AppConfig.configure(:model => Setting)
+        AppConfig.configure(model: Setting)
         AppConfig.load
       end
 
@@ -26,6 +26,5 @@ module EasyRailsWebsite
         I18n.available_locales = Language.available_locales
       end
     end
-
   end
 end

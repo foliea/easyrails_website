@@ -1,5 +1,4 @@
 class PageDecorator < BaseDecorator
- 
   def edit_link
     h.mercury_edit_path(h.page_path(self))
   end
@@ -20,8 +19,7 @@ class PageDecorator < BaseDecorator
     {
       disqus_shortname:   h.settings(:disqus_shortname),
       disqus_url:         h.page_url(self),
-      disqus_identifier:  self.to_param
+      disqus_identifier:  to_param
     }
   end
-
 end

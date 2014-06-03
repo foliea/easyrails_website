@@ -1,6 +1,6 @@
 class UserParameterSanitizer < Devise::ParameterSanitizer
-    private
-    
+  private
+
     def account_update
       default_params.permit(:email, :password, :password_confirmation, :current_password, :provider, :uid)
     end

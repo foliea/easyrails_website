@@ -1,5 +1,5 @@
 class Profile < ActiveRecord::Base
-  belongs_to  :user
+  belongs_to :user
 
   validates :user, presence: true,
                    uniqueness: true
@@ -15,5 +15,4 @@ class Profile < ActiveRecord::Base
     self.avatar = URI.parse(url)
     @avatar_remote_url = url_value
   end
-
 end

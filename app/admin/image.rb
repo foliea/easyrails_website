@@ -8,21 +8,21 @@ ActiveAdmin.register Image do
     column :image_file_size
     column :created_at
     column :updated_at
-    actions 
+    actions
   end
 
   show do |s|
-    attributes_table do
-      row :image_file_name
-      row :image_content_type
-      row :image_file_size
-      row :image do
-        s.image.url(:medium)
-      end
-      row :image do
-        image_tag(s.image.url(:medium))
-      end
-    end
+     attributes_table do
+       row :image_file_name
+       row :image_content_type
+       row :image_file_size
+       row :image do
+         s.image.url(:medium)
+       end
+       row :image do
+         image_tag(s.image.url(:medium))
+       end
+     end
    end
 
   form do |f|

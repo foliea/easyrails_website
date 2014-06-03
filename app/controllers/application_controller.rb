@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
 
   before_action :set_locale
   before_action :set_languages_available
-  
+
   protected
 
   def set_locale
@@ -19,6 +19,5 @@ class ApplicationController < ActionController::Base
 
   def set_languages_available
     @languages_available ||= Language.all
-  end 
-
+  end
 end

@@ -1,5 +1,4 @@
 class OmniauthCallbacksController < Devise::OmniauthCallbacksController
-
   [:linkedin, :twitter, :github, :facebook, :google_oauth2].each do |method_name|
     define_method(method_name) { authenticate }
   end
@@ -11,8 +10,8 @@ class OmniauthCallbacksController < Devise::OmniauthCallbacksController
 
     if auth.present?
       user_params = format_to_user_params auth
-      user = User.get_from_oauth(user_params[:provider].presence, 
-                                 user_params[:uid].presence, 
+      user = User.get_from_oauth(user_params[:provider].presence,
+                                 user_params[:uid].presence,
                                  user_params[:email].presence)
       if user.present?
         flash[:notice] = I18n.t 'devise.omniauth_callbacks.success', kind: auth.provider
@@ -23,13 +22,13 @@ class OmniauthCallbacksController < Devise::OmniauthCallbacksController
     redirect_to new_user_registration_url
   end
 
-  def format_to_user_params auth
+  def format_to_user_params(auth)
     new_user_params = {
-                        provider:   auth.provider.presence,
-                        uid:        auth.uid.presence,
-                        name:       auth.info.name.presence,
-                        image:      auth.info.image.presence,
-                        email:      auth.info.email.presence
-                      }
+      provider:   auth.provider.presence,
+      uid:        auth.uid.presence,
+      name:       auth.info.name.presence,
+      image:      auth.info.image.presence,
+      email:      auth.info.email.presence
+    }
   end
 end

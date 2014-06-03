@@ -32,13 +32,13 @@ EasyRailsWebsite::Application.configure do
   config.action_mailer.delivery_method = :smtp
 
   config.action_mailer.smtp_settings = {
-    address: ENV["EMAIL_URL"],
-    port:    ENV["EMAIL_PORT"],
-    domain:  ENV["EMAIL_DOMAIN"],
-    authentication: "plain",
+    address: ENV['EMAIL_URL'],
+    port:    ENV['EMAIL_PORT'],
+    domain:  ENV['EMAIL_DOMAIN'],
+    authentication: 'plain',
     enable_starttls_auto: true,
-    user_name: ENV["EMAIL_USERNAME"],
-    password:  ENV["EMAIL_PASSWORD"]
+    user_name: ENV['EMAIL_USERNAME'],
+    password:  ENV['EMAIL_PASSWORD']
   }
 
   config.paperclip_defaults = {

@@ -11,7 +11,7 @@ class UsersController < ApplicationController
         current_user.update_columns(email: params[:user][:email])
         return redirect_to root_url, notice: I18n.t('account.email.success')
       else
-       @show_error = true 
+        @show_error = true
       end
     end
   end
@@ -21,5 +21,4 @@ class UsersController < ApplicationController
   def set_user
     @user = User.find params[:id]
   end
-
 end

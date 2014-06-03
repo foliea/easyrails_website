@@ -1,12 +1,12 @@
 class AccountTest < ActionDispatch::IntegrationTest
   fixtures :all
 
-  test "Account registration valid" do
+  test 'Account registration valid' do
     register('test_registration@example.com', 'password1234', 'password1234')
     assert_not_equal new_user_registration_path, current_path
   end
 
-  test "Account registration invalid" do
+  test 'Account registration invalid' do
     register('test_registration@example.com', 'password1234', '')
     assert_equal user_registration_path, current_path
   end

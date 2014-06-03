@@ -19,7 +19,7 @@ ActiveAdmin.register User do
     f.actions
   end
 
-  edit = Proc.new do
+  edit = proc do
     @user = User.find_or_create_by(id: params[:id])
     @user.admin = params[:user][:admin]
     @user.update_columns(admin: @user.admin) unless @user.save

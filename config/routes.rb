@@ -11,9 +11,9 @@ EasyRailsWebsite::Application.routes.draw do
   resources :profiles, only: [:show, :edit, :update]
 
   devise_for :users, controllers: { omniauth_callbacks: 'omniauth_callbacks' }
-  
+
   match 'users/:id/add_email/', to: 'users#add_email', as: :add_user_email, via: [:get, :patch]
-  
+
   resources :pages, param: :name, only: [:show, :update]
 
   namespace :mercury do

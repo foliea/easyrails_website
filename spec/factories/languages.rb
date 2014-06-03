@@ -5,7 +5,7 @@ FactoryGirl.define do
     default false
 
     factory :language_mandatory do
-       default nil
+      default nil
     end
   end
 end

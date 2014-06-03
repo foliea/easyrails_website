@@ -7,13 +7,13 @@ class CreateProfiles < ActiveRecord::Migration
       t.string :public_email
       t.text :description
       t.string :image
-      
+
       t.belongs_to :user
       t.timestamps
     end
   end
-  
+
   def down
-    drop_table :profiles  
+    drop_table :profiles
   end
 end

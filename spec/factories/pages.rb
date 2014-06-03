@@ -2,9 +2,9 @@
 
 FactoryGirl.define do
   factory :page do
-    name "MyString"
-    content "MyText"
-    locale "MyString"
-    tag "MyString"
+    name 'MyString'
+    content 'MyText'
+    locale 'MyString'
+    tag 'MyString'
   end
 end

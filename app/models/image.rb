@@ -1,8 +1,7 @@
 class Image < ActiveRecord::Base
-
-  has_attached_file :image, styles: { medium: "300x300>", thumb: "100x100>" },
-        path: ":rails_root/public/system/:attachment/:id/:style/:filename",
-        url: "/system/:attachment/:id/:style/:filename"
+  has_attached_file :image, styles: { medium: '300x300>', thumb: '100x100>' },
+                            path: ':rails_root/public/system/:attachment/:id/:style/:filename',
+                            url: '/system/:attachment/:id/:style/:filename'
 
   delegate :url, to: :image
 
@@ -16,5 +15,4 @@ class Image < ActiveRecord::Base
     options[:methods] << :url
     super(options)
   end
-
 end

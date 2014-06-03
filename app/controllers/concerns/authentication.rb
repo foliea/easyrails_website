@@ -1,6 +1,5 @@
 module Authentication
-
-  def self.included base
+  def self.included(base)
     base.class_eval do
       before_action :ensure_valid_email
     end
@@ -17,7 +16,7 @@ module Authentication
 
   def check_ownership!
     if @user != current_user
-      unauthorized!  
+      unauthorized!
     end
   end
 
@@ -32,7 +31,7 @@ module Authentication
     if current_user && User::TEMP_EMAIL_REGEX.match(current_user.email)
       redirect_to add_user_email_path(current_user)
     end
-  end 
+  end
 
   def devise_parameter_sanitizer
     if resource_class == User
@@ -41,5 +40,4 @@ module Authentication
       super
     end
   end
-
 end

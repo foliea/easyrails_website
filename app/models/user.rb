@@ -6,31 +6,30 @@ class User < ActiveRecord::Base
   before_create :set_profile
 
   devise :database_authenticatable,
-            :registerable,
-            :recoverable,
-            :rememberable,
-            :trackable,
-            :validatable,
-            :omniauthable
+         :registerable,
+         :recoverable,
+         :rememberable,
+         :trackable,
+         :validatable,
+         :omniauthable
   validates :email, :password, presence: true
 
-  def self.get_from_oauth provider, uid, email
+  def self.get_from_oauth(provider, uid, email)
     user = find_by(provider: provider, uid: uid)
     if user.nil? && email.present?
-     user = find_by(email: email)
+      user = find_by(email: email)
     end
     return user if user.present?
-    user = self.create(provider: provider,
-                       uid:      uid,
-                       email:    "#{uid}_#{provider}#{TEMP_EMAIL}",
-                       password: Devise.friendly_token[0,20],
-                      )
+    create(provider: provider,
+           uid:      uid,
+           email:    "#{uid}_#{provider}#{TEMP_EMAIL}",
+           password: Devise.friendly_token[0, 20],
+               )
   end
 
   protected
 
   def set_profile
-   self.profile = Profile.create
+    self.profile = Profile.create
   end
-
 end

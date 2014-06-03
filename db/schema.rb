@@ -11,95 +11,95 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140419193808) do
+ActiveRecord::Schema.define(version: 20_140_419_193_808) do
 
   # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
+  enable_extension 'plpgsql'
 
-  create_table "documents", force: true do |t|
-    t.string   "document_file_name"
-    t.string   "document_content_type"
-    t.integer  "document_file_size"
-    t.datetime "document_updated_at"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+  create_table 'documents', force: true do |t|
+    t.string 'document_file_name'
+    t.string 'document_content_type'
+    t.integer 'document_file_size'
+    t.datetime 'document_updated_at'
+    t.datetime 'created_at'
+    t.datetime 'updated_at'
   end
 
-  create_table "images", force: true do |t|
-    t.string   "image_file_name"
-    t.string   "image_content_type"
-    t.integer  "image_file_size"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.datetime "image_updated_at"
+  create_table 'images', force: true do |t|
+    t.string 'image_file_name'
+    t.string 'image_content_type'
+    t.integer 'image_file_size'
+    t.datetime 'created_at'
+    t.datetime 'updated_at'
+    t.datetime 'image_updated_at'
   end
 
-  create_table "languages", force: true do |t|
-    t.string   "name"
-    t.string   "locale"
-    t.boolean  "default"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+  create_table 'languages', force: true do |t|
+    t.string 'name'
+    t.string 'locale'
+    t.boolean 'default'
+    t.datetime 'created_at'
+    t.datetime 'updated_at'
   end
 
-  create_table "pages", force: true do |t|
-    t.string   "name"
-    t.string   "locale"
-    t.text     "content"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "title"
-    t.boolean  "commentable"
+  create_table 'pages', force: true do |t|
+    t.string 'name'
+    t.string 'locale'
+    t.text 'content'
+    t.datetime 'created_at'
+    t.datetime 'updated_at'
+    t.string 'title'
+    t.boolean 'commentable'
   end
 
-  add_index "pages", ["name", "locale"], name: "index_pages_on_name_and_locale", unique: true, using: :btree
+  add_index 'pages', %w(name locale), name: 'index_pages_on_name_and_locale', unique: true, using: :btree
 
-  create_table "profiles", force: true do |t|
-    t.string   "name"
-    t.string   "location"
-    t.date     "birthday"
-    t.string   "public_email"
-    t.text     "description"
-    t.integer  "user_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "avatar_file_name"
-    t.string   "avatar_content_type"
-    t.integer  "avatar_file_size"
-    t.datetime "avatar_updated_at"
+  create_table 'profiles', force: true do |t|
+    t.string 'name'
+    t.string 'location'
+    t.date 'birthday'
+    t.string 'public_email'
+    t.text 'description'
+    t.integer 'user_id'
+    t.datetime 'created_at'
+    t.datetime 'updated_at'
+    t.string 'avatar_file_name'
+    t.string 'avatar_content_type'
+    t.integer 'avatar_file_size'
+    t.datetime 'avatar_updated_at'
   end
 
-  add_index "profiles", ["user_id"], name: "index_profiles_on_user_id", unique: true, using: :btree
+  add_index 'profiles', ['user_id'], name: 'index_profiles_on_user_id', unique: true, using: :btree
 
-  create_table "settings", force: true do |t|
-    t.string   "keyname",      limit: 64,                     null: false
-    t.text     "value",                                       null: false
-    t.string   "value_format", limit: 64,  default: "string"
-    t.string   "name",         limit: 64
-    t.string   "description",  limit: 512
-    t.datetime "created_at"
-    t.datetime "updated_at"
+  create_table 'settings', force: true do |t|
+    t.string 'keyname',      limit: 64,                     null: false
+    t.text 'value',                                       null: false
+    t.string 'value_format', limit: 64,  default: 'string'
+    t.string 'name',         limit: 64
+    t.string 'description',  limit: 512
+    t.datetime 'created_at'
+    t.datetime 'updated_at'
   end
 
-  create_table "users", force: true do |t|
-    t.string   "email",                  default: "",    null: false
-    t.string   "encrypted_password",     default: "",    null: false
-    t.string   "reset_password_token"
-    t.datetime "reset_password_sent_at"
-    t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          default: 0,     null: false
-    t.datetime "current_sign_in_at"
-    t.datetime "last_sign_in_at"
-    t.string   "current_sign_in_ip"
-    t.string   "last_sign_in_ip"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.boolean  "admin",                  default: false
-    t.string   "provider"
-    t.string   "uid"
+  create_table 'users', force: true do |t|
+    t.string 'email',                  default: '',    null: false
+    t.string 'encrypted_password',     default: '',    null: false
+    t.string 'reset_password_token'
+    t.datetime 'reset_password_sent_at'
+    t.datetime 'remember_created_at'
+    t.integer 'sign_in_count',          default: 0,     null: false
+    t.datetime 'current_sign_in_at'
+    t.datetime 'last_sign_in_at'
+    t.string 'current_sign_in_ip'
+    t.string 'last_sign_in_ip'
+    t.datetime 'created_at'
+    t.datetime 'updated_at'
+    t.boolean 'admin',                  default: false
+    t.string 'provider'
+    t.string 'uid'
   end
 
-  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
-  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
+  add_index 'users', ['email'], name: 'index_users_on_email', unique: true, using: :btree
+  add_index 'users', ['reset_password_token'], name: 'index_users_on_reset_password_token', unique: true, using: :btree
 
 end

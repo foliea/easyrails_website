@@ -1,7 +1,7 @@
 class PagesController < ApplicationController
   before_action :authenticate_admin!, only: :update
   before_action :set_page
-  
+
   def show ; end
 
   def update

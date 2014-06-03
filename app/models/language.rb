@@ -2,14 +2,14 @@ class Language < ActiveRecord::Base
   after_save :set_default_locale, if: :default
   after_save :set_available_locales
   after_destroy :set_available_locales
-  
+
   validates :name, :locale, presence: true
   validates :locale, uniqueness: true
 
   has_default
 
   def self.available_locales
-    self.pluck(:locale)
+    pluck(:locale)
   end
 
   protected

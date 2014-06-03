@@ -3,7 +3,7 @@ module SpecialModel
     include ActiveModel::Validations
     include ActiveModel::Conversion
 
-    def initialize attributes = {}
+    def initialize(attributes = {})
       attributes.each do |name, value|
         send("#{name}=", value)
       end
