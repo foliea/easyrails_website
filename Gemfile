@@ -66,6 +66,7 @@ group :doc do
 end
 
 group :development do
+  gem 'rubocop'
   gem 'rails_layout'
   gem 'better_errors'
   gem 'binding_of_caller'

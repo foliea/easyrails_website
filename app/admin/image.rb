@@ -12,18 +12,18 @@ ActiveAdmin.register Image do
   end
 
   show do |s|
-     attributes_table do
-       row :image_file_name
-       row :image_content_type
-       row :image_file_size
-       row :image do
-         s.image.url(:medium)
-       end
-       row :image do
-         image_tag(s.image.url(:medium))
-       end
-     end
-   end
+    attributes_table do
+      row :image_file_name
+      row :image_content_type
+      row :image_file_size
+      row :image do
+        s.image.url(:medium)
+      end
+      row :image do
+        image_tag(s.image.url(:medium))
+      end
+    end
+  end
 
   form do |f|
     f.inputs 'Image' do

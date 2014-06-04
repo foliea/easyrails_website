@@ -16,14 +16,13 @@ class User < ActiveRecord::Base
 
   def self.get_from_oauth(provider, uid, email)
     user = find_by(provider: provider, uid: uid)
-    if user.nil? && email.present?
-      user = find_by(email: email)
-    end
+    user = find_by(email: email) if user.nil? && email.present?
+
     return user if user.present?
     create(provider: provider,
            uid:      uid,
            email:    "#{uid}_#{provider}#{TEMP_EMAIL}",
-           password: Devise.friendly_token[0, 20],
+           password: Devise.friendly_token[0, 20]
                )
   end
 

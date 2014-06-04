@@ -5,3 +5,21 @@ Documentation:
 
 Style/LineLength:
   Max: 120
+
+Style/MethodLength:
+  CountComments: false  # count full line comments?
+  Max: 15
+
+TrivialAccessors:
+  Enabled: true
+  ExactNameMatch: true
+
+AllCops:
+  Include:
+    - '**/*.gemspec'
+    - '**/Rakefile'
+  Exclude:
+    - 'vendor/**/*'
+    - 'config/initializers/devise.rb'
+  RunRailsCops: true
+

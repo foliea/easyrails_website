@@ -44,6 +44,8 @@ RSpec.configure do |config|
   config.include FactoryGirl::Syntax::Methods
 end
 
-class ActiveSupport::TestCase
-  include FactoryGirl::Syntax::Methods
+module ActiveSupport
+  class TestCase
+    include FactoryGirl::Syntax::Methods
+  end
 end

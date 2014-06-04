@@ -23,7 +23,7 @@ class OmniauthCallbacksController < Devise::OmniauthCallbacksController
   end
 
   def format_to_user_params(auth)
-    new_user_params = {
+    {
       provider:   auth.provider.presence,
       uid:        auth.uid.presence,
       name:       auth.info.name.presence,

@@ -8,7 +8,7 @@ class ProfilesController < ApplicationController
   def edit ; end
 
   def update
-    @profile.picture_from_url(get_avatar_from_session) if get_avatar_from_session
+    @profile.picture_from_url(avatar_from_session) if avatar_from_session
     if @profile.update profile_params
       session.delete 'new_user_params'
       redirect_to @profile, notice: I18n.t('profile.edit.success')
@@ -23,14 +23,14 @@ class ProfilesController < ApplicationController
     @profile = Profile.find params[:id]
   end
 
-  def get_avatar_from_session
+  def avatar_from_session
     (session['new_user_params'][:image] if session['new_user_params']) || nil
   end
 
   def check_ownership
-    if @profile != current_user.profile
-      unauthorized!
-    end
+    return true if @profile != current_user.profile
+
+    unauthorized!
   end
 
   def profile_params

@@ -9,15 +9,14 @@ module Authentication
 
   def authenticate_admin!
     authenticate_user!
-    unless current_user.admin?
-      unauthorized!
-    end
+
+    return if current_user.admin?
+
+    unauthorized!
   end
 
   def check_ownership!
-    if @user != current_user
-      unauthorized!
-    end
+    unauthorized! if @user != current_user
   end
 
   def unauthorized!
@@ -27,10 +26,9 @@ module Authentication
 
   def ensure_valid_email
     return if action_name == 'add_email'
+    return unless current_user && User::TEMP_EMAIL_REGEX.match(current_user.email)
 
-    if current_user && User::TEMP_EMAIL_REGEX.match(current_user.email)
-      redirect_to add_user_email_path(current_user)
-    end
+    redirect_to add_user_email_path(current_user)
   end
 
   def devise_parameter_sanitizer
