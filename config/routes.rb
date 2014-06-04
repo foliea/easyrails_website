@@ -17,7 +17,7 @@ EasyRailsWebsite::Application.routes.draw do
   resources :pages, param: :name, only: [:show, :update]
 
   namespace :mercury do
-    resources :images
+    resources :images, only: [:create, :destroy]
   end
 
 end
