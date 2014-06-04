@@ -1,8 +1,8 @@
-<% if languages_available.size > 1 %>
+<% if available_languages.size > 1 %>
   <li class="dropdown">
     <a href="#" class="dropdown-toggle" data-toggle="dropdown"><%= t('header.menu.language') %> <b class="caret"></b></a>
     <ul class="dropdown-menu">
-      <% languages_available.each do |l| %>
+      <% available_languages.each do |l| %>
         <li><%= link_to l.name, url_for( locale: l.locale ) %></li>
       <% end %>
     </ul>
