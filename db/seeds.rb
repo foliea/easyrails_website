@@ -17,7 +17,8 @@ settings = [
   # Amazon Web Services
   { keyname: 's3_host_name',          value: 's3-eu-west-1.amazonaws.com', value_format: 'string' },
   # Disqus
-  { keyname: 'disqus_shortname',      value: 'adrienfolie',                value_format: 'string' }
+  { keyname: 'disqus_shortname',      value: 'adrienfolie',                value_format: 'string' },
+  { keyname: 'enable_external_providers', value: 'false', value_format: 'boolean' }
 ]
 
 settings.each do |attributes|

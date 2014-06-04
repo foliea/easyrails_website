@@ -1,7 +1,7 @@
-<div class='top-buffer'>
-  <span><%= t('account.connect_with') %></span>
-</div>
-<% if devise_mapping.omniauthable? %>
+<% if devise_mapping.omniauthable? && settings('enable_external_providers') == true %>
+  <div class='top-buffer'>
+    <span><%= t('account.connect_with') %></span>
+  </div>
   <% resource_class.omniauth_providers.each do |provider| %>
     <%= decorate(OmniauthProviderDecorator, provider) do |decorated_provider|
 

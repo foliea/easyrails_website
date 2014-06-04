@@ -11,9 +11,8 @@ class UsersController < ApplicationController
     if current_user.valid? || current_user.errors[:email].blank?
       current_user.update_columns(email: params[:user][:email])
       return redirect_to root_url, notice: I18n.t('account.email.success')
-    else
-      @show_error = true
     end
+    @show_error = true
   end
 
   private

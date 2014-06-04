@@ -7,10 +7,9 @@ Bundler.require(:default, Rails.env)
 
 module EasyRailsWebsite
   class Application < Rails::Application
-    config.i18n.default_locale = :en
     config.autoload_paths += Dir[Rails.root.join('presenters', '*', '*.rb').to_s]
-
-    # Force locale on Heroku
+    config.i18n.default_locale = :en
+    
     I18n.config.enforce_available_locales = false
     I18n.load_path += Dir[Rails.root.join('config', 'locales', '*.yml').to_s]
     I18n.reload!
@@ -22,7 +21,8 @@ module EasyRailsWebsite
       end
 
       if Language.table_exists?
-        I18n.default_locale    = Language.get_default.locale
+        default_language       = Language.get_default
+        I18n.default_locale    = default_language.locale if default_language
         I18n.available_locales = Language.available_locales
       end
     end
