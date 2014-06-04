@@ -1,25 +1,21 @@
-# This is the configuration used to check the rubocop source code.
-
 Documentation:
   Enabled: false
 
 Style/LineLength:
   Max: 120
+  Exclude: 
+    - 'config/initializers/*'
 
 Style/MethodLength:
-  CountComments: false  # count full line comments?
-  Max: 15
+  CountComments: false
+  Max: 10
+  Exclude:
+    - 'db/migrate/*'
 
 TrivialAccessors:
   Enabled: true
   ExactNameMatch: true
 
 AllCops:
-  Include:
-    - '**/*.gemspec'
-    - '**/Rakefile'
-  Exclude:
-    - 'vendor/**/*'
-    - 'config/initializers/devise.rb'
   RunRailsCops: true
 
