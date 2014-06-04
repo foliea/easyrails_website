@@ -8,7 +8,7 @@
           content = link_to fa_icon(decorated_provider.icon, text: decorated_provider.title),
                   omniauth_authorize_path(resource_name, decorated_provider.to_sym),
                   class: decorated_provider.classes
-          content_tag(:div, content, class: 'top-buffer')        
+          content_tag(:div, content, class: 'top-buffer')
         end %>
   <% end %>
 <% end %>

@@ -28,7 +28,7 @@ module SpecialModel
 
       def reset_defaults
         return unless default_changed?
-      
+
         self.class.update_all(default: false)
       end
 
