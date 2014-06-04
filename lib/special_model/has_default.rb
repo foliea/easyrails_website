@@ -2,13 +2,9 @@ module SpecialModel
   module HasDefault
     def has_default
       before_destroy :destroyable?
-
-      # If model is selected as default
-      before_save :set_defaults_to_false, if: proc { |m|  m.default && (m.default_was != true || m.new_record?) }
-      # If no other default exist
-      after_create :set_as_default,        if: proc { |m| !m.default && m.class.get_default.nil? }
-      # If fallback is required
-      after_update :set_as_default,        if: proc { |m| !m.default && m.default_was == true }
+      before_save :reset_defaults
+      after_create :change_default
+      after_update :fallback
 
       extend ClassMethods
       include InstanceMethods
@@ -30,12 +26,34 @@ module SpecialModel
         !default
       end
 
-      def set_as_default
+      def change_default
+        return unless default_required?
+        
         update_columns(default: true)
       end
 
-      def set_defaults_to_false
+      def fallback
+        return unless fallback_required?
+        
+        update_columns(default: true)
+      end
+
+      def reset_defaults
+        return unless default_change?
+        
         self.class.update_all(default: false)
+      end
+      
+      def default_required?
+        !m.default && class.get_default.nil?
+      end
+      
+      def fallback_required?
+        !m.default && m.default_was == true
+      end
+      
+      def default_change?
+        default && (default_was != true || new_record?)
       end
     end
   end
