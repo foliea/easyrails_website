@@ -26,6 +26,12 @@ module SpecialModel
         !default
       end
 
+      def reset_defaults
+        return unless default_changed?
+      
+        self.class.update_all(default: false)
+      end
+
       def change_default
         return unless default_required?
         
@@ -38,10 +44,8 @@ module SpecialModel
         update_columns(default: true)
       end
 
-      def reset_defaults
-        return unless default_change?
-        
-        self.class.update_all(default: false)
+      def default_changed?
+        default && (default_was != true || new_record?)
       end
       
       def default_required?
@@ -50,10 +54,6 @@ module SpecialModel
       
       def fallback_required?
         !m.default && m.default_was == true
-      end
-      
-      def default_change?
-        default && (default_was != true || new_record?)
       end
     end
   end
