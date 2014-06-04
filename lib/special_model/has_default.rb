@@ -33,7 +33,7 @@ module SpecialModel
       end
 
       def change_default
-        return unless default_required?
+        return unless default_can_change?
         
         update_columns(default: true)
       end
@@ -48,7 +48,7 @@ module SpecialModel
         default && (default_was != true || new_record?)
       end
       
-      def default_required?
+      def default_can_change?
         !m.default && class.get_default.nil?
       end
       
