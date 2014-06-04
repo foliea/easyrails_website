@@ -8,7 +8,7 @@ module Mercury
 
     def create
       @image = Image.new(image_params)
-      @image.save
+      @image.save!
       respond_with @image
     end
 
