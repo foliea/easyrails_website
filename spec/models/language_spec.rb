@@ -5,15 +5,17 @@ describe Language do
   it { should validate_presence_of(:code) }
   it { should validate_uniqueness_of(:code) }
 
-  describe 'is valid' do
-    it 'with only mandatory fields' do
+  context 'with only mandatory fields' do
+    it 'is valid' do
       language = FactoryGirl.build(:language_mandatory)
-      language.should be_valid
+      expect(language).to be_valid
     end
+  end
 
-    it 'with all attributes' do
+  context 'with all attributes' do
+    it 'is valid' do
       language = FactoryGirl.build(:language)
-      language.should be_valid
+      expect(language).to be_valid
     end
   end
 end
