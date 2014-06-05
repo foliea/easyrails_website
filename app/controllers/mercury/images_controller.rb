@@ -4,6 +4,7 @@ module Mercury
 
     before_action :authenticate_admin!
     before_action :set_image, only: :destroy
+    
     respond_to :json
 
     def create
