@@ -5,7 +5,7 @@ describe Page do
   it { should validate_presence_of(:locale) }
   it { should validate_uniqueness_of(:name).scoped_to(:locale) }
   
-  context 'when saving' do
+  context 'before save' do
     it 'parameterize the name' do
       
     end
