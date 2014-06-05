@@ -34,7 +34,7 @@ module SpecialModel
 
       def change_default
         return unless default_can_change?
-        
+
         update_columns(default: true)
       end
 
