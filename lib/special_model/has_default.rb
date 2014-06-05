@@ -47,7 +47,7 @@ module SpecialModel
       def default_changed?
         default && (default_was != true || new_record?)
       end
-      
+
       def default_can_change?
         !m.default && class.get_default.nil?
       end
