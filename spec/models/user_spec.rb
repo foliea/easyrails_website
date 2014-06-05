@@ -33,4 +33,10 @@ describe User do
       
     end
   end
+  
+  context 'when there is only one admin' do
+    it 'prevents from destroy' do
+      
+    end
+  end
 end
