@@ -41,11 +41,8 @@ RSpec.configure do |config|
   # the seed, which is printed after each run.
   #     --seed 1234
   config.order = 'random'
+  
   config.include FactoryGirl::Syntax::Methods
+  config.include Paperclip::Shoulda::Matchers
 end
 
-module ActiveSupport
-  class TestCase
-    include FactoryGirl::Syntax::Methods
-  end
-end
