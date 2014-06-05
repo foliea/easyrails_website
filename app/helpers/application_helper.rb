@@ -18,8 +18,7 @@ module ApplicationHelper
   end
 
   def include_specifics_javascripts
-    case controller.controller_name
-    when 'pages'
+    if controller.controller_name == 'pages'
       javascript_include_tag 'page'
     end
   end
