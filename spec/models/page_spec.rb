@@ -28,4 +28,10 @@ describe Page do
     
     end
   end
+  
+  context 'when language is locked' do
+    it "can't be destroy" do
+      
+    end
+  end
 end
