@@ -12,8 +12,10 @@ class User < ActiveRecord::Base
          :trackable,
          :validatable,
          :omniauthable
+         
   validates :email, :password, presence: true
-
+  # is it alreay provided by devise ?
+  
   def self.get_from_oauth(provider, uid, email)
     user = find_by(provider: provider, uid: uid)
     user = find_by(email: email) if user.nil? && email.present?
