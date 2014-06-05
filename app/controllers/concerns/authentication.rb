@@ -19,7 +19,7 @@ module Authentication
     unauthorized! if @user != current_user
   end
 
-  def unauthorized
+  def unauthorized!
     flash[:alert] = I18n.t('account.unauthorized')
     redirect_to root_path
   end
