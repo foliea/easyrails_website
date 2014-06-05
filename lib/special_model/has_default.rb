@@ -40,7 +40,7 @@ module SpecialModel
 
       def fallback
         return unless fallback_required?
-        
+
         update_columns(default: true)
       end
 
