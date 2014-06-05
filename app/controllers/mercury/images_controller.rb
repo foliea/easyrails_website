@@ -3,7 +3,7 @@ module Mercury
     include Authentication
 
     before_action :authenticate_admin!
-
+    before_action :set_image, only: :destroy
     respond_to :json
 
     def create
@@ -13,15 +13,14 @@ module Mercury
     end
 
     def destroy
-      @image = image
       @image.destroy
       respond_with @image
     end
 
     private
 
-    def image
-      Image.find(params[:id])
+    def set_image
+      @image = Image.find(params[:id])
     end
 
     def image_params
