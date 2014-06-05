@@ -18,4 +18,19 @@ describe Language do
       expect(language).to be_valid
     end
   end
+  
+  context 'when updating language to default' do
+    it 'set others language default to false' do
+    end
+  end
+  
+  context 'when updating default language as not default' do
+    it 'fallbacks' do
+    end
+  end
+  
+  context 'when destroying default language' do
+    it 'must not be destroy' do
+    end
+  end
 end
