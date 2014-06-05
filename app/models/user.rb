@@ -14,7 +14,7 @@ class User < ActiveRecord::Base
          :omniauthable
          
   validates :email, :password, presence: true
-  # is it alreay provided by devise ?
+  # is it already provided by devise ?
   
   def self.get_from_oauth(provider, uid, email)
     user = find_by(provider: provider, uid: uid)
