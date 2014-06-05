@@ -29,7 +29,7 @@ describe User do
   end
   
   context 'when destroying'
-    it 'destroy affiliated profile' do
+    it 'destroys affiliated profile' do
       
     end
   end
