@@ -13,7 +13,7 @@ describe Page do
   end
 
   it 'is saved' do
-    expect(page_en).not_to be_nil
+    expect(page_en).to be_persisted
   end
 
   context 'before save' do

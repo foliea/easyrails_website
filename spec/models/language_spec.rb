@@ -12,7 +12,7 @@ describe Language do
 
   it 'is saved' do
     language = FactoryGirl.create(:language)
-    expect(:language).not_to be_nil
+    expect(language).to be_persisted
   end
 
   # Included from has_default behavior
@@ -44,7 +44,7 @@ describe Language do
     it 'must not be destroy' do
       language = FactoryGirl.create(:default_language)
       language.destroy
-      expect(language).not_to be_nil
+      expect(language).to be_persisted
     end
   end
 end

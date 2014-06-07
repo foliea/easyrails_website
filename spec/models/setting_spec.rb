@@ -12,7 +12,7 @@ describe Setting do
 
   it 'is saved' do
     setting = FactoryGirl.create(:setting)
-    expect(setting).not_to be_nil
+    expect(setting).to be_persisted
   end
 
   context 'after save' do

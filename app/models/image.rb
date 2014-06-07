@@ -5,7 +5,6 @@ class Image < ActiveRecord::Base
 
   delegate :url, to: :image
 
-  # Validate the attached image is image/jpg, image/png, etc
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
   validates_attachment_size :image, less_than: 5.megabytes
   validates_attachment :image, presence: true

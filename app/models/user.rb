@@ -4,6 +4,7 @@ class User < ActiveRecord::Base
 
   has_one :profile, dependent: :destroy
   before_create :set_profile
+  before_destroy :destroy?
 
   devise :database_authenticatable,
          :registerable,
@@ -30,4 +31,9 @@ class User < ActiveRecord::Base
   def set_profile
     self.profile = Profile.create
   end
+
+  def destroy?
+    !admin? || User.count(:admin) > 1
+  end
+
 end
