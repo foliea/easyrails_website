@@ -1,11 +1,11 @@
 FactoryGirl.define do
   factory :language do
     name 'language'
-    sequence(:code) { |i| "code#{i}" }
+    sequence(:locale) { |i| "locale#{i}" }
     default false
 
-    factory :language_mandatory do
-      default nil
+    factory :default_language do
+      default true
     end
   end
 end

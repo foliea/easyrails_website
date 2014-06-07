@@ -49,11 +49,11 @@ module SpecialModel
       end
 
       def default_can_change?
-        !m.default && class.get_default.nil?
+        !default && self.class.get_default.nil?
       end
 
       def fallback_required?
-        !m.default && m.default_was == true
+        !default && default_was == true
       end
     end
   end
