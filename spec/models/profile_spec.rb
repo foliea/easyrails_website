@@ -11,10 +11,8 @@ describe Profile do
                 less_than(2.megabytes) }
 
   it 'is valid' do
-
+    profile = FactoryGirl.build(:profile)
+    expect(profile).to be_valid
   end
 
-  it 'is saved' do
-
-  end
 end

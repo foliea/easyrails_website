@@ -6,16 +6,19 @@ describe Setting do
   it { should validate_uniqueness_of(:keyname) }
 
   it 'is valid' do
-
+    setting = FactoryGirl.build(:setting)
+    expect(setting).to be_valid
   end
 
   it 'is saved' do
-
+    setting = FactoryGirl.create(:setting)
+    expect(setting).not_to be_nil
   end
 
   context 'after save' do
     it 'reloads config' do
-
+      Setting.any_instance.expects(:reload)
+      FactoryGirl.create(:setting)
     end
   end
 end

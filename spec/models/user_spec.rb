@@ -5,11 +5,13 @@ describe User do
   it { should validate_presence_of(:password) }
 
   it 'is valid' do
-
+    user = FactoryGirl.build(:user)
+    expect(user).to be_valid
   end
 
   it 'is saved' do
-
+    user = FactoryGirl.create(:user)
+    expect(user).not_to be_nil
   end
 
   context 'when already registered from a provider' do
