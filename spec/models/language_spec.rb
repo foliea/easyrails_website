@@ -18,8 +18,8 @@ describe Language do
   # Included from has_default behavior
   context 'when saving language to default' do
     it 'sets existing languages default to false' do
-      default_language     = FactoryGirl.create(:default_language)
-      new_default_language = FactoryGirl.create(:default_language)
+      default_language = FactoryGirl.create(:default_language)
+      FactoryGirl.create(:default_language)
 
       default_language.reload
       expect(default_language.default).to be_false

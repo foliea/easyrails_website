@@ -9,5 +9,9 @@ FactoryGirl.define do
     factory :page_fr do
       locale 'fr'
     end
+
+    factory :page_home do
+      name 'home'
+    end
   end
 end

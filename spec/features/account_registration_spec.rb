@@ -1,17 +1,18 @@
-class AccountTest < ActionDispatch::IntegrationTest
-  fixtures :all
+require 'spec_helper'
 
-  test 'Account registration valid' do
+feature 'Account registration' do
+
+  let!(:page_home) { FactoryGirl.create(:page_home) }
+
+  scenario 'is valid' do
     register('test_registration@example.com', 'password1234', 'password1234')
-    assert_not_equal new_user_registration_path, current_path
+    expect(root_path).to eq(current_path)
   end
 
-  test 'Account registration invalid' do
+  scenario 'is invalid' do
     register('test_registration@example.com', 'password1234', '')
-    assert_equal user_registration_path, current_path
+    expect(user_registration_path).to eq(current_path)
   end
-
-  private
 
   def register(email, password, password_confirmation)
     visit new_user_registration_path

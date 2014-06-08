@@ -35,7 +35,7 @@ describe Page do
 
   context "when current locale doesn't exist" do
     it 'gets language by name from default locale' do
-      page_fr = FactoryGirl.create(:page_fr)
+      FactoryGirl.create(:page_fr)
       page = Page.get_by_name!(page_en.name, 'es', 'fr')
 
       expect(page.locale).to eq('fr')
