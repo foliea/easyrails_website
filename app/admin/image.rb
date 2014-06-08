@@ -27,7 +27,7 @@ ActiveAdmin.register Image do
 
   form do |f|
     f.inputs 'Image' do
-      FileInput.form_block(f, 'image')
+      FileInput.upload(f, 'image')
     end
     f.actions
   end
