@@ -79,6 +79,7 @@ group :test do
   gem 'capybara'
 end
 
+# Required also in development for generate
 group :development, :test do
   gem 'pry-rails'
   gem 'factory_girl_rails'

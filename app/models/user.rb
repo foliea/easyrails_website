@@ -35,5 +35,4 @@ class User < ActiveRecord::Base
   def destroy?
     !admin? || User.count(:admin) > 1
   end
-
 end
