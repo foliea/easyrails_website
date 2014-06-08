@@ -6,9 +6,11 @@ require 'rspec/autorun'
 require 'capybara/rails'
 require 'factory_girl'
 require 'paperclip/matchers'
-require "codeclimate-test-reporter"
+require 'codeclimate-test-reporter'
+require 'coveralls'
 
 CodeClimate::TestReporter.start
+Coveralls.wear!('rails')
 # Requires supporting ruby files with custom matchers and macros, etc,
 # in spec/support/ and its subdirectories.
 Dir[Rails.root.join('spec/support/**/*.rb')].each { |f| require f }
