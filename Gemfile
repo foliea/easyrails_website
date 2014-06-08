@@ -78,7 +78,6 @@ group :test do
   gem 'shoulda-matchers'
   gem 'capybara'
   gem 'coveralls', require: false
-  gem 'codeclimate-test-reporter', require: nil
 end
 
 # Required also in development for generate

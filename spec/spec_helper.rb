@@ -6,11 +6,9 @@ require 'rspec/autorun'
 require 'capybara/rails'
 require 'factory_girl'
 require 'paperclip/matchers'
-require 'codeclimate-test-reporter'
 require 'coveralls'
 
-CodeClimate::TestReporter.start
-Coveralls.wear!('rails')
+Coveralls.wear!('rails') if ENV['COVERALLS_REPO_TOKEN']
 # Requires supporting ruby files with custom matchers and macros, etc,
 # in spec/support/ and its subdirectories.
 Dir[Rails.root.join('spec/support/**/*.rb')].each { |f| require f }
@@ -22,7 +20,6 @@ ActiveRecord::Migration.check_pending! if defined?(ActiveRecord::Migration)
 RSpec.configure do |config|
   config.mock_with :mocha
 
-  I18n.locale = :en
   # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures
   # config.fixture_path = "#{::Rails.root}/spec/fixtures"
 

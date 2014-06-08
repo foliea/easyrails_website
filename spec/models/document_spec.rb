@@ -11,7 +11,7 @@ describe Document do
   end
 
   it do
-  #  should validate_attachment_size(:document).
-  #    less_than(20.megabytes)
+    should validate_attachment_size(:document).
+      less_than(20.megabytes)
   end
 end
