@@ -9,7 +9,7 @@ class OmniauthCallbacksController < Devise::OmniauthCallbacksController
     auth = request.env['omniauth.auth']
 
     if auth.present?
-      user_params = format_to_user_params auth
+      user_params = User.oauth_data auth
       user = User.get_from_oauth(user_params[:provider].presence,
                                  user_params[:uid].presence,
                                  user_params[:email].presence)
@@ -22,13 +22,4 @@ class OmniauthCallbacksController < Devise::OmniauthCallbacksController
     redirect_to new_user_registration_url
   end
 
-  def format_to_user_params(auth)
-    {
-      provider:   auth.provider.presence,
-      uid:        auth.uid.presence,
-      name:       auth.info.name.presence,
-      image:      auth.info.image.presence,
-      email:      auth.info.email.presence
-    }
-  end
 end

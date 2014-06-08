@@ -1,9 +1,3 @@
-# Default admin account
-User.create(email: 'admin@example.com', password: 'password', admin: true)
-
-# Default language
-Language.create(name: 'English', locale: 'en', default: true)
-
 settings = [
   # Default settings
   { keyname: 'site_title',            value: 'Adrien Folie',               value_format: 'string' },
@@ -32,5 +26,12 @@ settings.each do |attributes|
   end
 end
 
-Page.create(name: 'home', locale: 'en', content: '<h1>Home EN</h1>')
+# Default admin account
+User.create!(email: 'admin@example.com', password: 'password', admin: true)
+
+# Default language
+Language.create!(name: 'English', locale: 'en', default: true)
+
+
+Page.create!(name: 'home', locale: 'en', content: '<h1>Home EN</h1>')
 # Page.create(name: 'home', locale: 'fr', content: '<h1>Home FR</h1>')

@@ -27,8 +27,7 @@ ActiveAdmin.register Image do
 
   form do |f|
     f.inputs 'Image' do
-      f.input :image_file_name
-      f.input :image, required: false, as: :file, label: 'Upload'
+      FileInput.form_block(f, 'image')
     end
     f.actions
   end

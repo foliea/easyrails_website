@@ -15,10 +15,6 @@ module Authentication
     unauthorized!
   end
 
-  def check_ownership!
-    unauthorized! if @user != current_user
-  end
-
   def unauthorized!
     flash[:alert] = I18n.t('account.unauthorized')
     redirect_to root_path

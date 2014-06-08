@@ -14,6 +14,10 @@ describe User do
     expect(user).to be_persisted
   end
 
+  it 'gets data from external provider' do
+
+  end
+
   context 'when already registered from a provider' do
     it 'gets the user from provider' do
       user = FactoryGirl.create(:user_twitter)
@@ -62,4 +66,5 @@ describe User do
       expect(user).to be_persisted
     end
   end
+
 end

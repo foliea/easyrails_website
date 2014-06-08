@@ -15,8 +15,7 @@ ActiveAdmin.register Document do
 
   form do |f|
     f.inputs 'Document' do
-      f.input :document_file_name
-      f.input :document, required: false, as: :file, label: 'Upload'
+      FileInput.upload(f, 'document')
     end
     f.actions
   end

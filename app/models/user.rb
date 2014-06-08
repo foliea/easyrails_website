@@ -3,7 +3,7 @@ class User < ActiveRecord::Base
   TEMP_EMAIL_REGEX = /.+#{TEMP_EMAIL}$/
 
   has_one :profile, dependent: :destroy
-  before_create :set_profile
+  after_create :build_profile
   before_destroy :destroy?
 
   devise :database_authenticatable,
@@ -26,10 +26,20 @@ class User < ActiveRecord::Base
                )
   end
 
+  def self.oauth_data(auth)
+    {
+      provider:   auth.provider.presence,
+      uid:        auth.uid.presence,
+      name:       auth.info.name.presence,
+      image:      auth.info.image.presence,
+      email:      auth.info.email.presence
+    }
+  end
+
   protected
 
-  def set_profile
-    self.profile = Profile.create
+  def build_profile
+    Profile.create(user: self)
   end
 
   def destroy?
