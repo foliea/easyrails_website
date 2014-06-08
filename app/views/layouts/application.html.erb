@@ -6,7 +6,6 @@
     <meta name="description" content="<%= content_for?(:description) ? yield(:description) : settings(:site_description) %>">
     <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
     <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
-    <%= include_specifics_javascripts %>
     <%= csrf_meta_tags %>
     <%= favicon_link_tag settings(:favicon_url) %>
   </head>
