@@ -39,7 +39,7 @@ class User < ActiveRecord::Base
   protected
 
   def build_profile
-    true if Profile.create(user: self)
+    Profile.create!(user: self)
   end
 
   def destroy?
