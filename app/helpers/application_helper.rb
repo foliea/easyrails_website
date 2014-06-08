@@ -16,10 +16,4 @@ module ApplicationHelper
       block.call decorator.new(instance, self)
     end
   end
-
-  def include_specifics_javascripts
-    if controller.controller_name == 'pages'
-      javascript_include_tag 'page'
-    end
-  end
 end
