@@ -12,4 +12,4 @@ It's also my first project with rails, don't blame me.
 
 ### Build status
 
-![Codeship](https://www.codeship.io/projects/4f6bcec0-d0cb-0131-b04e-22cfb90185d8/status)
+[![Codeship Status for folieadrien/easyrails_website](https://codeship.io/projects/4f6bcec0-d0cb-0131-b04e-22cfb90185d8/status?branch=master)](https://codeship.io/projects/23171)
