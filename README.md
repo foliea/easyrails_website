@@ -1,5 +1,6 @@
 # EasyRails Website
 [![Code Climate](https://codeclimate.com/github/folieadrien/easyrails_website.png)](https://codeclimate.com/github/folieadrien/easyrails_website)
+[![Coverage Status](https://coveralls.io/repos/folieadrien/easyrails_website/badge.png?branch=master)](https://coveralls.io/r/folieadrien/easyrails_website?branch=master)
 
 EasyRails Website is a tiny CMS. This project aims to provide an easy way for anyone 
 to promote themselves with a user friendly customizable website.
