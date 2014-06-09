@@ -32,7 +32,7 @@ en:
       login: "Login"
       language: "Language"
   footer:
-    copyright: "© %{owner} %{date}"
+    copyright: "© %{date} %{owner}"
   general:
     back: "Back"
     confirm: "Are you sure?"
