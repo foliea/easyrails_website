@@ -1,4 +1,4 @@
-class AddConstraintToLanguage < ActiveRecord::Migration
+class AddConstraintToLanguages < ActiveRecord::Migration
   def up
     change_column :languages, :name, :string, null: false
     change_column :languages, :locale, :string, null: false
