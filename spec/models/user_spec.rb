@@ -57,6 +57,8 @@ describe User do
   context 'when there is only one admin' do
     it 'is last admin' do
       user = FactoryGirl.create(:user_admin)
+      FactoryGirl.create(:user)
+
       expect(user).to be_last_admin
     end
 
@@ -74,6 +76,15 @@ describe User do
       user.save
       user.reload
       expect(user.admin).to be_true
+    end
+  end
+
+  context 'when there is two or more admins' do
+    it "isn't last admin" do
+      user = FactoryGirl.create(:user_admin)
+      FactoryGirl.create(:user_another_admin)
+
+      expect(user).not_to be_last_admin
     end
   end
 end
