@@ -76,5 +76,4 @@ describe User do
       expect(user.admin).to be_true
     end
   end
-
 end
