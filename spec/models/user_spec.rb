@@ -61,6 +61,15 @@ describe User do
       user.destroy
       expect(user).to be_persisted
     end
+
+    it "can't be set as not admin" do
+      user = FactoryGirl.create(:user_admin)
+
+      user.admin = false
+      user.save
+      user.reload
+      expect(user.admin).to be_true
+    end
   end
 
 end

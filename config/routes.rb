@@ -8,11 +8,14 @@ EasyRailsWebsite::Application.routes.draw do
 
   root 'pages#show', defaults: { name: 'home' }
 
-  resources :profiles, only: [:show, :edit, :update]
+  resources :profiles, only: [:show]
+
+  match 'profile/', to: 'profiles#edit', via: [:get]
+  match 'profile/', to: 'profiles#update', via: [:patch, :put]
 
   devise_for :users, controllers: { omniauth_callbacks: 'omniauth_callbacks' }
 
-  match 'users/:id/add_email/', to: 'users#add_email', as: :add_user_email, via: [:get, :patch]
+  match 'users/add_email/', to: 'users#add_email', as: :add_user_email, via: [:get, :patch]
 
   resources :pages, param: :name, only: [:show, :update]
 

@@ -1,6 +1,6 @@
 class OmniauthCallbacksController < Devise::OmniauthCallbacksController
-  [:linkedin, :twitter, :github, :facebook, :google_oauth2].each do |method_name|
-    define_method(method_name) { authenticate }
+  Devise.omniauth_providers.each do |provider|
+    define_method(provider) { authenticate }
   end
 
   private
@@ -17,7 +17,6 @@ class OmniauthCallbacksController < Devise::OmniauthCallbacksController
         flash[:notice] = I18n.t 'devise.omniauth_callbacks.success', kind: auth.provider
         return sign_in_and_redirect user, event: :authentication
       end
-      session['new_user_params'] = user_params
     end
     redirect_to new_user_registration_url
   end
