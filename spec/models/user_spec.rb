@@ -55,6 +55,11 @@ describe User do
   end
 
   context 'when there is only one admin' do
+    it 'is last admin' do
+      user = FactoryGirl.create(:user_admin)
+      expect(user).to be_last_admin
+    end
+
     it "can't be destroy" do
       user = FactoryGirl.create(:user_admin)
 

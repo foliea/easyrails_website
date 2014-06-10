@@ -53,6 +53,7 @@ class User < ActiveRecord::Base
   end
 
   def last_admin?
-    admin_was == true && User.count(:admin) <= 1
+    admin_was == true && 
+    self.class.where(admin: true).count <= 1
   end
 end
