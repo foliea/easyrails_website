@@ -14,6 +14,11 @@ describe Language do
     language = FactoryGirl.create(:language)
     expect(language).to be_persisted
   end
+  
+  it 'gets available locales' do
+    language = FactoryGirl.create(:default_language)
+    expect(Language.available_locales).to eq ['en']
+  end
 
   # Included from has_default behavior
   context 'when saving language to default' do
