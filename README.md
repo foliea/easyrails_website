@@ -11,6 +11,10 @@ This project is still at an early development stage. Don't use it yet.
 
 It's also my first project with rails, don't blame me.
 
-### Build status
+## Build status
 
 [![Codeship Status for folieadrien/easyrails_website](https://codeship.io/projects/4f6bcec0-d0cb-0131-b04e-22cfb90185d8/status?branch=master)](https://codeship.io/projects/23171)
+
+## Licensing
+
+Easyrails_website is licensed under the Apache License, Version 2.0. See LICENSE for full license text.
