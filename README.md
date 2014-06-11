@@ -17,4 +17,4 @@ It's also my first project with rails, don't blame me.
 
 ## Licensing
 
-Easyrails_website is licensed under the Apache License, Version 2.0. See LICENSE for full license text.
+easyrails_website is licensed under the Apache License, Version 2.0. See LICENSE for full license text.
