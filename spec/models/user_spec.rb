@@ -35,6 +35,12 @@ describe User do
       user = User.get_from_oauth('twitter', '1', nil)
       expect(user.email).to match(User::TEMP_EMAIL_REGEX)
     end
+
+    it 'creates a new user with email received from profider' do
+      email = 'test@example.com'
+      user = User.get_from_oauth('twitter', '1', email)
+      expect(user.email).to match(email)
+    end
   end
 
   context 'before create' do

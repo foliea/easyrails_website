@@ -22,9 +22,9 @@ class User < ActiveRecord::Base
     return user if user.present?
     create(provider: provider,
            uid:      uid,
-           email:    "#{uid}_#{provider}#{TEMP_EMAIL}",
+           email:    email.presence || "#{uid}_#{provider}#{TEMP_EMAIL}",
            password: Devise.friendly_token[0, 20]
-               )
+           )
   end
 
   def self.oauth_data(auth)
