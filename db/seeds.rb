@@ -9,7 +9,7 @@ settings = [
     value_format: 'string' },
 
   # Disqus
-  { keyname: 'disqus_shortname',      value: 'easyrails_website',         value_format: 'string' },
+  { keyname: 'disqus_shortname',      value: 'easyrails-dev',             value_format: 'string' },
 
   # Omniauth
   { keyname: 'enable_external_providers', value: 'true', value_format: 'boolean' }

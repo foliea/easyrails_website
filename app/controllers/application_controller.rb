@@ -3,15 +3,16 @@ class ApplicationController < ActionController::Base
 
   protect_from_forgery with: :exception
 
-  before_action :set_locale
   before_action :set_available_locales
+  before_action :set_locale
   before_action :set_available_languages
-
+  
   protected
 
   def set_locale
     # update sessions if passed
-    if params[:locale].present? && @available_locales
+    if params[:locale].present? && 
+      @available_locales.include?(params[:locale])
       session[:locale] = params[:locale]
     end
     # set locale based on sessions

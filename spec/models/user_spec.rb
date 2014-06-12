@@ -81,7 +81,7 @@ describe User do
       user.admin = false
       user.save
       user.reload
-      expect(user.admin).to be_true
+      expect(user.admin).to be true
     end
   end
 
