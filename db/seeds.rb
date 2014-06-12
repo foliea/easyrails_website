@@ -8,9 +8,6 @@ settings = [
   { keyname: 'favicon_url',           value: 'https://avatars2.githubusercontent.com/u/7833986?s=140',
     value_format: 'string' },
 
-  # Amazon Web Services
-  { keyname: 's3_host_name',          value: 's3-eu-west-1.amazonaws.com', value_format: 'string' },
-
   # Disqus
   { keyname: 'disqus_shortname',      value: 'easyrails_live',                value_format: 'string' },
 
@@ -19,11 +16,7 @@ settings = [
 ]
 
 settings.each do |attributes|
-  Setting.find_or_initialize_by(keyname: attributes[:keyname]).tap do |s|
-    s.value = attributes[:value]
-    s.value_format = attributes[:value_format]
-    s.save!
-  end
+  Setting.create!(attributes)
 end
 
 # Default admin account
@@ -34,4 +27,3 @@ Language.create!(name: 'English', locale: 'en', default: true)
 
 
 Page.create!(name: 'home', locale: 'en', content: '<h1>Home EN</h1>')
-# Page.create(name: 'home', locale: 'fr', content: '<h1>Home FR</h1>')
