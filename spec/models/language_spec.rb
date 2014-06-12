@@ -16,7 +16,7 @@ describe Language do
   end
   
   it 'gets available locales' do
-    language = FactoryGirl.create(:default_language)
+    FactoryGirl.create(:default_language)
     expect(Language.available_locales).to eq ['en']
   end
 
