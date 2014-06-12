@@ -9,7 +9,12 @@ FactoryGirl.define do
     end
 
     factory :user_admin do
+      email 'admin@example.com'
       admin true
+
+      factory :user_another_admin do
+        email 'another@example.com'
+      end
     end
   end
 end

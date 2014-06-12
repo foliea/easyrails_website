@@ -1,7 +1,5 @@
 class UsersController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_user
-  before_action :check_ownership!
 
   def add_email
     return unless params[:user]
@@ -13,11 +11,5 @@ class UsersController < ApplicationController
       return redirect_to root_url, notice: I18n.t('account.email.success')
     end
     @show_error = true
-  end
-
-  private
-
-  def set_user
-    @user = User.find params[:id]
   end
 end

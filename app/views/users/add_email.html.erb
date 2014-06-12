@@ -7,7 +7,7 @@
         <h3 class="panel-title"><%= t('account.email.title') %></h3>
       </div>
       <div class="panel-body">
-        <%= form_for(@user, as: 'user', url: add_user_email_path(@user), html: { role: 'form'}) do |f| %>
+        <%= form_for(current_user, as: 'user', url: add_user_email_path, html: { role: 'form'}) do |f| %>
          <% if @show_error %>
           <div id="error_explanation">
             <%= t('account.email.error') %>
