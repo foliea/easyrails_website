@@ -55,7 +55,7 @@ group :development do
 end
 
 group :test do
-  gem 'shoulda'
+  gem 'formulaic'
   gem 'shoulda-matchers'
   gem 'capybara'
   gem 'coveralls', require: false
@@ -67,6 +67,7 @@ group :development, :test do
   gem 'factory_girl_rails'
   gem 'mocha'
   gem 'rspec-rails'
+  gem 'dotenv-rails'
 end
 
 group :production do

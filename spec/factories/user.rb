@@ -2,7 +2,8 @@ FactoryGirl.define do
   factory :user do
     email 'test@example.com'
     password 'password2013'
-#    sequence(:id) { |i| i }
+    password_confirmation 'password2013'
+    
     factory :user_twitter do
       provider 'twitter'
       uid '42'

@@ -16,6 +16,8 @@ feature 'Account registration' do
 
   def register(email, password, password_confirmation)
     visit new_user_registration_path
+
+    #fill_form(:user, attributes_for(:user))
     fill_in 'Email', with: email
     fill_in 'Password', with: password
     fill_in 'Password Confirmation', with: password_confirmation
