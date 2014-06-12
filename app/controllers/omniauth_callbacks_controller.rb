@@ -10,7 +10,6 @@ class OmniauthCallbacksController < Devise::OmniauthCallbacksController
 
     if auth.present?
       user_params = User.oauth_data auth
-      binding.pry
       user = User.get_from_oauth(user_params[:provider].presence,
                                  user_params[:uid].presence,
                                  user_params[:email].presence)
