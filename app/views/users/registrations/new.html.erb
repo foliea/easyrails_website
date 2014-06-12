@@ -7,28 +7,17 @@
         <h3 class="panel-title"><%= t('account.register.title') %></h3>
       </div>
       <div class="panel-body">
-        <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-          <%= devise_error_messages! %>
-          <div class="form-group">
-            <%= f.label :email, t('account.field.email') %>
-            <%= f.email_field :email,
-                              autofocus: true,
-                              class: 'form-control' %>
-          </div>
-          <div class="form-group">
-            <%= f.label :password, t('account.field.password') %>
-            <%= f.password_field :password,
-                                  class: 'form-control' %>
-          </div>
-          <div class="form-group">
-            <%= f.label :password_confirmation, t('account.field.password_confirmation') %>
-            <%= f.password_field :password_confirmation,
-                                  class: 'form-control' %>
-          </div>
+        <%= simple_form_for(resource, url: registration_path(resource_name), 
+                            as: resource_name,
+                            html: { class: 'form-vertical' },
+                            wrapper: :vertical_form) do |f| %>
+          <%= f.input :email %>
+          <%= f.input :password %>
+          <%= f.input :password_confirmation %>
           <%= render 'users/shared/links' %>
           <%= button_tag(type: 'submit', class: 'btn btn-success top-buffer', id: 'register') do %>
             <%= fa_icon 'check-square-o', text: t('account.register.button') %>
-          <% end %>
+          <% end %>       
         <% end %>
         <%= render 'users/shared/links_connect_with' %>
       </div>

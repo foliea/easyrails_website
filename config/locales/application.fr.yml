@@ -57,13 +57,6 @@ fr:
   account:
     connect_with: "Se connecter avec :"
     unauthorized: "Accès interdit"
-    field:
-      email: "Courriel"
-      password: "Mot de passe"
-      password_confirmation: "Mot de passe (Confirmation)"
-      new_password: "Nouveau Mot de passe"
-      new_password_confirmation: "Nouveau Mot de passe (Confirmation)"
-      current_password: "Mot de passe actuel"
     sign_in:
       title:  "Connexion"
       remember_me: "Se souvenir de moi"
@@ -74,8 +67,8 @@ fr:
     edit:
       title: "Modifier votre compte"
       button: "Sauvegarder"
-      tooltip_password: "(Laisser blanc pour ne pas le changer)"
-      tooltip_current_password: "(Taper votre mot de passe pour confirmer les changements)"
+      tooltip_password: "Laisser blanc pour ne pas le changer"
+      tooltip_current_password: "Taper votre mot de passe pour confirmer les changements"
       email_confirmation: "Attente de la confirmation par email :"
     cancel:
       title: "Me désinscrire"

@@ -7,31 +7,20 @@
           <h3 class="panel-title"><%= t('account.edit.title') %></h3>
       </div>
       <div class="panel-body">
-        <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-          <%= devise_error_messages! %>
-          <div class="form-group">
-            <%= f.label :email, t('account.field.email') %>
-            <%= f.email_field :email, autofocus: true, class: 'form-control' %>
-          </div>
-
+        <%= simple_form_for(resource, url: registration_path(resource_name), 
+                            as: resource_name,
+                            html: { method: :put, class: 'form-vertical' },
+                            wrapper: :vertical_form) do |f| %>
+          <%= f.input :email %>
           <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
             <div class="top-buffer bottom-buffer">
               <%= t('account.edit.email_confirmation') %> <%= resource.unconfirmed_email %>
             </div>
           <% end %>
-
-          <div class="form-group">
-            <%= f.label :password, t('account.field.new_password') %> <i><%= t('account.edit.tooltip_password') %></i>
-            <%= f.password_field :password, autocomplete: "off", class: 'form-control' %>
-          </div>
-          <div class="form-group">
-            <%= f.label :password_confirmation, t('account.field.new_password_confirmation') %>
-            <%= f.password_field :password_confirmation, class: 'form-control' %>
-          </div>
-          <div class="form-group">
-            <%= f.label :current_password, t('account.field.current_password') %> <i><%= t('account.edit.tooltip_current_password') %></i>
-            <%= f.password_field :current_password, class: 'form-control' %>
-          </div>
+          <%= f.input :password, hint: t('account.edit.tooltip_password') %>
+          <%= f.input :password_confirmation %>
+          <%= f.input :current_password, hint: t('account.edit.tooltip_current_password') %>
+          <%= f.error :password %>
           <%= button_tag(type: 'submit', class: 'btn btn-success') do %>
             <%= fa_icon 'check-square-o', text: t('account.edit.button') %>
           <% end %>

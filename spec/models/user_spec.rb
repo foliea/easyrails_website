@@ -35,6 +35,12 @@ describe User do
       user = User.get_from_oauth('twitter', '1', nil)
       expect(user.email).to match(User::TEMP_EMAIL_REGEX)
     end
+
+    it 'creates a new user with email received from profider' do
+      email = 'test@example.com'
+      user = User.get_from_oauth('twitter', '1', email)
+      expect(user.email).to match(email)
+    end
   end
 
   context 'before create' do
@@ -75,7 +81,16 @@ describe User do
       user.admin = false
       user.save
       user.reload
-      expect(user.admin).to be_true
+      expect(user.admin).to be true
+    end
+  end
+
+  context 'when there is two or more admins' do
+    it "isn't last admin" do
+      user = FactoryGirl.create(:user_admin)
+      FactoryGirl.create(:user_another_admin)
+
+      expect(user).not_to be_last_admin
     end
   end
 
