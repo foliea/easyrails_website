@@ -3,7 +3,10 @@ FactoryGirl.define do
     email 'test@example.com'
     password 'password2013'
     password_confirmation 'password2013'
-    
+
+    factory :user_error do
+      password_confirmation ''
+    end
     factory :user_twitter do
       provider 'twitter'
       uid '42'

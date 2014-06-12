@@ -15,6 +15,7 @@ gem 'sass-rails', '~> 4.0.2'
 gem 'compass-rails'
 gem "font-awesome-rails"
 gem 'bootstrap-sass'
+gem 'simple_form', '~> 3.1.0.rc1', github: 'plataformatec/simple_form'
 
 # Image Uploading
 gem 'aws-sdk'

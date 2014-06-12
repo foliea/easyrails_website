@@ -56,13 +56,6 @@ en:
   account:
     connect_with: "Connect with"
     unauthorized: "Unauthorized Access!"
-    field:
-      email: "Email"
-      password: "Password"
-      password_confirmation: "Password Confirmation"
-      new_password: "New Password"
-      new_password_confirmation: "Password Confirmation"
-      current_password: "Current Password"
     sign_in:
       title:  "Login to your account"
       remember_me: "Remember me"
@@ -73,8 +66,8 @@ en:
     edit:
       title: "Edit your account"
       button: "Update"
-      tooltip_password: "(leave blank if you don't want to change it)"
-      tooltip_current_password: "(we need your current password to confirm your changes)"
+      tooltip_password: "Leave blank if you don't want to change it"
+      tooltip_current_password: "We need your current password to confirm your changes"
       email_confirmation: "Currently waiting confirmation for:"
     cancel:
       title: "Cancel my account"
