@@ -13,7 +13,7 @@
                             wrapper: :vertical_form) do |f| %>
           <%= f.input :email %>
           <%= button_tag(type: 'submit', class: "btn btn-primary") do %>
-            <%= fa_icon 'envelope-o', text: t('account.recover.button') %>
+            <%= fa_icon 'envelope-o', text: t('helpers.submit.password.new') %>
           <% end %>
         <% end %>
         <%= render "users/shared/links" %>

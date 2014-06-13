@@ -16,7 +16,7 @@
           <%= f.input :password %>
           <%= f.input :password_confirmation %>
           <%= button_tag(type: 'submit', class: "btn btn-primary") do %>
-            <%= fa_icon 'lock', text: t('account.change_password.buton') %>
+            <%= fa_icon 'lock', text: t('helpers.submit.password.update') %>
           <% end %>
         <% end %>
         <%= render "users/shared/links" %>

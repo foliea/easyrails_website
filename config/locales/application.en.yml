@@ -25,7 +25,14 @@ en:
         new: "Register"
         create: "Sign in"
         update: "Update"
-        cancel: "Cancel"
+        destroy: "Cancel"
+      password:
+        new: "Send another"
+        update: "Change"
+      email:
+        new: "Resend"
+        create: "Unlock"
+        update: "Confirm"
   error:
     destroy: "You can't destroy a default %{class_name}."
     update: "An error has occured."
@@ -78,13 +85,13 @@ en:
       question: "Do you want to cancel your account ?"
     recover:
       title: "Forgot your password?"
-      button: "Send another"
     change_password:
       title: "Change your password"
-      button: "Change"
     confirm:
       title: "Resend confirmation instructions"
       button: "Resend"
+    unlock:
+      title: "Resend unlock instructions"
     email:
       title: "Email confirmation"
       notice: "Please confirm your email address."

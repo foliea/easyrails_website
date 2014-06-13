@@ -24,6 +24,16 @@ fr:
     submit:
       user:
         new: "S'inscrire"
+        create: "Se connecter"
+        update: "Sauvegarder"
+        destroy: "Se désinscrire"
+      password:
+        new: "Envoyer un nouveau"
+        update: "Changer"
+      email:
+        new: "Réenvoyer"
+        create: "Envoyer les instructions de déblocage"
+        update: "Confirmer"
   error:
     destroy: "Vous ne pouvez pas supprimmer le %{class_name} par défaut"
     update: "Une erreur s'est produite"
@@ -64,35 +74,29 @@ fr:
     sign_in:
       title:  "Connexion"
       remember_me: "Se souvenir de moi"
-      button: "Se connecter"
     register:
       title: "Inscription"
-      button: "S'inscrire"
     edit:
       title: "Modifier votre compte"
-      button: "Sauvegarder"
       tooltip_password: "Laisser blanc pour ne pas le changer"
       tooltip_current_password: "Taper votre mot de passe pour confirmer les changements"
       email_confirmation: "Attente de la confirmation par email :"
     cancel:
       title: "Me désinscrire"
-      button: "Se désinscrire"
       question: "Cliquer ici pour vous désinscrire"
     recover:
       title: "Mot de passe oublié ?"
-      button: "Envoyer un nouveau"
     change_password:
       title: "Changez votre mot de passe"
-      button: "Changer"
     confirm:
       title: "Réenvoyer un courriel de confirmation"
-      button: "Réenvoyer"
+    unlock:
+      title: "Envoyer les instructions de déblocage"
     email:
       title: "Confirmation de l'adresse email"
       notice: "Veuillez confirmer votre adresse email."
       success: "Votre adresse email a été sauvegardée avec succès."
       error: "Email invalide."
-      button: "Confirmer"
     links:
       sign_in: "Connexion"
       register: "Inscription"
