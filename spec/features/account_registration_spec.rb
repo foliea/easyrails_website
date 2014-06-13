@@ -6,18 +6,18 @@ feature 'Account registration' do
 
   scenario 'is valid' do
     register(:user)
-    expect(root_path).to eq(current_path)
+    expect(current_path).to eq(root_path)
   end
 
   scenario 'is invalid' do
     register(:user_error)
-    expect(user_registration_path).to eq(current_path)
+    expect(current_path).to eq(user_registration_path)
   end
 
   def register(user_factory_name)
     visit new_user_registration_path
 
     fill_form(:user, attributes_for(user_factory_name))
-    submit(:user, :new)
+    click submit(:user, :new)
   end
 end
