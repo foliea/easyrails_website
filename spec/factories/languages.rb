@@ -8,6 +8,7 @@ FactoryGirl.define do
       default true
 
       factory :new_default_language do
+        locale 'fr'
       end
     end
   end
