@@ -18,6 +18,6 @@ feature 'Account registration' do
     visit new_user_registration_path
 
     fill_form(:user, attributes_for(user_factory_name))
-    click submit(:user, :new)
+    click_on submit(:user, :new)
   end
 end
