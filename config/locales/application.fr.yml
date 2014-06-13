@@ -20,6 +20,10 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 fr:
+  helpers:
+    submit:
+      user:
+        new: "S'inscrire"
   error:
     destroy: "Vous ne pouvez pas supprimmer le %{class_name} par défaut"
     update: "Une erreur s'est produite"

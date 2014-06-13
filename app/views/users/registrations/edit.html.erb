@@ -22,7 +22,7 @@
           <%= f.input :current_password, hint: t('account.edit.tooltip_current_password') %>
           <%= f.error :password %>
           <%= button_tag(type: 'submit', class: 'btn btn-success') do %>
-            <%= fa_icon 'check-square-o', text: t('account.edit.button') %>
+            <%= fa_icon 'check-square-o', text: t('helpers.submit.user.update') %>
           <% end %>
         <% end %>
         <div class='top-buffer'>
@@ -43,7 +43,7 @@
       <div class="panel-body">
         <p><%= t('account.cancel.question') %></p>
         <%= button_to(registration_path(resource_name), data: { confirm: t('general.confirm') }, method: :delete, class: 'btn btn-danger') do %>
-            <%= fa_icon 'warning', text: t('account.cancel.button') %>
+          <%= fa_icon 'warning', text: t('helpers.submit.user.cancel') %>
         <% end %>
       </div>
     </div>

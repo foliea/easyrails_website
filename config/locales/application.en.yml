@@ -19,6 +19,13 @@
 # To learn more, please read the Rails Internationalization guide
 # available at http://guides.rubyonrails.org/i18n.html.
 en:
+  helpers:
+    submit:
+      user:
+        new: "Register"
+        create: "Sign in"
+        update: "Update"
+        cancel: "Cancel"
   error:
     destroy: "You can't destroy a default %{class_name}."
     update: "An error has occured."
@@ -59,19 +66,15 @@ en:
     sign_in:
       title:  "Login to your account"
       remember_me: "Remember me"
-      button: "Sign in"
     register:
       title: "Register an account"
-      button: "Register"
     edit:
       title: "Edit your account"
-      button: "Update"
       tooltip_password: "Leave blank if you don't want to change it"
       tooltip_current_password: "We need your current password to confirm your changes"
       email_confirmation: "Currently waiting confirmation for:"
     cancel:
       title: "Cancel my account"
-      button: "Cancel"
       question: "Do you want to cancel your account ?"
     recover:
       title: "Forgot your password?"
