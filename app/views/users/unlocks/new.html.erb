@@ -11,8 +11,8 @@
                                     as: resource_name,
                                     html: { method: :post, class: 'form-vertical' },
                                     wrapper: :vertical_form) do |f| %>
-                <%= f.input :email %>
-                <%= f.submit t('helpers.submit.email.unlock') %>
+        <%= f.input :email %>
+        <%= f.submit t('helpers.submit.email.unlock') %>
       <% end %>
       <%= render "users/shared/links" %>
       </div>

@@ -5,7 +5,7 @@ FactoryGirl.define do
     password_confirmation 'password2013'
 
     factory :user_error do
-      password_confirmation ''
+      password ''
     end
     factory :user_twitter do
       provider 'twitter'
