@@ -13,17 +13,21 @@ module AuthenticationHelper
 
   def sign_in(user_factory = :user)
     visit_then_fill_and_submit_form(new_user_session_path, :new,
-      :user, user_factory)
+      :user, user_factory, [:email, :password])
   end
-  
+
   def sign_out
     visit destroy_user_session
   end
 
-  def visit_then_fill_and_submit_form(path, action, model, factory)
+  def visit_then_fill_and_submit_form(path, action, model, factory, selected_attributes = [])
     visit path
 
-    fill_form(model, attributes_for(factory))
+    attributes = attributes_for(factory)
+    attributes = attributes.slice(*selected_attributes) unless selected_attributes.empty?
+
+    fill_form(model, attributes)
+
     click_button submit(model, action)
   end
 end

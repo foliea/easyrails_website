@@ -1,4 +1,4 @@
-require 'authentication_helper'
+require 'spec_helper'
 
 feature 'Account registration' do
   include AuthenticationHelper

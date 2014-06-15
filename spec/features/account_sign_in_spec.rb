@@ -1,4 +1,4 @@
-require 'authentication_helper'
+require 'spec_helper'
 
 feature 'Account sign in' do
   include AuthenticationHelper
@@ -13,6 +13,6 @@ feature 'Account sign in' do
 
   scenario "failed when user doesn't exist" do
     sign_in(:user_twitter)
-    expect(current_path).to eq(user_registration_path)
+    expect(current_path).to eq(root_path)
   end
 end
