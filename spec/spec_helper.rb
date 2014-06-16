@@ -43,6 +43,6 @@ RSpec.configure do |config|
   config.include Formulaic::Dsl, type: :feature
 
   config.before(:each) do
-  #  @page_home = FactoryGirl.create(:page_home)
+    @page_home = FactoryGirl.create(:page_home)
   end
 end
