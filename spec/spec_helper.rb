@@ -41,4 +41,8 @@ RSpec.configure do |config|
   config.include FactoryGirl::Syntax::Methods
   config.include Paperclip::Shoulda::Matchers
   config.include Formulaic::Dsl, type: :feature
+
+  config.before(:each) do
+  #  @page_home = FactoryGirl.create(:page_home)
+  end
 end

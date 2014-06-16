@@ -1,9 +1,8 @@
 require 'spec_helper'
 
 feature 'Account sign in' do
-  include AuthenticationHelper
+  include Support::Authentication
 
-  let!(:page_home) { FactoryGirl.create(:page_home) }
   let!(:user) { FactoryGirl.create(:user) }
 
   scenario 'succeed when user exist' do

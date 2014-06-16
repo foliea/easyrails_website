@@ -1,9 +1,7 @@
 require 'spec_helper'
 
 feature 'Account registration' do
-  include AuthenticationHelper
-
-  let!(:page_home) { FactoryGirl.create(:page_home) }
+  include Support::Authentication
 
   scenario 'succeed when user is valid' do
     register(:user)
