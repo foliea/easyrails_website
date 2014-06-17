@@ -12,9 +12,6 @@ Coveralls.wear!('rails') if ENV['COVERALLS_REPO_TOKEN']
 # in spec/support/ and its subdirectories.
 Dir[Rails.root.join('spec/support/**/*.rb')].each { |f| require f }
 
-I18n.load_path += Dir[Rails.root.join('config', 'locales', '*.yml').to_s]
-I18n.reload!
-
 # Checks for pending migrations before tests are run.
 # If you are not using ActiveRecord, you can remove this line.
 ActiveRecord::Migration.check_pending! if defined?(ActiveRecord::Migration)
