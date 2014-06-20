@@ -1,3 +1,3 @@
 ## super_active
 
-Will be release in a gem ASAP.
+Will be release as a gem ASAP.
