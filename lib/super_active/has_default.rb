@@ -1,4 +1,4 @@
-module SpecialModel
+module SuperActive
   module HasDefault
     def has_default
       before_destroy :destroyable?
@@ -6,13 +6,13 @@ module SpecialModel
       after_create :change_default
       after_update :fallback
 
-      extend ClassMethods
+      extend  ClassMethods
       include InstanceMethods
     end
 
     module ClassMethods
       def get_default
-        where(default: true).first
+        find_by(default: true)
       end
     end
 

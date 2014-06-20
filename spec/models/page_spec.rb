@@ -50,7 +50,7 @@ describe Page do
     end
   end
 
-  context 'when page do not exist' do
+  context "when page doesn't exist" do
     it 'throws an error' do
       expect { Page.get_by_name!('unknown') }.to raise_error
     end
