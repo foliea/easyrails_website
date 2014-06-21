@@ -28,7 +28,7 @@ describe Page do
 
   context 'when current locale exist' do
     it 'gets language by name from current locale' do
-      page = Page.get_by_name!(page_en.name, 'en', 'fr')
+      page = Page.from_name!(page_en.name, 'en', 'fr')
       expect(page.locale).to eq('en')
     end
   end
@@ -36,7 +36,7 @@ describe Page do
   context "when current locale doesn't exist" do
     it 'gets language by name from default locale' do
       FactoryGirl.create(:page_fr)
-      page = Page.get_by_name!(page_en.name, 'es', 'fr')
+      page = Page.from_name!(page_en.name, 'es', 'fr')
 
       expect(page.locale).to eq('fr')
     end
@@ -44,7 +44,7 @@ describe Page do
 
   context "when default locale doesn't exist" do
     it 'gets first existant language with name' do
-      page = Page.get_by_name!(page_en.name, 'es', 'it')
+      page = Page.from_name!(page_en.name, 'es', 'it')
 
       expect(page.name).to eq(page_en.name)
     end
@@ -52,7 +52,7 @@ describe Page do
 
   context "when page doesn't exist" do
     it 'throws an error' do
-      expect { Page.get_by_name!('unknown') }.to raise_error
+      expect { Page.from_name!('unknown') }.to raise_error
     end
   end
 

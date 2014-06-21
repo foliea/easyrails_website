@@ -17,7 +17,7 @@ describe User do
   context 'when already registered from a provider' do
     it 'gets the user from provider' do
       user = FactoryGirl.create(:user_twitter)
-      user_got = User.get_from_oauth(user.provider, user.uid, nil)
+      user_got = User.from_oauth(user.provider, user.uid, nil)
       expect(user_got.id).to eq(user.id)
     end
   end
@@ -25,20 +25,20 @@ describe User do
   context 'when email from provider already exist' do
     it 'gets the user from email' do
       user = FactoryGirl.create(:user)
-      user_got = User.get_from_oauth('twitter', '1', user.email)
+      user_got = User.from_oauth('twitter', '1', user.email)
       expect(user_got.id).to eq(user.id)
     end
   end
 
   context "when user from provider doesn't exist" do
     it 'creates a new user with temporary email' do
-      user = User.get_from_oauth('twitter', '1', nil)
+      user = User.from_oauth('twitter', '1', nil)
       expect(user.email).to match(User::TEMP_EMAIL_REGEX)
     end
 
     it 'creates a new user with email received from profider' do
       email = 'test@example.com'
-      user = User.get_from_oauth('twitter', '1', email)
+      user = User.from_oauth('twitter', '1', email)
       expect(user.email).to match(email)
     end
   end

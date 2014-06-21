@@ -6,7 +6,7 @@ class Page < ActiveRecord::Base
 
   scope :by_name, ->(name) { where(name: name) }
 
-  def self.get_by_name!(name, locale = I18n.locale, default_locale = I18n.default_locale)
+  def self.from_name!(name, locale = I18n.locale, default_locale = I18n.default_locale)
     page ||= find_by(name: name, locale: locale)
     page ||= find_by(name: name, locale: default_locale)
     page || find_by!(name: name)

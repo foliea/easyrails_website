@@ -13,6 +13,6 @@ class PagesController < ApplicationController
   private
 
   def set_page
-    @page = Page.get_by_name!(params[:name])
+    @page = Page.from_name!(params[:name])
   end
 end

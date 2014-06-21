@@ -10,9 +10,9 @@ class OmniauthCallbacksController < Devise::OmniauthCallbacksController
 
     if auth.present?
       user_params = User.oauth_data auth
-      user = User.get_from_oauth(user_params[:provider].presence,
-                                 user_params[:uid].presence,
-                                 user_params[:email].presence)
+      user = User.from_oauth(user_params[:provider].presence,
+                             user_params[:uid].presence,
+                             user_params[:email].presence)
       if user.present?
         flash[:notice] = I18n.t 'devise.omniauth_callbacks.success', kind: auth.provider
         return sign_in_and_redirect user, event: :authentication
