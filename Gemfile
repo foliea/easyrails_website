@@ -39,8 +39,14 @@ gem 'omniauth-github'
 gem 'omniauth-facebook'
 gem 'omniauth-google-oauth2'
 
+gem 'email_validator'
+
 # Server
 gem 'puma'
+
+# Wrap inside an initializer : "Rack:Timeout.timeout = 10"
+# to change the default timeout of 15 seconds.
+gem "rack-timeout"
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
@@ -65,6 +71,7 @@ end
 # Required also in development for generate
 group :development, :test do
   gem 'pry-rails'
+  gem 'pry-byebug'
   gem 'factory_girl_rails'
   gem 'mocha'
   gem 'rspec-rails'

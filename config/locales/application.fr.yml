@@ -13,9 +13,11 @@ fr:
         new: "Réenvoyer"
         unlock: "Envoyer les instructions de déblocage"
         update: "Confirmer"
-  errors:
+  error:
     destroy: "Vous ne pouvez pas supprimmer le %{model} par défaut"
     update: "Une erreur s'est produite"
+    validation:
+      last_admin: "Vous ne pouvez pas retirer le dernier administrateur"
   header:
     menu:
       admin: "Administration"

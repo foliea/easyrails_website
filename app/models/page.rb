@@ -9,7 +9,7 @@ class Page < ActiveRecord::Base
   def self.get_by_name!(name, locale = I18n.locale, default_locale = I18n.default_locale)
     page ||= find_by(name: name, locale: locale)
     page ||= find_by(name: name, locale: default_locale)
-    page || self.find_by!(name: name)
+    page || find_by!(name: name)
   end
 
   protected

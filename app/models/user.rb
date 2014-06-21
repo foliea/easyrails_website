@@ -3,9 +3,8 @@ class User < ActiveRecord::Base
   TEMP_EMAIL_REGEX = /.+#{TEMP_EMAIL}$/
 
   has_one :profile, dependent: :destroy
-  after_create :build_profile
   before_destroy :destroy?
-  before_save :keep_last_admin
+  after_create :build_profile
 
   devise :database_authenticatable,
          :registerable,
@@ -14,6 +13,9 @@ class User < ActiveRecord::Base
          :trackable,
          :validatable,
          :omniauthable
+
+  validates :email, presence: true, email: true
+  validate :keep_last_admin
 
   def self.get_from_oauth(provider, uid, email)
     user = find_by(provider: provider, uid: uid)
@@ -49,8 +51,9 @@ class User < ActiveRecord::Base
   end
 
   def keep_last_admin
-    self.admin = true if last_admin?
-    true
+    if admin == false && last_admin?
+      errors[:admin] << I18n.t('error.validation.last_admin')
+    end
   end
 
   def destroy?

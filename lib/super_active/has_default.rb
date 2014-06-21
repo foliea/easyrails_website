@@ -11,7 +11,7 @@ module SuperActive
     end
 
     module ClassMethods
-      def get_default
+      def default
         find_by(default: true)
       end
     end
@@ -21,7 +21,9 @@ module SuperActive
 
       def destroyable?
         if default
-          errors.add :default, (I18n.t 'error.destroy', class_name: self.class.name)
+          # add super_active.yml after moving as a gem
+          error_msg = I18n.t('error.destroy', model: self.class.name)
+          errors[:default] << error_msg
         end
         !default
       end
@@ -39,6 +41,7 @@ module SuperActive
       end
 
       def fallback
+        # for future update : stop falling back silently
         return unless fallback_required?
 
         update_columns(default: true)
@@ -49,7 +52,7 @@ module SuperActive
       end
 
       def default_can_change?
-        !default && self.class.get_default.nil?
+        !default && self.class.default.nil?
       end
 
       def fallback_required?

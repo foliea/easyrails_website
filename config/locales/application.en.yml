@@ -13,9 +13,11 @@ en:
         new: "Resend"
         unlock: "Unlock"
         update: "Confirm"
-  errors:
+  error:
     destroy: "You can't destroy a default %{model}."
     update: "An error has occured."
+    validation:
+      last_admin: "You can't remove the last administrator"
   header:
     menu:
       admin: "Admin"
