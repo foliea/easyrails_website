@@ -15,7 +15,7 @@ class User < ActiveRecord::Base
          :omniauthable
 
   validates :email, presence: true, email: true
-  validate :keep_last_admin
+  validate :last_admin_stays_admin
 
   def self.get_from_oauth(provider, uid, email)
     user = find_by(provider: provider, uid: uid)
@@ -50,7 +50,7 @@ class User < ActiveRecord::Base
     Profile.create!(user: self)
   end
 
-  def keep_last_admin
+  def last_admin_stays_admin
     if admin == false && last_admin?
       errors[:admin] << I18n.t('error.validation.last_admin')
     end
