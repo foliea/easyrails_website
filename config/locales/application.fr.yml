@@ -17,7 +17,7 @@ fr:
     destroy: "Vous ne pouvez pas supprimmer le %{model} par défaut"
     update: "Une erreur s'est produite"
     validation:
-      last_admin: "Vous ne pouvez pas retirer le dernier administrateur"
+      last_stays: "Vous ne pouvez pas retirer le dernier %{model} avec cet attribut"
   header:
     menu:
       admin: "Administration"

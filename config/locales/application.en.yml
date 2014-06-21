@@ -17,7 +17,7 @@ en:
     destroy: "You can't destroy a default %{model}."
     update: "An error has occured."
     validation:
-      last_admin: "You can't remove the last administrator"
+      last_stays: "You can't remove the last %{model} with that attribute"
   header:
     menu:
       admin: "Admin"

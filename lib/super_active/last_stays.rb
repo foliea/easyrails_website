@@ -6,7 +6,9 @@ class LastStaysValidator < ActiveModel::EachValidator
     # it can't change this attribute value to false
     if value == false && value_was == true &&
       record.class.where("#{attribute}" => true).count <= 1
-      record.errors[attribute] << I18n.t('error.validation.last_stays')
+
+      error = I18n.t('error.validation.last_stays', model: record.class.name)
+      record.errors[attribute] << error
     end
   end
 end

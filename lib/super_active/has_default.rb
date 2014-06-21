@@ -22,8 +22,8 @@ module SuperActive
       def destroyable?
         if default
           # add super_active.yml after moving as a gem
-          error_msg = I18n.t('error.destroy', model: self.class.name)
-          errors[:default] << error_msg
+          error = I18n.t('error.destroy', model: self.class.name)
+          errors[:default] << error
         end
         !default
       end
