@@ -14,10 +14,16 @@ Devise.setup do |config|
   require 'omniauth-github'
   require 'omniauth-google-oauth2'
 
-  config.omniauth :linkedin,      ENV['LINKEDIN_APP_ID'], ENV['LINKEDIN_APP_SECRET']
-  config.omniauth :twitter,       ENV['TWITTER_APP_ID'],  ENV['TWITTER_APP_SECRET']
-  config.omniauth :github,        ENV['GITHUB_APP_ID'],   ENV['GITHUB_APP_SECRET']
-  config.omniauth :google_oauth2, ENV['GOOGLE_APP_ID'],   ENV['GOOGLE_APP_SECRET']
+  {
+    linkedin:      { id: ENV['LINKEDIN_APP_ID'], secret: ENV['LINKEDIN_APP_SECRET'] },
+    twitter:       { id: ENV['TWITTER_APP_ID'],  secret: ENV['TWITTER_APP_SECRET']  },
+    github:        { id: ENV['GITHUB_APP_ID'],   secret: ENV['GITHUB_APP_SECRET']   },
+    google_oauth2: { id: ENV['GOOGLE_APP_ID'],   secret: ENV['GOOGLE_APP_SECRET']   }
+  }.each do |provider, app|
+    if app[:id].present? && app[:secret].present?
+      config.omniauth(provider, app[:id], app[:secret])
+    end 
+  end
 
   # config.after_initialize do
   # ==> Mailer Configuration
