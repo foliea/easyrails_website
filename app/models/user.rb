@@ -17,16 +17,14 @@ class User < ActiveRecord::Base
   validates :email, presence: true, email: true
   validates :admin, last_stays: true
 
-  def self.from_oauth(provider, uid, email)
+  def self.from_oauth(provider, uid, email = nil)
     user = find_by(provider: provider, uid: uid)
-    user = find_by(email: email) if user.nil? && email.present?
-
-    return user if user.present?
-    create(provider: provider,
-           uid:      uid,
-           email:    email.presence || "#{uid}_#{provider}#{TEMP_EMAIL}",
-           password: Devise.friendly_token[0, 20]
-           )
+    user ||= find_by(email: email) if email.present?
+    user || create(provider: provider,
+                   uid:      uid,
+                   email:    email.presence || "#{uid}_#{provider}#{TEMP_EMAIL}",
+                   password: Devise.friendly_token[0, 20]
+                  )
   end
 
   def self.oauth_data(auth)

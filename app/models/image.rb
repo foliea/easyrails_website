@@ -9,10 +9,8 @@ class Image < ActiveRecord::Base
   validates_attachment_size :image, less_than: 5.megabytes
   validates_attachment :image, presence: true
 
-  def serializable_hash(options = nil)
-    options ||= {}
-    options[:methods] ||= []
-    options[:methods] << :url
+  def serializable_hash(options = {})
+    options.fetch(:methods) { [] } << :url
     super(options)
   end
 end
