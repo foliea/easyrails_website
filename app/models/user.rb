@@ -1,4 +1,6 @@
 class User < ActiveRecord::Base
+  include SuperActive::Validators
+
   TEMP_EMAIL       = '@temp.com'
   TEMP_EMAIL_REGEX = /.+#{TEMP_EMAIL}$/
 
