@@ -1,7 +1,7 @@
 module SuperActive
   module Filterable
-    def self.included(base)
-      base.extend ClassMethods
+    def acts_as_filterable
+      extend ClassMethods
     end
 
     module ClassMethods
@@ -14,4 +14,5 @@ module SuperActive
       end
     end
   end
+  ActiveRecord::Base.extend Filterable
 end
