@@ -1,8 +1,8 @@
 class User < ActiveRecord::Base
   include SuperActive::Validators
 
-  TEMP_EMAIL       = '@temp.com'
-  TEMP_EMAIL_REGEX = /.+#{TEMP_EMAIL}$/
+  TEMP_EMAIL_SUFFIX = '@temp.com'
+  TEMP_EMAIL_REGEX  = /.+#{TEMP_EMAIL_SUFFIX}$/
 
   has_one :profile, dependent: :destroy
   before_destroy :destroy?
@@ -24,7 +24,7 @@ class User < ActiveRecord::Base
     user ||= find_by(email: email) if email.present?
     user || create(provider: provider,
                    uid:      uid,
-                   email:    email.presence || "#{uid}_#{provider}#{TEMP_EMAIL}",
+                   email:    email.presence || "#{uid}_#{provider}#{TEMP_EMAIL_SUFFIX}",
                    password: Devise.friendly_token[0, 20]
                   )
   end
