@@ -10,7 +10,8 @@ class Image < ActiveRecord::Base
   validates_attachment :image, presence: true
 
   def serializable_hash(options = {})
-    options.fetch(:methods) { [] } << :url
+    options[:methods] = options.fetch(:methods) { [] }
+    options[:methods] << :url
     super(options)
   end
 end
