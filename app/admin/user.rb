@@ -23,7 +23,7 @@ ActiveAdmin.register User do
     @user = User.find_or_create_by(id: params[:id])
     @user.email = params[:user][:email]
     @user.admin = params[:user][:admin]
-    @user.save
+    @user.save!
     redirect_to action: :show, id: @user.id
   end
 
