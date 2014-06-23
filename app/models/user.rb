@@ -24,7 +24,8 @@ class User < ActiveRecord::Base
     user ||= find_by(email: email) if email.present?
     user || create(provider: provider,
                    uid:      uid,
-                   email:    email.presence || "#{uid}_#{provider}#{TEMP_EMAIL_SUFFIX}",
+                   email:    email.presence ||
+                             "#{uid}_#{provider}#{TEMP_EMAIL_SUFFIX}",
                    password: Devise.friendly_token[0, 20]
                   )
   end
