@@ -55,7 +55,6 @@ section {
 .radio-inline input[type="radio"],
 .checkbox input[type="checkbox"],
 .checkbox-inline input[type="checkbox"] {
-  // remove float left ? it's already in bootstrap base style
   float: left;
   margin-left: 0px;
 }
