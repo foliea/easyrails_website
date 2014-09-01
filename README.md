@@ -15,4 +15,4 @@ This project is still at an early development stage. Don't use it yet.
 
 ## Licensing
 
-easyrails_website is licensed under the MIT License. See `LICENSE` for full license text.
+`easyrails_website` is licensed under the MIT License. See `LICENSE` for full license text.
