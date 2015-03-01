@@ -4,7 +4,7 @@ class UsersController < ApplicationController
   def add_email
     return unless params[:user]
 
-    current_user.email = params[:user][:email].presence
+    current_user.email = params[:user][:email]
 
     if current_user.valid? || current_user.errors[:email].blank?
       current_user.update_columns(email: params[:user][:email])
