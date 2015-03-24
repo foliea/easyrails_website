@@ -10,7 +10,7 @@ This project is still at an early development stage. Don't use it yet.
 
 ## Build status
 
-[![Codeship Status for folieadrien/easyrails_website](https://codeship.io/projects/4f6bcec0-d0cb-0131-b04e-22cfb90185d8/status?branch=master)](https://codeship.io/projects/23171)
+[![Codeship Status for foliea/easyrails_website](https://codeship.io/projects/4f6bcec0-d0cb-0131-b04e-22cfb90185d8/status?branch=master)](https://codeship.io/projects/23171)
 
 ## Licensing
 
