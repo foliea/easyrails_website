@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-ruby '2.1.2'
+ruby '2.1.5'
 
 gem 'rails', '4.1.1'
 gem 'pg'
@@ -64,7 +64,7 @@ group :test do
   gem 'formulaic'
   gem 'shoulda-matchers'
   gem 'capybara'
-  gem 'coveralls', require: false
+  gem 'codeclimate-test-reporter', require: false
 end
 
 # Required also in development for generate
